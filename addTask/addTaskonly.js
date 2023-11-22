@@ -1,7 +1,13 @@
-//added Eventlistener for the Window. It's check everytime the WIndow gets resized for the switchParent Function
+/**
+ * Eventlistener who checks if the window is resized and if it to small it calls the function switchParent.
+ * 
+ */
 window.addEventListener("resize", switchParent);
 
-//Function to switch the Parent Div from prio and assigned. Need to sort the Elements in the right Order in Responsiv.
+/**
+ * Function to switch the Parent Div from prio and assigned. Need to sort the Elements in the right Order in Responsiv.
+ * 
+ */
 function switchParent() {
   let formLeft = document.getElementById("formLeft");
   let formRight = document.getElementById("formRight");

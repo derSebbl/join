@@ -9,6 +9,10 @@ const profilBadges = [
   "/contact/img/Ellipse 6.svg",
 ]
 
+/**
+ * Function to initialize the contact page
+ * 
+ */
 async function initContact() {
   // await includeHTML();
   // await initRender();
@@ -16,10 +20,16 @@ async function initContact() {
   editContactPlates();
 }
 
-/////////////////////////////////////////////////////////////////
-
+/**
+ * Eventlistener who checks if the window is resized and if it to small it calls the function closeResponse.
+ * 
+ */
 window.addEventListener('resize', closeResponse);
 
+/**
+ * Function to close the Response Window if the window is resized to big.
+ * 
+ */
 function closeResponse(){
   if (window.innerWidth > 1300) {
     closeNewContactResp();
@@ -29,12 +39,13 @@ function closeResponse(){
 }else {
   document.getElementById('btnContainerResp').style.display="inline-flex";
 }
-}
-/////////////////////////////////////////////////////////////////
+};
 
-
-
-// Function let floatingFrame slide in if the Contact get clicked
+/**
+ * Function to show and hide the editContact Window in Responsive.
+ * 
+ * @param {number} x - Index of the selected Contact 
+ */
 function slideIn(x) {
   editFloatingDisplay(x);
   let floatingFrame = document.getElementById("floatingFrame");
@@ -49,7 +60,11 @@ function slideIn(x) {
 }
 };
 
-//Function edit the FLoating Display with BigName etc.
+/**
+ * Function to edit the Contact Detail Window in Responsive.
+ * 
+ * @param {number} y - Index of the selected Contact
+ */
 function editFloatingDisplay(y) {
   if (window.innerWidth > 1300){
     let name = contacts[y].name;
@@ -70,47 +85,84 @@ function editFloatingDisplay(y) {
 }
 };
 
+/**
+ * Function to sort the Contacts by the first Letter of the Name.
+ * 
+ * @param {string} contacts - Array of all Contacts
+ * @returns 
+ */
+function sortContacts(contacts) {
+  return contacts.sort((a, b) => a.name.localeCompare(b.name));
+};
 
+/**
+ * Function to add the Letter Segment to the Contact List.
+ * 
+ * @param {Element} contactList - HTML Element who contains all Contacts
+ * @param {Element} letter - HTML Element who contains the Letter of the Contact
+ */
+function addLetterSegment(contactList, letter) {
+  contactList.innerHTML += /*html*/`
+    <div class="letterSection">${letter}
+    <img class="lineLetterSection" src="/contact/img/Vector 10.svg"></div>
+  `;
+};
 
+/**
+ * Function to add the Contact to the Contact List and edit the HTML Elements.
+ * 
+ * @param {Element} contactList - HTML Element who contains all Contacts
+ * @param {Array} contact - Arraay of all Contacts
+ * @param {number} i - Index of the selected Contact
+ */
+function addContact(contactList, contact, i) {
+  let name = contact.name;
+  let mail = contact.mail;
+  let words = name.split(' ');
+  let firstLetter = words[0].charAt(0).toUpperCase();
+  let secondWordFirstLetter = words[1].charAt(0).toUpperCase();
 
+  contactList.innerHTML += `
+    <div onclick="slideIn(${i})" id="contactPlate${i}" class="contactPlate">
+    <div class="profilBadge">
+      <img class="profilBadgeImg" src="${randomProfilBadges[i]}">      
+      <div id= "initials-container">${firstLetter}${secondWordFirstLetter}</div>
+    </div>
+    <div class="contactInfo">
+      <span class="contactName" id="contactName${i}">${name}</span>
+      <span class="contactEmail" id="contactEmail${i}">${mail}</span>
+    </div>
+    `;
+};
+
+/**
+ * Function to edit the Contact Plates and sort them. If the Letter is already created it checks the position from the second letter t sort it right. If no Letter is created it calls the function addLetterSegment.
+ * 
+ */
 function editContactPlates() {
   let contactList = document.getElementById("contactList");
+  let currentLetter = null;
+  let sortedContacts = sortContacts(contacts);
   contactList.innerHTML = ``;
 
-  let currentLetter = null;
-
-  contacts.sort((a, b) => a.name.localeCompare(b.name));  // Sort Contacts by Name
-
-  for (let i = 0; i < contacts.length; i++) {
-    let name = contacts[i].name;
-    let mail = contacts[i].mail;
+  for (let i = 0; i < sortedContacts.length; i++) {
+    let name = sortedContacts[i].name;
     let words = name.split(' ');
     let firstLetter = words[0].charAt(0).toUpperCase();
-    let secondWordFirstLetter = words[1].charAt(0).toUpperCase();
     
     if (firstLetter !== currentLetter) {
       currentLetter = firstLetter;
+      addLetterSegment(contactList, currentLetter);
+    }
 
-      contactList.innerHTML += /*html*/`
-        <div class="letterSection">${currentLetter}
-        <img class="lineLetterSection" src="/contact/img/Vector 10.svg"></div>
-      `;  
-    }                                                                             // Edit the Sort. Letter and Line in Contact List
-    contactList.innerHTML += `
-      <div onclick="slideIn(${i})" id="contactPlate${i}" class="contactPlate">
-      <div class="profilBadge">
-        <img class="profilBadgeImg" src="${randomProfilBadges[i]}">      
-        <div id= "initials-container">${firstLetter}${secondWordFirstLetter}</div>
-      </div>
-      <div class="contactInfo">
-        <span class="contactName" id="contactName${i}">${name}</span>
-        <span class="contactEmail" id="contactEmail${i}">${mail}</span>
-      </div>
-      `;
+    addContact(contactList, sortedContacts[i], i);
   }
 };
 
-// Function to edit a new Contact and push it to the Array
+/**
+ * Function to create a new Contact and add it to the Array. It also set the Badged coloer to the new Contact.
+ * 
+ */
 function newContact() {
   let name = document.getElementById("newContactName");
   let mail = document.getElementById("newContactMail");
@@ -128,16 +180,25 @@ function newContact() {
   clearValuesNewContact(name, mail, phone);
 };
 
-
+/**
+ * Function to clear the Values of the new Contact Window.
+ * 
+ * @param {string} name - Name of the new Contact
+ * @param {string} mail - Mail of the new Contact
+ * @param {string} phone - Phone of the new Contact
+ */
 function clearValuesNewContact(name, mail, phone) {
   name.value = ``;
   mail.value = ``;
   phone.value = ``;
   
   editContactPlates();
-}
+};
 
-// Show Window for New Contact
+/**
+ * Function to show the new Contact Window.
+ * 
+ */
 function addNewContact() {
   let newContact = document.getElementById("newContactContainer");
   let background = document.getElementById("background");
@@ -146,9 +207,13 @@ function addNewContact() {
   background.style.display = "block";
   personPlate.style.display = "none";
   standardColorNamePlate();
-}
+};
 
-// Show Window for Edit Contact
+/**
+ * Function to show the Edit Contact Window.
+ * 
+ * @param {number} x - Index of the selected Contact
+ */
 function editContact(x) {
   let editContact = document.getElementById("editContactContainer");
   let background = document.getElementById("background");
@@ -157,9 +222,12 @@ function editContact(x) {
   background.style.display = "block";
   personPlate.style.display = "none";
   fillEditContact(x);
-}
+};
 
-// Close Window New Contact
+/**
+ * Function to close the New Contact Window and clear the Values.
+ * 
+ */
 function closeNewContact() {
   let newContact = document.getElementById("newContactContainer");
   let background = document.getElementById("background");
@@ -171,39 +239,53 @@ function closeNewContact() {
   name.value = ``;
   mail.value = ``;
   phone.value = ``;
-}
+};
 
-// Close Window Edit Contact
+/**
+ * Function to close the Edit Contact Window and set the backgroundcoor of the Contact Plate back to normal.
+ * 
+ */
 function closeEditContact() {
   let editContact = document.getElementById("editContactContainer");
   let background = document.getElementById("background");
   editContact.style.display = "none";
   background.style.display = "none";
   standardColorNamePlate();
-}
+};
 
-// Function to Change BackgroundColor on aktive Person
+/**
+ * Function to switch the Backgroundcolor and Color of the selected Contact Plate.
+ * 
+ * @param {number} x - Index of the selected Contact
+ */
 function changeColorNamePlate(x) {
   let contactPlate = document.getElementById(`contactPlate${x}`);
   let contactText = document.getElementById(`contactName${x}`);
   contactPlate.classList.add("selectedBackground");
   contactText.style.color = "white";
-}
+};
 
-// Function to Change back BackgroundColor on aktive Person
+/**
+ * Function to switch the Backgroundcolor and Color of the selected Contact Plate back to normal.
+ * 
+ */
 function standardColorNamePlate() {
-  let contactPlate = document.querySelectorAll(".contactPlate"); // save all Elements with the class "contactPlate"
-  let contactText = document.querySelectorAll(".contactName");  // save all Elements with the class "contactName"
+  let contactPlate = document.querySelectorAll(".contactPlate"); 
+  let contactText = document.querySelectorAll(".contactName");  
 
   for (let i = 0; i < contactPlate.length; i++) {
     contactPlate[i].classList.remove("selectedBackground");
-  }                                                             // making the changes of the Codeblock on all Elements wit class "contactPlate"
+  }                                                             
   for (let i = 0; i < contactText.length; i++) {
     contactText[i].style.color = "black";
-}                                                               // making the changes of the Codeblock on all Elements wit class "contactName"
-}
+}                                                               
+};
 
-//Function to Fill the editContact Fields
+/**
+ * Functtion to Fill the edit Contact Window with the Data of the selected Contact.
+ * 
+ * @param {number} x - Index of the selected Contact
+ */
 function fillEditContact(x) {
   let i = x;
   let name = document.getElementById('editContactName');
@@ -217,7 +299,11 @@ function fillEditContact(x) {
   createEditBadges(i);
   };
 
-//Function to create the Badges on the Edit Contact Window
+/**
+ * Function to create the Badge and Initials on the Edit Contact Window.
+ * 
+ * @param {number} i - Index of the selected Contact
+ */
   function createEditBadges(i) {
     let img = document.getElementById('editImg');
     let initials = document.getElementById('editInitials');
@@ -229,8 +315,10 @@ function fillEditContact(x) {
     initials.innerHTML = `${firstLetter}${secondWordFirstLetter}`;
   };
 
-
-//Edit the selected Contact and change the Array data if you click on Save
+/**
+ * Function to overrite the Contact with the new Data in the Array
+ * 
+ */
 function updateContact() {
   let name = document.getElementById('editContactName').value;
   let mail = document.getElementById('editContactMail').value;
@@ -246,7 +334,10 @@ function updateContact() {
   closeEditContact();
 };
 
-// Function to delete a Contact on Edit-Display
+/**
+ * Function to delete the Contact in the edit Window.
+ * 
+ */
 function deleteContact() {
   let i = selectedContactIndex;
   contacts.splice(i, 1);
@@ -255,7 +346,11 @@ function deleteContact() {
   closeEditContact();
 };
 
-// Function to delete a Contact on the floating Display
+/**
+ * Function to delete the Contact in the Detail Window.
+ * 
+ * @param {number} i - Index of the selected Contact
+ */
 function deleteContactFloat(i) {
   contacts.splice(i, 1);
   randomProfilBadges.splice(i, 1);
@@ -265,13 +360,19 @@ function deleteContactFloat(i) {
   closeRespDetailCard();
 };
 
-// Function to close the floating Display
+/**
+ * Fucntion to close the Detail Window.
+ * 
+ */
 function closeFloatingFrame() {
   let floatingFrame = document.getElementById("floatingFrame");
   floatingFrame.style.display = "none";
 };
 
-// Function to edit the Initials on the User Profile
+/**
+ * Function to edit the Contact Initials.
+ * 
+ */
 function editInitalsContacts() {
   for (let i = 0; i < contacts.length; i++) {
     let name = contacts[i].name;
@@ -283,7 +384,10 @@ function editInitalsContacts() {
 }
 };
 
-// Function to edit an random Badge to the Array
+/**
+ * Function to edit a random Badge to the Contact.
+ * 
+ */
 function initializeRandomProfilBadges() {
   for (let i = 0; i < contacts.length; i++) {
     randomProfilBadges[i] = profilBadges[Math.floor(Math.random() * profilBadges.length)];
