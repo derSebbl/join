@@ -354,10 +354,14 @@ function deleteContact() {
 function deleteContactFloat(i) {
   contacts.splice(i, 1);
   randomProfilBadges.splice(i, 1);
+  let addContactResp = document.getElementById("btnContainerResp");
   editContactPlates();
   closeFloatingFrame();
   closeResponse();
   closeRespDetailCard();
+  if (window.innerWidth > 1300){
+  addContactResp.style.display="none";
+  }
 };
 
 /**
