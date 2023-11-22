@@ -1,0 +1,71 @@
+#logoTopLeft{
+    position: absolute;
+    transform: scale(0.3);
+    top: 80px;
+    left: 77px;
+    transform-origin: left top;
+}
+
+#loginContainer{
+    margin-top: 15px;
+}
+
+@media (max-height:900px), (max-width: 900px) {
+    #logoTopLeft{
+        top: 30px;
+        left: 30px;
+    }
+}
+form{
+    gap: 24px !important;
+}
+
+#rememberContainer{
+    padding: 0;
+    justify-content: center;
+}
+
+#headline{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center
+}
+
+h1{
+    width: 315px;
+}
+
+#headline > a{
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    left: -32px;
+}
+
+#headline > a:hover{
+    border-radius: 100px;
+    background-color: #EEEEEE;
+    transform: scale(1.1);
+}
+
+#loginContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 422px;
+    max-height: 535px;
+    /* background-color: red; */
+}
+
+@media (max-width: 750px) {
+    #headline > a{
+        left: -32px;
+    }
+}
+@media (max-width: 600px) {
+    #headline > a{
+        left: 16px;
+    }
+}

@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    font-family: Inter;
+    line-height: 120%; /* 73.2px */ 
+}
+.imgContainer{
+    display: none;
+}
+.content{
+    margin-left: 328px;
+    margin-top: 50px;
+    max-width: 1014px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    font-size: 61px;
+    font-weight: 700;
+}
+button{
+    background: none;
+    border: none;
+}
+button > img:hover{
+    background-color: #EEE;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.legalNotice{
+    margin-top: 32px;
+    text-wrap: wrap;
+}
+h2{
+    margin-bottom: 0;
+}
+p{
+    margin-top: 5px;
+}

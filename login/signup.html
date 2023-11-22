@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="shortcut icon" href="/Templates/img/Capa 2.svg" type="image/x-icon">
+    <title>Join - Sign Up</title>
+</head>
+<body onload="loadUsers();">
+    <div class="container">
+        <div id="logoTopLeft">
+            <img src="../Templates/img/join-dark.svg" alt="join logo" id="logo">
+        </div>
+    </div>
+
+    <div id="loginContainer">
+        <div id="formHead">
+            <div id="headline">
+                <a href="login.html"><img src="loginSymbols/arrowLeft.svg" alt=""></a>
+                <h1>Sign up</h1>
+            </div>
+            <img src="loginSymbols/underline.svg">
+        </div>
+        <form onsubmit="register(); return false;">
+            <div id="nameContainer">
+                <input type="text" id="username" placeholder="Name" name="username" required>
+                <img src="loginSymbols/user.svg" class="inputIcon" alt="user symbol">
+            </div>
+
+            <div id="emailContainer">
+                <input type="email" id="email" placeholder="Email" name="email" required>
+                <img src="loginSymbols/mail.svg" class="inputIcon" alt="mail symbol">
+            </div>
+
+            <div id="passwordContainer">
+                <input type="password" id="password" placeholder="Password" name="password" required>
+                <img src="loginSymbols/lock.svg" id="passwordIcon" class="inputIcon"  alt="lock icon">
+            </div>
+
+            <div id="confirmPasswordContainer">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" name="confirmPassword" required>
+                <img src="loginSymbols/lock.svg" id="confirmPasswordIcon" class="inputIcon" alt="lock icon">
+            </div>
+
+            <div id="rememberContainer">
+                <label class="customCheckbox">
+                    <input type="checkbox" id="policyCheckbox" class="hiddenCheckbox">
+                    <span class="customCheckbox-box"></span>
+                    <p class="checkmark">I accept the <a href="">Privacy policy</a></p>
+                </label>                  
+            </div>
+
+            <div id="loginButtons">
+                <button id="registerBtn" class="btn">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Legal notice</a>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="register.js"></script>
+    <script src="showToast.js"></script>
+</body>
+</html>

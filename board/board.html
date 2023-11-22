@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join-Board</title>
+    <link rel="stylesheet" href="../Templates/style-templates.css"> <!--Style for the navBar and header-->
+    <link rel="stylesheet" href="../fonts/fonts.css"> <!--Style for the Fonts-->
+    <link rel="stylesheet" href="../Templates/style-templates.css">
+    <link rel="stylesheet" href="../css/designTemplatesGeneralElements.css">
+    <link rel="stylesheet" href="../css/designTemplatesBoard.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="stylesheet" href="../css/board.css">
+    <link rel="stylesheet" href="../addTask/addTask.css">
+    <link rel="icon" type="image/x-icon" href="/Templates/img/Capa 2.svg">
+    <script src="../js/main.js"></script>
+    <script src="../Templates/Template.js"></script> <!--Javascript to load the navBar and header-->
+    <script src="../js/designTemplatesGeneralElements.js"></script>
+    <script src="../js/board.js"></script>
+    <script src="../addTask/addTask.js"></script>
+    <script src="../login/showToast.js"></script>
+    <title>Join - Board</title>
+</head>
+
+<body onload="init(); initBoard();">
+
+    <div w3-include-html="/Templates/header.html"></div> <!--header-->
+    <div w3-include-html="/Templates/navBar.html"></div> <!--navBar-->
+
+    <div id="boardContainer">
+        <div id="boardColumnTitleContainer"></div>
+        <div id="boardColumnContainer"></div>
+    </div>
+    <div id="cardOverlayContainer"></div>
+</body>
+
+</html>

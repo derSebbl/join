@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join-Contact</title>
+    <link rel="stylesheet" href="/contact/contact.css">
+    <link rel="stylesheet" href="/Templates/style-templates.css"> <!--Style for the navBar and header-->
+    <link rel="stylesheet" href="../css/designTemplatesGeneralElements.css"> <!--Style for global design-->
+    <link rel="stylesheet" href="/fonts/fonts.css"> <!--Style for the Fonts-->
+    <link rel="stylesheet" href="/contact/contactResponsiv.css">
+    <link rel="icon" type="image/x-icon" href="/Templates/img/Capa 2.svg">
+    <script src="/Templates/Template.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/contact/contact.js"></script>
+    <script src="/contact/contactResp.js"></script>
+    
+</head>
+<body onload="initContact(); init()">
+    <div w3-include-html="/Templates/header.html"></div> <!--header-->
+    <div w3-include-html="/Templates/navBar.html"></div> <!--navBar-->
+    <div id="background"></div>
+    <div id="newContactContainer" class="slide-from-right">
+        <div class="newContactLeft">
+             <img src="/contact/img/Capa 2.svg">
+            <div class="newContactHeadline">
+             <div class="newContactLeftText"><span class="headLeft">Add contact</span><span class="underLeft">Tasks are better with a team!</span></div>
+                 <img src="/contact/img/Vector 5 left.svg">
+            </div>
+        </div>
+        <div class="newContactRight">
+
+            <img class="close" onclick="closeNewContact()" src="/contact/img/close.svg">
+
+                <div class="newContactBadgetContainer">
+                    <div class="newContactBadget">
+                        <img class="personImg" src="/contact/img/Group 9.svg">
+                        <img class="personNew" src="/contact/img/person new.svg">
+                    </div>
+                </div>
+
+                <form onsubmit="newContact(); return false" class="newContactInfo">
+                    <div class="contactInfosRight">
+                        <div class="nameContainer">
+                            <input id="newContactName" required pattern="^[A-Za-z]+ [A-Za-z]+$" type="text" placeholder="First- and Lastname"> <img class="newContactImg" src="/contact/img/person.svg">
+                        </div>
+                        <div class="mailContainer">
+                            <input id="newContactMail" required type="email" placeholder="Email"> <img class="newContactImg" src="/contact/img/mail.svg">
+                        </div>
+                        <div class="phoneContainerNew">
+                            <input id="newContactPhone" required ="tel" placeholder="Phone"> <img class="newContactImg" src="/contact/img/call.svg">
+                        </div>
+                    </div>
+                    <div class="newContactBtnContainer">
+                        <button onclick="closeNewContact()" id="cancel">Cancel <img class="cancelImg" src="/contact/img/iconoir_cancel.svg"></button>
+                        <button id="create">Create Contact <img src="/contact/img/check.svg"></button>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+    <div id="editContactContainer" class="slide-from-right">
+        <div class="editContactLeft">
+             <img src="/contact/img/Capa 2.svg">
+            <div class="editContactHeadline">
+             <div class="editContactLeftText"><span class="headLeft">Edit contact</span></div>
+             <img src="/contact/img/Vector 5 left.svg">
+            </div>
+        </div>
+        <div class="editContactRight">
+            <img class="close" onclick="closeEditContact()" src="/contact/img/close.svg">
+            <div class="editContactBadget">
+                <div class="initialsContainer">
+                    <img id="editImg">
+                    <div id="editInitials"></div>
+                </div>
+            </div> 
+            <div class="infoEditContainer">
+                <div class="contactInfosRight">
+                    <div class="nameContainer">
+                        <input id="editContactName" type="text" placeholder="Name"> <img class="newContactImg" src="/contact/img/person.svg">
+                    </div>
+                    <div class="mailContainer">
+                        <input id="editContactMail" type="email" placeholder="Email"> <img class="newContactImg" src="/contact/img/mail.svg">
+                    </div>
+                    <div class="phoneContainerNew">
+                        <input id="editContactPhone" type="tel" placeholder="Phone"> <img class="newContactImg" src="/contact/img/call.svg">
+                    </div>
+                </div>
+                <div class="editContactBtnContainer">
+                    <button onclick="deleteContact()" id="deleteEditContact">Delete <img class="cancelImg" src="/contact/img/iconoir_cancel.svg"></button>
+                    <button onclick="updateContact()"  id="save">Save <img src="/contact/img/check.svg"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContainer">
+        <div id="contactContainer" class="contactContainer">
+            <div class="buttonContainer"><button onclick="addNewContact()" class="addNewContactBtn"><span class="btnText">Add new contact</span><img class="btnImg" src="/contact/img/person_add.svg"></button></div>
+            <div id="contactList">
+                <div class="sortLetter"></div>
+                <div class="spacer"><img class="spacerImg" src="/contact/img/Vector 10.svg"></div>
+            </div>
+        </div>
+
+        <div class="contactRight">
+            <div class="contactHeader">
+                <span class="contacts">Contacts</span>
+                <img src="/contact/img/Vector 5.svg">
+                <span class="better">Better with a Team</span>
+            </div>
+            <div id="floatingFrame" style="display: none;" class="slide-from-right">
+                <div id="bigName">
+                    <div class="bigContactImg">
+                        <img id="ImgFloatingDisplay">
+                        <div id="bigInitials"></div>
+                    </div>
+                    <div class="bigContactName">
+                        <span id="nameBig"></span>
+                        <div id="bigContainerImg" class="bigContainerImg">
+                        </div>
+                    </div>
+                </div>
+                <div class="bigInfo">Contact Information</div>
+                <div id="bigDetails">
+                    <div class="emailContainer">
+                        <span class="emailSpan">Email</span>
+                        <span id="floatEmail"></span>
+                    </div>
+                    <div class="phoneContainer">
+                        <span class="phoneSpan">Phone</span>
+                        <span id="floatPhone"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--RESPONSIV HTML-->
+
+        <div id="contactRightResp" style="display: none;">
+            <div class="contactDetailResp">
+                    <span class="contactsResp">Contacts</span>
+                    <span class="betterResp">Better with a Team</span>
+                    <img class="lineResp" src="/contact/img/Vector 5.svg">
+            </div>
+            <div class="floatingContactResp">
+                <div class="nameRespDetail">
+                    <div class="respImg"><img id="respImg">
+                    <div id="respInitials"></div>
+                </div>
+                    <div id="respName"></div>
+                </div>
+                <div class="contactInfoResp">
+                    <span class="contactInfoRespText">Contact Information</span>
+                </div>
+                <div class="emailPhoneRespContainer">
+                    <div class="emailRespContainer">
+                        <span class="emailTextResp">Email</span>
+                        <span id="emailResp"></span>
+                    </div>
+                    <div class="phoneRespContainer">
+                        <span class="phoneTextResp">Phone</span>
+                        <span id="phoneResp"></span>
+                    </div>
+                </div>
+                <div id="editDeleteBtnContainerResp">
+                    <button onclick="slideInResp()" class="editDeleteBtnResp"><img src="/contact/img/more_vert.svg"></button>
+                </div>
+                <div id="contactOptionsResp" style="display: none;" class="slide-from-right">
+                </div>
+                    <img id="backArrow" onclick="closeRespDetailCard()" src="/contact/img/arrow-left-line.svg">
+            </div>
+        </div>
+        <div id="btnContainerResp">
+            <button onclick="openNewContactResp()" class="respBtn"><img src="/contact/img/person_add Resp.svg"></button>
+        </div>
+
+        <form onsubmit="newContactResp(); return false" id="newContactResp">
+            <img class="closeResp" onclick="closeNewContactResp()" src="/contact/img/close.svg">
+            <div class="headerNewContactResp">
+                <div class="imgContainerResp">
+                    <img class="personImgResp" src="/contact/img/Group 9.svg">
+                    <img class="personNewResp" src="/contact/img/person new.svg">
+                </div>
+                <div class="headerTextContainer">
+                    <div class="headerTextResp">
+                        <span class="headlineResp">Add contact</span>
+                        <span class="underlineResp">Tasks are better with a team!</span>
+                    </div>
+                    <img class="lineResp" src="/contact/img/Vector 5.svg">
+                </div>
+            </div>
+            <div id="ContactInfosResp">
+                <div class="nameContainerResp">
+                    <input id="newContactNameResp" type="text" required pattern="^[A-Za-z]+ [A-Za-z]+$" placeholder="First- and Lastname"> <img class="newContactImg" src="/contact/img/person.svg">
+                </div>
+                <div class="mailContainerResp">
+                   <input id="newContactMailResp" type="email" required placeholder="Email"> <img class="newContactImg" src="/contact/img/mail.svg">
+                </div>
+                <div class="phoneContainerNewResp">
+                   <input id="newContactPhoneResp" type="tel" required placeholder="Phone"> <img class="newContactImg" src="/contact/img/call.svg">
+                </div>
+            </div>
+            <div class="createBtnResp"><button id="create">Create Contact <img src="/contact/img/check.svg"></button></div>
+        </form>
+
+        <div id="editContactResp">
+            <img class="closeResp" onclick="closeEditContactResp()" src="/contact/img/close.svg">
+            <div class="headerEditContactResp">
+                <div class="imgContainerResp">
+                    <img id="editContactBadgetResp">
+                    <div id="editInitialsResp"></div>
+                </div>
+                <div class="headerTextContainer">
+                    <div class="headerTextResp">
+                        <span class="headlineResp">Edit contact</span>
+                    </div>
+                    <img class="lineResp" src="/contact/img/Vector 5.svg">
+                </div>
+            </div>
+            <div id="ContactInfosResp">
+                <div class="nameContainer">
+                    <input id="editContactNameResp" type="text" placeholder="Name"> <img class="newContactImg" src="/contact/img/person.svg">
+                </div>
+
+                <div class="mailContainer">
+                    <input id="editContactMailResp" type="email" placeholder="Email"> <img class="newContactImg" src="/contact/img/mail.svg">
+                </div>
+
+                <div class="phoneContainerNew">
+                    <input id="editContactPhoneResp" type="tel" placeholder="Phone"> <img class="newContactImg" src="/contact/img/call.svg">
+                </div>
+            </div>
+            <div class="editContactBtnContainerResp">
+                <button onclick="deleteContactRespEditWindow()" id="deleteEditContact">Delete <img class="cancelImg" src="/contact/img/iconoir_cancel.svg"></button>
+                <button onclick="updateContactRespEditWindow()"  id="save">Save <img src="/contact/img/check.svg"></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

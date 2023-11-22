@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+
+    <link rel="stylesheet" href="styleSummary.css"> <!-- stylesheet for summary page-->
+    <link rel="stylesheet" href="../Templates/style-templates.css"> <!-- stylesheet for embedded header and navbar template-->
+    <link rel="stylesheet" href="../fonts/fonts.css"> <!-- stylesheet for fonts-->
+    <link rel="stylesheet" href="../css/designTemplatesGeneralElements.css"> <!-- stylesheet for fonts-->
+    <link rel="icon" type="image/x-icon" href="/Templates/img/Capa 2.svg">
+    <script src="./scriptSummary.js"></script> <!-- JS for summary page-->
+    <script src="./summaryStyle.js"></script> <!-- JS for style in summary page-->
+    <script src="../Templates/Template.js"></script> <!-- JS script file for templates (header and navbar)-->
+    <script src="../js/main.js"></script>
+    <script src="../js/board.js"></script>
+</head>
+<body onload="init(); initSummary()">
+
+    <div w3-include-html="../Templates/header.html"></div> <!--includes top-bar-->
+    <div w3-include-html="../Templates/navbar.html"></div> <!--includes nav-bar-->
+    <div class="summaryHeadline">
+        <h2 class="headlineText">Join 360</h2>
+        <div class="separatorHeadline"><svg xmlns="http://www.w3.org/2000/svg" width="4" height="63" viewBox="0 0 4 63" fill="none">
+            <path d="M2 2V61" stroke="#29ABE2" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <p class="headlineInfo">Key Metrics at a Glance</p>
+    </div>
+    <img src="./img/VectorResponsive.svg" class="blueVectorResponsive">
+    <div class="summaryBodyFlex">
+        <div class="summaryBody">
+        <div  class="summaryBodyPartFlex">
+            <div onmouseover="changePen()" id="hoverContainer1" class="summaryBodyFlex white">
+                <img id="pen1" src="./img/summaryPen.png" class="summaryImg" alt="Pen">               
+                <div id="hoverEffect1">
+                    <h3 id="todoColor1">1</h3>
+                    <h4 id="todoColor2">To-do</h4>
+                </div>
+            </div>
+            <div onmouseover="changeCheck()" id="hoverContainer2" class="summaryBodyFlex white">
+                <img id="check1" src="./img/summaryCheck.png" class="summaryImg" alt="Check">
+                <div>
+                    <h3 id="doneColor1">1</h3>
+                    <h4 id="doneColor2">Done</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="summaryContentMiddle white">
+            <div onmouseover="changeUrgent()" id="hoverContainer3" class="summaryBodyFlex">
+                <div class="summaryBodyFlex" id="summaryResponsiveUrgent">
+                    <div class="redDot">
+                        <img src="./img/summaryArrowUp.png" class="summaryArrow" alt="Arrow Up">
+                    </div>
+                    <div>
+                        <h3 id="urgentColor1">1</h3>
+                        <h4 id="urgentColor2">Urgent</h4>
+                    </div>
+                </div>
+                <div class="separatorBody"><svg xmlns="http://www.w3.org/2000/svg" width="2" height="106" viewBox="0 0 2 106" fill="none">
+                    <path d="M1 1.98828V104.011" stroke="#D1D1D1" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="summaryDateContainer">
+                    <h4 id="urgentColor3" class="summaryDate">October 16, 2022</h4>
+                    <p id="urgentColor4" class="summaryDeadline">Upcomming Deadline</p>
+                </div>
+            </div>
+        </div>
+        <div class="summaryBodyPartFlex">
+            <div onmouseover="changeTask1()" id="hoverContainer4" class="summaryTasks white">
+                <div class="summaryTaskInfo">
+                    <h3 id="taskColor1">5</h3>
+                    <h4 id="taskColor2" class="summaryTaskDetails">Tasks in Board</h4>
+                </div>
+            </div>
+            <div onmouseover="changeTask2()" id="hoverContainer5" class="summaryTasks white">
+                <div>
+                    <h3 id="taskColor3">2</h3>
+                    <h4 id="taskColor4" class="summaryTaskDetails">Tasks in Progress</h4>
+                </div>
+            </div>
+            <div onmouseover="changeTask3()" id="hoverContainer6" class="summaryTasks white">
+                <div>
+                    <h3 id="taskColor5">2</h3>
+                    <h4 id="taskColor6" class="summaryTaskDetails">Awaiting Feedback</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="summaryGreetings">
+            <div class="summaryGoodMorning">
+                <h2 id="rightGreeting" class="summaryGoodMorningH2">Good morning</h2>
+            </div>
+            <div class="summaryGreetingsName">
+                <h1 id="greetingName" class="summaryGreetingsNameH1"></h1>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>

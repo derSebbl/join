@@ -1,0 +1,264 @@
+header {
+  max-width: 1920px;
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px 40px 20px 348px;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+ /* position: fixed;
+  width: 100%; */
+}
+
+.headerText {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.help {
+  width: 32px;
+  height: 32px;
+}
+
+.userProfileInitialsFrame {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border: 3px solid #2A3647;
+  border-radius: 559px;
+  background: var(--white, #FFF);
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.userProfileInitialsFrame:hover {
+  /* background: var(--white, #FFF); */
+  border-radius: 559px;
+  background: linear-gradient(0deg, rgba(12, 46, 98, 0.12) 0%, rgba(12, 46, 98, 0.12) 100%), #FFF;
+  cursor: pointer;
+}
+
+.initialbody {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 559px;
+  background: var(--white, #fff);
+}
+
+.initials {
+  width: 27.944px;
+  height: 14.238px;
+  flex-shrink: 0;
+}
+
+.circle {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  stroke-width: 3px;
+  stroke: #2a3647;
+}
+
+nav {
+  display: flex;
+  width: 232px;
+  box-sizing: border-box;
+  max-height: 1080px;
+  height: 100%;
+  padding: 64px 0px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  background: #2a3647;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+}
+
+.logo {
+  width: 100.034px;
+  height: 121.966px;
+  flex-shrink: 0;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+#summaryMenu, 
+#addTaskMenu,
+#boardMenu, 
+#contactMenu {
+  color: #cdcdcd;
+  display: flex;
+  height: 46px;
+  width: 125px;
+  padding: 8px 53px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+}
+
+.navText {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+#summaryMenu:hover,
+#addTaskMenu:hover,
+#boardMenu:hover,
+#contactMenu:hover {
+  background-color: #2a3d59;
+  cursor: pointer;
+}
+
+.menuImg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.bottom {
+  display: flex;
+  padding: 0px 0px 0px 52px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.privacy,
+.legal {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  color: #a8a8a8;
+}
+
+.privacy:hover,
+.legal:hover {
+  cursor: pointer;
+  color: #2aaae2;
+  scale: 1.1;
+}
+
+.logoMenu {
+  display: none;
+}
+
+
+@media (max-width: 1300px){
+  
+  header {
+      padding: 20px 16px;
+      position: fixed;
+      top: 0;
+      height: 80px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .headerText,
+  .initials, 
+  .initialbody, 
+  .initialContainer, 
+  .userInitialsContainer, 
+  .help {
+      display: none;
+  } 
+
+  .circle {
+      width: 40px;
+      height: 40px;
+      padding-right: 40px;
+  }
+
+  .logoMenu {
+      display: flex;
+      width: 32px;
+      height: 39.016px;
+  }
+
+  nav {
+      width: 100%;
+      height: 80px;
+      position: fixed;
+      bottom: 0;
+      top: auto;
+      padding: 0 2px 0 2px;
+      max-width: 1300px;
+  }
+
+  .logo,
+  .bottom {
+      display: none;
+  }
+
+  .menu {
+      gap: 0;
+      justify-content: space-around;
+      flex-direction: row;
+      width: 100vw;
+  }
+
+  #summaryMenu,
+  #addTaskMenu,
+  #boardMenu,
+  #contactMenu {
+      display: flex;
+      width: 76px;
+      height: 50px;
+      padding: 15px 0px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+  }
+
+  .navText {
+      color: var(--white, #FFF);
+      font-family: Open Sans;
+      font-size: 14px;
+  }
+
+  .menuImg {
+      width: 24px;
+      height: 24px;
+  }
+}

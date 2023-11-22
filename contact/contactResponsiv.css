@@ -1,0 +1,577 @@
+@media (max-width: 1300px) {
+  .contactRight {
+    display: none;
+  }
+
+  #contactRightResp {
+    display: none;
+    padding-left: 16px;
+    padding-right: 82px;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white, #fff);
+    max-width: 456px;
+    border: 5px black;
+    box-sizing: border-box;
+    max-width: 456px;
+    width: 100%;
+    padding-top: 80px;
+    height: calc(100vh - 80px);
+    align-items: flex-start;
+    background-color: #f6f7f8;
+  }
+
+  .contactDetailResp {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 48px;
+    max-width: 213px;
+    max-height: 88px;
+  }
+
+  .contactsResp {
+    color: #000;
+    font-family: Inter;
+    font-size: 47px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  .lineResp {
+    width: 90px;
+    height: 90px;
+    transform: rotate(90deg);
+    margin-top: -26px;
+    box-sizing: content-box;
+    display: block;
+    float: none;
+    line-height: normal;
+    position: static;
+    z-index: auto;
+  }
+
+  .betterResp {
+    color: #2a3647;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  #contactList {
+    background: var(--white, #fff);
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactContainer {
+    max-width: 456px;
+    width: 100%;
+    padding-top: 80px;
+  }
+
+  #mainContainer {
+    padding-left: 0;
+    justify-content: center;
+  }
+  .addNewContactBtn {
+    display: none;
+  }
+
+  #btnContainerResp {
+    position: fixed;
+    bottom: 112px;
+    right: 16px;
+    display: inline-flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 46px;
+    border: 1px solid var(--version-2-main-color, #2a3647);
+    background: var(--version-2-main-color, #2a3647);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  #btnContainerResp:hover,
+  .respBtn:hover,
+  .respBtn img:hover {
+    cursor: pointer;
+  }
+
+  .respBtn {
+    background-color: #2a3647;
+    border: hidden;
+  }
+
+  .respBtn img {
+    background-color: #2a3647;
+    color: #2a3647;
+  }
+
+  .floatingContactResp {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+    padding-top: 60px;
+  }
+
+  .nameRespDetail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .respImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 70px;
+    border: 3px solid var(--white, #fff);
+    background: #fff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  #respInitials {
+    position: absolute;
+    display: flex;
+    width: 53.333px;
+    height: 19.048px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  #respImg {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+  }
+
+  #respName {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    color: #000;
+    font-family: Inter;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  .contactInfoResp {
+    display: flex;
+    width: 330px;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contactInfoRespText {
+    width: 207px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  .emailPhoneRespContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .emailRespContainer,
+  .phoneRespContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .emailTextResp,
+  .phoneTextResp {
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  #emailResp {
+    color: #007cee;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  #phoneResp {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  #editDeleteBtnContainerResp {
+    position: fixed;
+    bottom: 112px;
+    right: 16px;
+    display: none;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 46px;
+    border: 1px solid var(--version-2-main-color, #2a3647);
+    background: var(--version-2-main-color, #2a3647);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .editDeleteBtnResp {
+    background-color: #2a3647;
+    border: hidden;
+  }
+
+  .editDeleteBtnResp img {
+    background-color: #2a3647;
+    color: #2a3647;
+  }
+
+  #editDeleteBtnContainerResp:hover,
+  .editDeleteBtnResp:hover,
+  .editDeleteBtnResp img:hover {
+    cursor: pointer;
+  }
+
+  #backArrow {
+    width: 36.901px;
+    height: 36.901px;
+    flex-shrink: 0;
+    position: fixed;
+    right: 16px;
+    top: 125px;
+  }
+
+  #backArrow:hover {
+    cursor: pointer;
+  }
+
+  #contactOptionsResp {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px 20px 0px 20px;
+    background: var(--white, #fff);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+  }
+
+  #deleteResp,
+  #editResp {
+    display: flex;
+    width: 96px;
+    padding: 8px;
+    align-items: center;
+    gap: 8px;
+    color: var(--version-2-main-color, #2a3647);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  #deleteResp:hover,
+  #editResp:hover {
+    cursor: pointer;
+  }
+
+  #newContactResp,
+  #editContactResp {
+    display: none;
+    position: absolute;
+    top: 0;
+    max-width: 396px;
+    max-height: 760px;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    animation: slide-up 0.5s forwards;
+    z-index: 2;
+  }
+
+  .closeResp {
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(345deg)
+      brightness(99%) contrast(102%);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  .closeResp:hover {
+    cursor: pointer;
+  }
+
+  .headerNewContactResp,
+  .headerEditContactResp {
+    display: flex;
+    height: 50%;
+    box-sizing: border-box;
+    padding: 66px 24px;
+    border-radius: 30px 30px 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    flex-shrink: 0;
+    background: var(--version-2-main-color, #2a3647);
+  }
+
+  .headerTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .headerTextResp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .headlineResp {
+    color: var(--white, #fff);
+    font-family: Inter;
+    font-size: 47px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  .underlineResp {
+    color: var(--white, #fff);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  .imgContainerResp {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 70px;
+    background: #fff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 42%;
+    left: 34%;
+  }
+
+  .personImgResp {
+    margin-left: -25px;
+  }
+
+  .personNewResp {
+    margin-left: -100px;
+  }
+
+  #ContactInfosResp {
+    display: flex;
+    max-width: 364px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 92px;
+  }
+
+  .nameContainerResp,
+  .mailContainerResp,
+  .phoneContainerNewResp {
+    display: flex;
+    height: 15px;
+    padding: 13px 21px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid var(--Style, #d1d1d1);
+    background: #fff;
+  }
+
+  #newContactPhoneResp,
+  #newContactMailResp,
+  #newContactNameResp {
+    color: black;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+    outline: none;
+    border: none;
+  }
+
+  .createBtnResp {
+    padding-top: 32px;
+    padding-left: 81px;
+    padding-right: 81px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  #create {
+    display: inline-flex;
+    height: 51px;
+    padding: 18px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #2a3647;
+  }
+
+  .nameContainer,
+  .mailContainer,
+  .phoneContainerNew {
+    display: flex;
+    height: 15px;
+    padding: 13px 21px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid var(--Style, #d1d1d1);
+    background: #fff;
+    width: auto;
+  }
+
+  #editContactNameResp,
+  #editContactMailResp,
+  #editContactPhoneResp {
+    color: black;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+    outline: none;
+    border: none;
+  }
+
+  #editContactBadgetResp {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+  }
+
+  #editInitialsResp {
+    position: absolute;
+    display: flex;
+    width: 80px;
+    height: 28.571px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 47px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  .editContactBtnContainerResp {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding-left: 78px;
+    padding-right: 78px;
+    padding-top: 32px;
+  }
+
+  #save {
+    display: flex;
+    height: 51px;
+    padding: 18px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  #deleteEditContact {
+    display: flex;
+    height: 51px;
+    padding: 18px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @keyframes slide-up {
+    from {
+      top: -1000px; /* Startposition unten */
+    }
+    to {
+      top: 0; /* Endposition oben */
+    }
+  }
+}

@@ -1,0 +1,502 @@
+:root {
+    /* color */
+    --fontColorStyleSoft: #D1D1D1;
+    --fontColorStyleHard: #000000;
+    --ColorStyleCardOverlayBg: rgba(0, 0, 0, 0.8);
+
+    /* Design Colors */
+    --styleColorVariant0: #9186c9;
+    --styleColorVariant1: #6E52FF;
+    --styleColorVariant2: #FFA35E;
+    --styleColorVariant3: #FFE62B;
+    --styleColorVariant4: #00BEE8;
+    --styleColorVariant5: #FF5EB3;
+    --styleColorVariant6: #FFBB2B;
+    --styleColorVariant7: #FF745E;
+    --styleColorVariant8: #C3FF2B;
+    --styleColorVariant9: #FF7A00;
+    --styleColorVariant10: #1FD7C1;
+    --styleColorVariant11: #0038FF;
+    --styleColorVariant12: #FFC701;
+    --styleColorVariant13: #9327FF;
+    --styleColorVariant14: #FC71FF;
+    --styleColorVariant15: #FF4646;
+}
+
+h2 {
+    text-align: center;
+}
+
+.dNone {
+    display: none;
+}
+
+.dFlex {
+    display: flex;
+}
+
+.designStyleColorsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/*******************************/
+/* Design Style Colors - start */
+/*******************************/
+
+.designStyleColors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    color: var(--fontColorStyleSoft);
+    margin: 16px;
+}
+
+
+.designStyleColorVariant0 {
+    background-color: var(--styleColorVariant1);
+}
+
+
+.designStyleColorVariant1 {
+    background-color: var(--styleColorVariant1);
+}
+
+
+.designStyleColorVariant2 {
+    background-color: var(--styleColorVariant2);
+}
+
+
+.designStyleColorVariant3 {
+    background-color: var(--styleColorVariant3);
+}
+
+
+.designStyleColorVariant4 {
+    background-color: var(--styleColorVariant4);
+}
+
+
+.designStyleColorVariant5 {
+    background-color: var(--styleColorVariant5);
+}
+
+
+.designStyleColorVariant6 {
+    background-color: var(--styleColorVariant6);
+}
+
+
+.designStyleColorVariant7 {
+    background-color: var(--styleColorVariant7);
+}
+
+
+.designStyleColorVariant8 {
+    background-color: var(--styleColorVariant8);
+}
+
+
+.designStyleColorVariant9 {
+    background-color: var(--styleColorVariant9);
+}
+
+
+.designStyleColorVariant10 {
+    background-color: var(--styleColorVariant10);
+}
+
+
+.designStyleColorVariant11 {
+    background-color: var(--styleColorVariant11);
+}
+
+
+.designStyleColorVariant12 {
+    background-color: var(--styleColorVariant12);
+}
+
+
+.designStyleColorVariant13 {
+    background-color: var(--styleColorVariant13);
+}
+
+
+.designStyleColorVariant14 {
+    background-color: var(--styleColorVariant14);
+}
+
+
+.designStyleColorVariant15 {
+    background-color: var(--styleColorVariant15);
+}
+
+
+/*****************************/
+/* Design Style Colors - end */
+/*****************************/
+
+
+
+/**************************/
+/* Profile Badges - start */
+/**************************/
+.designProfileBadgeContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.designProfileBadgeContainer .designProfileBadge {
+    margin: 8px;
+}
+
+
+.designProfileBadge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.designProfileBadgeInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    stroke-width: 2px;
+    stroke: #FFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 551px;
+    gap: 10px;
+}
+
+
+#designProfileBadgeInner-0 {
+    background-color: var(--styleColorVariant0);
+}
+
+
+#designProfileBadgeInner-1 {
+    background-color: var(--styleColorVariant9);
+}
+
+
+#designProfileBadgeInner-2 {
+    background-color: var(--styleColorVariant13);
+}
+
+
+#designProfileBadgeInner-3 {
+    background-color: var(--styleColorVariant1);
+}
+
+
+#designProfileBadgeInner-4 {
+    background-color: var(--styleColorVariant14);
+}
+
+
+#designProfileBadgeInner-5 {
+    background-color: var(--styleColorVariant6);
+}
+
+
+#designProfileBadgeInner-6 {
+    background-color: var(--styleColorVariant10);
+}
+
+
+#designProfileBadgeInner-7 {
+    background-color: #462F8A;
+}
+
+
+#designProfileBadgeInner-8 {
+    background-color: var(--styleColorVariant15);
+}
+
+
+#designProfileBadgeInner-9 {
+    background-color: var(--styleColorVariant4);
+}
+
+
+.designProfileBadgeInnerText {
+    display: flex;
+    width: 28px;
+    height: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    /* Version 2/t7 */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 14.4px */
+}
+
+/************************/
+/* Profile Badges - end */
+/************************/
+
+
+/*********************************/
+/* User profile initials - start */
+/*********************************/
+
+.userProfileInitialsFrame {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: 3px solid #2A3647;
+    border-radius: 559px;
+    background: var(--white, #FFF);
+}
+
+.userProfileInitialsFrame:hover {
+    /* background: var(--white, #FFF); */
+    border-radius: 559px;
+    background: linear-gradient(0deg, rgba(12, 46, 98, 0.12) 0%, rgba(12, 46, 98, 0.12) 100%), #FFF;
+}
+
+.userProfileInitialsFrame span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 14px;
+    padding: 10px;
+    font-size: 18px;
+    color: #29ABE2;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/*******************************/
+/* User profile initials - end */
+/*******************************/
+
+
+/************************/
+/* Close Button - start */
+/************************/
+
+.closeButtonIcons {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 56px;
+}
+
+.closeButtonIcons:hover, .closeButtonWhite:hover {
+    background: #EEE;
+}
+
+
+.closeButtonIcons:active, .closeButtonWhite:active {
+    background: #29ABE2;
+}
+
+
+/**********************/
+/* Close Button - end */
+/**********************/
+
+/***************************/
+/* Arrow Left Line - start */
+/***************************/
+
+.arrowLeftLine {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background-image: url(../assets/icons/arrowLeftLineDefault.svg);
+}
+
+.arrowLeftLine:hover {
+    background-image: url(../assets/icons/arrowLeftLineHover.svg);
+}
+
+
+
+/*************************/
+/* Arrow Left Line - end */
+/*************************/
+
+
+/*********************/
+/* Help Icon - start */
+/*********************/
+
+.helpIcon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background-image: url(../assets/icons/helpDefault.svg);
+}
+
+.helpIcon:hover {
+    background-image: url(../assets/icons/helpHover.svg);
+}
+
+
+
+/*******************/
+/* Help Icon - end */
+/*******************/
+
+/****************************/
+/* Priority buttons - start */
+/****************************/
+
+.buttonFrameForPriority {
+    display: flex;
+    width: 440px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.buttonForPriority, .buttonActiveForPriorityLow, .buttonActiveForPriorityMedium, .buttonActiveForPriorityUrgent {
+    display: flex;
+    padding: 16px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 10px;
+    background: var(--white, #FFF);
+    background-position: center;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+.buttonForPriority:hover {
+    display: flex;
+    padding: 16px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    cursor: pointer;
+    border-radius: 10px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.buttonForPriorityIcon {
+    width: 20px;
+    height: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.buttonActiveForPriorityLow {
+    background: #7AE229;
+}
+
+.buttonActiveForPriorityMedium {
+    background: #FFA800;
+}
+
+.buttonActiveForPriorityUrgent {
+    background: #FF3D00;
+}
+
+.buttonActiveForPriorityLow .OverlayPriorityText {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+/**************************/
+/* Priority buttons - end */
+/**************************/
+
+/****************************************/
+/* Priority for overlay buttons - start */
+/****************************************/
+
+.buttonForOverlayPriority {
+    display: inline-flex;
+    padding: 4px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.OverlayPriorityText {
+    color: var(--black, #000);
+
+    /* Version 2/t6 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 24px */
+}
+
+.OverlayPriorityIcon {
+    width: 17px;
+    height: 12px;
+    background-repeat: no-repeat;
+}
+
+.OverlayPriorityIconLow {
+    background-image: url(../assets/icons/prioritySymbolPropertyLow.svg);
+}
+
+.OverlayPriorityIconLowWhite {
+    background-image: url(../assets/icons/prioritySymbolPropertyLowWhite.svg);
+}
+
+.OverlayPriorityIconMedium {
+    background-image: url(../assets/icons/prioritySymbolPropertyMedium.svg);
+}
+
+.OverlayPriorityIconMediumWhite {
+    background-image: url(../assets/icons/prioritySymbolPropertyMediumWhite.svg);
+}
+
+.OverlayPriorityIconUrgent {
+    background-image: url(../assets/icons/prioritySymbolPropertyUrgent.svg);
+}
+
+.OverlayPriorityIconUrgentWhite {
+    background-image: url(../assets/icons/prioritySymbolPropertyUrgentWhite.svg);
+}
+
+
+
+/**************************************/
+/* Priority for overlay buttons - end */
+/**************************************/

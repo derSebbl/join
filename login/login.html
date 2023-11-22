@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+    <link rel="shortcut icon" href="/Templates/img/Capa 2.svg" type="image/x-icon">
+    <title>Join - Login</title>
+</head>
+<body onload="loadLogin(); loadUsers()">
+    <div class="container">
+        <div id="logoContainer">
+            <div alt="join logo" id="logo"></div>
+            <!-- <img src="../Templates/img/join-dark.svg" alt="join logo" id="logo"> -->
+        </div>
+    </div>
+    <div class="main">
+        <header>
+            <div id="signUp">
+                <p>Not a Join user?</p>
+                <a href="signup.html" class="btn">Sign Up</a>
+            </div>
+        </header>
+
+        <div id="loginContainer">
+            <div id="formHead">
+                <h1>Log in</h1>
+                <img src="loginSymbols/underline.svg">
+            </div>
+            <form onsubmit="login(); return false;">
+                <div id="emailContainer">
+                    <input type="email" id="email" placeholder="Email" name="email" required>
+                    <img src="loginSymbols/mail.svg" class="inputIcon" alt="mail symbol">
+                </div>
+
+                <div id="passwordContainer">
+                    <input type="password" id="password" placeholder="Password" name="password" required>
+                    <img src="loginSymbols/lock.svg" id="passwordIcon" class="inputIcon"  alt="lock icon">
+                </div>
+                
+                <div id="rememberContainer">
+                    <label class="customCheckbox">
+                        <input type="checkbox" id="rememberCheckbox" class="hiddenCheckbox">
+                        <span class="customCheckbox-box"></span>
+                        <p>Remember me?</p>
+                    </label>                  
+                </div>
+
+                <div id="loginButtons">
+                    <button class="btn">Log in</button>
+                    <a href="/summary/summary.html" class="btn btn2">Guest Log in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="../privacyPolicy.html">Privacy Policy</a>
+        <a href="../legalNotice.html">Legal notice</a>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="login.js"></script>
+    <script src="showToast.js"></script>
+</body>
+</html>

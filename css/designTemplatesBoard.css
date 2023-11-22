@@ -1,0 +1,1179 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #FFFFFF;
+}
+
+input, textarea {
+    outline: none;
+}
+
+input:hover, textarea:hover {
+    cursor: pointer;
+}
+
+/**************************/
+/* form Find Task - start */
+/**************************/
+
+#formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#formFindTaskInput {
+    display: flex;
+    width: 280px;
+    height: 32px;
+    padding: 8px 16px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--icon, #A8A8A8);
+    background: #FFF;
+    transition: initial 1100ms ease-out;
+}
+
+
+#formFindTaskInput:focus-within {
+    border: 1px solid var(--Ligth-blue, #29ABE2);
+    transition: border 1100ms ease-out;
+}
+
+
+#formFindTaskInputField {
+    width: 100%;
+    color: var(--fontColorStyleSoft);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+}
+
+
+#formFindTaskInputField:focus {
+    color: var(--fontColorStyleHard);
+    transition: all 1100ms ease-out;
+}
+
+
+#formFindTaskInputSearchButtonIcon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    border: none;
+}
+
+
+#formFindTaskInputSearchButtonIcon:hover {
+    cursor: pointer;
+}
+
+/* Display Default Search Icon and hide the Hovered Search Icon and Clicked Search Icon - start */
+#formFindTaskInputSearchButtonIcon .searchIconHover,
+#formFindTaskInputSearchButtonIcon .searchIconClick {
+    display: none;
+}
+
+/* Display Default Search Icon and hide the Hovered Search Icon and Clicked Search Icon - end */
+
+
+/* Display Hovered Search Icon and hide the Default Search Icon and Clicked Search Icon - start */
+#formFindTaskInputSearchButtonIcon:hover .searchIconHover {
+    display: inline;
+}
+
+
+#formFindTaskInputSearchButtonIcon:hover .searchIconDefault,
+#formFindTaskInputSearchButtonIcon:hover .searchIconClick {
+    display: none;
+}
+
+/* Display Hovered Search Icon and hide the Default Search Icon and Clicked Search Icon - end */
+
+
+/* Display Clicked Search Icon and hide the Default Search Icon and Hovered Search Icon - start */
+#formFindTaskInputSearchButtonIcon:active .searchIconClick {
+    display: inline;
+}
+
+
+#formFindTaskInputSearchButtonIcon:active .searchIconDefault,
+#formFindTaskInputSearchButtonIcon:active .searchIconHover {
+    display: none;
+}
+
+/* Display Clicked Search Icon and hide the Default Search Icon and Hovered Search Icon - end */
+
+
+#formFindTaskInputSearchButtonIcon .searchIconDefault {
+    height: 32px;
+    width: 32px;
+}
+
+/************************/
+/* form Find Task - end */
+/************************/
+
+/**************************/
+/* Subtasks Icons - start */
+/**************************/
+
+.subtasksIconsText {
+    padding-left: 32px;
+}
+
+.subtasksIconsIcon {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.subtasksIconsDelete {
+    background-image: url('../assets/icons/iconDelete.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsDelete:hover {
+    fill: #EEEEEE;
+    background-image: url('../assets/icons/iconDeleteHover.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsClose {
+    width: 24px;
+    background-image: url('../assets/icons/iconClose.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsClose:hover {
+    fill: #EEEEEE;
+    background-image: url('../assets/icons/iconCloseHover.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsCheck {
+    background-image: url('../assets/icons/IconCheck.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsCheck:hover {
+    fill: #EEEEEE;
+    background-image: url('../assets/icons/IconCheckHover.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsEdit {
+    background-image: url('../assets/icons/IconEdit.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsEdit:hover {
+    fill: #EEEEEE;
+    background-image: url('../assets/icons/IconEditHover.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsAdd {
+    background-image: url('../assets/icons/IconAdd.svg');
+    transition: border 1100ms ease-out;
+}
+
+.subtasksIconsAdd:hover {
+    fill: #EEEEEE;
+    background-image: url('../assets/icons/IconAddHover.svg');
+    transition: border 1100ms ease-out;
+}
+
+/************************/
+/* Subtasks Icons - end */
+/************************/
+
+
+/*****************************/
+/* Board Card Labels - start */
+/*****************************/
+.boardCardLabel0, .boardCardLabel1 {
+    display: inline-flex;
+    padding: 4px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    color: #FFFFFF;
+
+}
+
+
+.boardCardLabel0 {
+    background: #0038FF;
+}
+
+
+.boardCardLabel1 {
+    background: #1FD7C1;
+}
+
+/***************************/
+/* Board Card Labels - end */
+/***************************/
+
+
+/**************************/
+/* Subtasks Check - start */
+/**************************/
+.subtasksCheckField {
+    display: flex;
+    /* width: 175px; */
+    height: 32px;
+    /* padding: 6px 16px; */
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+    cursor: pointer;
+    caret-color: transparent;
+    transition: initial 1100ms ease-out;
+
+}
+
+/* Hide the browser's default checkbox */
+.subtasksCheckField input {
+    display: none;
+    transition: display 1100ms ease-out;
+}
+
+.checkButtonUnchecked, .checkButtonUncheckedHover {
+    height: 24px;
+    width: 24px;
+    /* transition: all 100ms ease-out; */
+}
+
+
+.checkButtonChecked, .checkButtonCheckedHover {
+    height: 18px;
+    width: 24px;
+    /* transition: all 100ms ease-out; */
+}
+
+.checkButtonCheckedHoverGroup {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 551px;
+    background: var(--fontColorStyleSoft);
+    transition: display 1100ms ease-out;
+}
+
+.checkButtonCheckedHover {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+
+/* Display Unchecked checkbox and hide the Unchecked Hovered, Checked and Checked Hovered checkboxes - start */
+/* Hide the checked checkbox */
+.checkButtonUncheckedHover,
+.checkButtonChecked,
+.checkButtonCheckedHoverGroup {
+    display: none;
+    transition: display 1100ms ease-out;
+}
+
+/* Display Unchecked checkbox and hide the Unchecked Hovered, Checked and Checked Hovered checkboxes - end */
+
+
+
+/* Display Checked checkbox and hide the Unchecked and hovered checkboxes - start */
+/* If checked, show the checked image */
+.subtasksCheckField input:checked~.checkButtonChecked {
+    display: inline;
+    transition: display 1100ms ease-out;
+}
+
+/* If checked, hide the unchecked images */
+.subtasksCheckField input:checked~.checkButtonUnchecked,
+.subtasksCheckField input:checked~.checkButtonUncheckedHover {
+    display: none;
+    transition: display 1100ms ease-out;
+}
+
+/* Display Checked checkbox and hide the Unchecked and hovered checkboxes - end */
+
+
+/* Display Unchecked Hovered checkbox and hide the Unchecked, Checked and Checked Hovered checkboxes - start */
+/* If Unchecked Hovered, show the Unchecked Hovered image */
+.subtasksCheckField input:hover~.checkButtonUncheckedHover {
+    display: inline;
+    transition: display 1100ms ease-out;
+}
+
+/* If Unchecked Hovered, hide the Unchecked, Checked and Checked Hovered images */
+.subtasksCheckField input:hover~.checkButtonUnchecked,
+.subtasksCheckField input:hover~.checkButtonChecked,
+.subtasksCheckField input:hover~.checkButtonCheckedHoverGroup {
+    display: none;
+    transition: display 1100ms ease-out;
+}
+
+/* Display Unchecked Hovered checkbox and hide the Unchecked, Checked and Checked Hovered checkboxes - end */
+
+
+/* Display Checked Hovered checkbox and hide the Unchecked, Unchecked Hovered and Checked checkboxes - start */
+/* If Unchecked Hovered, hide the Unchecked, Checked and Checked Hovered images */
+.subtasksCheckField input:checked:hover~.checkButtonUnchecked,
+.subtasksCheckField input:checked:hover~.checkButtonUncheckedHover,
+.subtasksCheckField input:checked:hover~.checkButtonChecked {
+    display: none;
+    transition: display 1100ms ease-out;
+}
+
+/* If Unchecked Hovered, show the Unchecked Hovered image */
+.subtasksCheckField input:checked:hover~.checkButtonCheckedHoverGroup {
+    display: flex;
+    transition: display 1100ms ease-out;
+}
+
+/* Display Unchecked Hovered checkbox and hide the Unchecked, Checked and Checked Hovered checkboxes - end */
+
+/************************/
+/* Subtasks Check - end */
+/************************/
+
+
+/****************************/
+/* Priority symbols - start */
+/****************************/
+.prioritySymbolsIcons {
+    display: flex;
+    width: 32px;
+    /* padding: 10px 18px; */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.prioritySymbolPropertyLow {
+    width: 17px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+
+.prioritySymbolPropertyMedium {
+    width: 17px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+
+.prioritySymbolPropertyUrgent {
+    width: 17px;
+    height: 12px;
+    flex-shrink: 0;
+}
+
+.prio {
+    display: flex;
+    max-width: 440px;
+    width: 100vw;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.prioText {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.prioField {
+    display: flex;
+    max-width: 440px;
+    width: 100vw;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.urgent,
+.medium,
+.low {
+    display: flex;
+    max-width: 116px;
+    width: 100vw;
+    height: 24px;
+    padding: 16px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 10px;
+    background: var(--white, #fff);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.urgent img,
+.medium img,
+.low img {
+    width: 20px;
+    height: 14.51px;
+}
+
+.urgent:hover,
+.medium:hover,
+.low:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 2px -2px rgba(0, 0, 0, 0.106);
+}
+
+.urgent.selected {
+    background-color: #FF3D00;
+    color: white;
+}
+
+.medium.selected {
+    background-color: #FFA802;
+    color: white;
+}
+
+.low.selected {
+    background-color: #7AE228;
+    color: white;
+}
+
+/**************************/
+/* Priority symbols - end */
+/**************************/
+
+
+
+
+/***********************/
+/* Plus Button - start */
+/***********************/
+.plusButtonIcons:hover {
+    cursor: pointer;
+}
+
+
+.plusButtonIconDefault,
+.plusButtonIconHover,
+.plusButtonIconWhileClick {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+
+.plusButtonIconDefault {
+    border: 2px solid var(--version-2-main-color, #2A3647);
+}
+
+
+.plusButtonIconHover {
+    border: 2px solid var(--Ligth-blue, #29ABE2);
+}
+
+
+.plusButtonIconWhileClick {
+    border: 2px solid #091931;
+}
+
+
+
+
+
+/* Display Default Plus Button Icon and hide the Hovered Plus Button Icon and Clicked Plus Button Icon - start */
+.plusButtonIconHover,
+.plusButtonIconWhileClick {
+    display: none;
+    transition: all 1100ms ease-out;
+}
+
+/* Display Default Plus Button Icon and hide the Hovered Plus Button Icon and Clicked Plus Button Icon - end */
+
+
+/* Display Hovered Plus Button Icon and hide the Default Plus Button Icon and Clicked Plus Button Icon - start */
+.plusButtonIcons:hover .plusButtonIconHover {
+    display: flex;
+    transition: all 1100ms ease-out;
+}
+
+
+.plusButtonIcons:hover .plusButtonIconDefault,
+.plusButtonIcons:hover .plusButtonIconWhileClick {
+    display: none;
+    transition: all 1100ms ease-out;
+}
+
+/* Display Hovered Plus Button Icon and hide the Default Plus Button Icon and Clicked Plus Button Icon - end */
+
+
+/* Display Clicked Plus Button Icon and hide the Default Plus Button Icon and Hovered Plus Button Icon - start */
+.plusButtonIcons:active .plusButtonIconWhileClick {
+    display: flex;
+    transition: all 1100ms ease-out;
+}
+
+
+.plusButtonIcons:active .plusButtonIconDefault,
+.plusButtonIcons:active .plusButtonIconHover {
+    display: none;
+    transition: all 1100ms ease-out;
+}
+
+/* Display Clicked Plus Button Icon and hide the Default Plus Button Icon and Hovered Plus Button Icon - end */
+
+
+
+
+/*********************/
+/* Plus Button - end */
+/*********************/
+
+
+
+/***********************/
+/* Cards - start */
+/***********************/
+
+.cardFrame {
+    display: flex;
+    width: 220px;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 24px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+.cardFrame:hover {
+    cursor: pointer;
+}
+
+
+.cardFrame:active {
+    transform: rotate(5deg);
+}
+
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+}
+
+
+.cardContentTitle {
+    align-self: stretch;
+    color: var(--version-2-main-color, #2A3647);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+
+.cardContentText {
+    align-self: stretch;
+    color: var(--icon, #A8A8A8);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+
+.cardProgress {
+    display: flex;
+    width: 100%;
+    padding: 0px 6px 2px 0px;
+    align-items: center;
+    gap: 11px;
+}
+
+
+.cardProgressBar {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 8px;
+    background: #F4F4F4;
+}
+
+
+.cardProgressBarFiller {
+    height: 8px;
+    align-self: stretch;
+    border-radius: 16px;
+    background: var(--version-2-main-color, #4589FF);
+}
+
+
+.cardProgressText {
+    width: 100%;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+
+.boardCardFooterContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.boardCardFooterContentProfileBadgeIcons {
+    display: flex;
+    align-items: flex-start;
+    gap: -8px;
+}
+
+.boardCardFooterContent .designProfileBadge {
+    margin-left: -8px;
+}
+
+.boardCardFooterContent .designProfileBadge:nth-of-type(1) {
+    margin-left: 0px;
+}
+
+/*********************/
+/* Cards - end */
+/*********************/
+
+
+
+
+/************************/
+/* Task Overlay - start */
+/************************/
+.cardFrameTaskOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskOverlaytemplateCard {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cardTaskOverlayContent {
+    display: flex;
+    width: 445px;
+    max-height: 85vh;
+    padding: 48px 40px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    border-radius: 30px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+}
+
+.cardTaskOverlayContentInner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 24px;
+    overflow-y: scroll;
+    align-self: flex-start;
+}
+
+.cardTaskOverlayContentInnerTop {}
+
+.cardTaskOverlayContentTitle {
+    align-self: stretch;
+    color: var(--black, #000);
+    font-family: Inter;
+    font-size: 41px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.cardTaskOverlayContentTitleEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.cardTaskOverlayContentFieldIsRequired {
+    width: 119px;
+    height: 12px;
+    color: rgba(255, 129, 144, 0.00);
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 14.4px */
+}
+
+.cardTaskOverlayContentTitleEdit label {
+    color: var(--version-2-main-color, #2A3647);
+    /* Version 2/t6 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 24px */
+}
+
+.cardTaskOverlayContentTitleEdit input {
+    display: flex;
+    flex: 1 0 0;
+    padding: 12px 21px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    color: var(--black, #000);
+    /* Version 2/t6 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 24px */
+    border-radius: 10px;
+    border: 1px solid var(--Style, #D1D1D1);
+    background: #FFF;
+}
+
+.cardTaskOverlayContentText {
+    align-self: stretch;
+    color: var(--black, #000);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.cardTaskOverlayContentDescriptionEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.cardTaskOverlayContentDescriptionEdit label {
+    align-self: stretch;
+    color: var(--version-2-main-color, #2A3647);
+    /* Version 2/t6 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 24px */
+}
+
+.cardTaskOverlayContentDescriptionEdit textarea {
+    display: flex;
+    flex: 1 0 0;
+    height: 120px;
+    padding: 18px 16px;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    color: var(--black, #000);
+    font-family: Open Sans;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 25.2px */
+    border-radius: 10px;
+    border: 1px solid var(--Style, #D1D1D1);
+    background: #FFF;
+}
+
+.cardTaskOverlayDueDate {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    align-self: stretch;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.cardTaskOverlayDueDateText {
+    color: var(--version-2-main-color, #2A3647);
+}
+
+.cardTaskOverlayDueDateData {
+    color: var(--black, #000);
+}
+
+.cardTaskOverlayContentDateEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.cardTaskOverlayContentDateEdit label {
+    color: var(--version-2-main-color, #2A3647);
+    /* Version 2/t6 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 24px */
+}
+
+.cardTaskOverlayContentDateEdit input {
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    color: var(--black, #000);
+
+    /* Version 2/t6 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    /* 24px */
+
+    border-radius: 10px;
+    border: 1px solid var(--Style, #D1D1D1);
+    background: #FFF;
+}
+
+.cardTaskOverlayContentInnerBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cardTaskOverlayPriority {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    align-self: stretch;
+}
+
+.cardTaskOverlayPriorityText, .cardTaskOverlayAssignedToText, .cardTaskOverlaySubtasksTitle {
+    color: var(--version-2-main-color, #2A3647);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.cardTaskOverlayPriorityEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.cardTaskOverlayPriorityEdit>.cardTaskOverlayPriorityText {
+    color: #42526E;
+    font-family: Open Sans;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    /* 22.8px */
+}
+
+.cardTaskOverlayAssignedTo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.cardTaskOverlayAssignedToText {
+    align-self: stretch;
+}
+
+.cardTaskOverlayAssignedToBadges {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.assignedContainer {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--Style, #d1d1d1);
+    background: #fff;
+    width: 100%;
+    max-width: 440px;
+}
+
+.assignedInput {
+    display: flex;
+    max-width: 410px;
+    width: 100vw;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    background: var(--white, #fff);
+    font-size: 20px;
+}
+
+.assignedInput:hover, .assignedArrow:hover {
+    cursor: pointer;
+}
+
+.cardTaskOverlayAssignedToBadgesEdit {
+    display: flex;
+    align-self: stretch;
+}
+
+.designProfileBadgeContact {
+    display: flex;
+    padding: 7px 16px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 10px;
+}
+
+.cardTaskOverlayAssignedToBadgesEdit>.designProfileBadgeContact {
+    padding: 0px 8px 0 0;
+}
+
+.designProfileBadgeContactBanner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cardTaskOverlayAssignedToBadges .designProfileBadge {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 10px;
+}
+
+.designProfileBadgeContactCheckbox {
+    display: flex;
+    padding: 7px 16px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cardTaskOverlaySubtasks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.cardTaskOverlaySubtasksTitle {
+    align-self: stretch;
+}
+
+.subtaskField {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--Style, #d1d1d1);
+    background: #fff;
+    width: 100vw;
+    max-width: 440px;
+}
+
+.subtaskInput {
+    display: flex;
+    height: 22.67px;
+    max-width: 366px;
+    width: 100vw;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px 0px 1px 1px solid var(--Style, #d1d1d1);
+    background: #fff;
+    font-size: 20px;
+}
+
+.subtask::placeholder {
+    color: var(--Style, #d1d1d1);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.subtask img {
+    width: 24px;
+    height: 24px;
+    padding-right: 20px;
+}
+
+.subtaskInput:hover,
+.subtask img:hover {
+    cursor: pointer;
+}
+
+
+.textTechnicalTask {
+    color: var(--menu-color, #42526E);
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.textTechnicalTaskStretch {
+    align-self: stretch;
+}
+
+.cardTaskOverlaySubtasksDatas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    align-self: stretch;
+}
+
+.cardTaskOverlaySubtasksDatasSubtask {
+    display: flex;
+    height: 32px;
+    padding: 6px 16px;
+    align-items: center;
+    gap: 16px;
+}
+
+.cardTaskOverlayDeleteOrEdit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#create {
+    display: flex;
+    padding: 16px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 10px;
+    background: #2a3647;
+}
+
+#create:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 2px -2px rgba(0, 0, 0, 0.106);
+    background-color: #2aaae2;
+    /* border: 1px solid #2aaae2; */
+}
+
+.createText {
+    width: 100%;
+    height: 24px;
+    color: #fff;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+
+/**********************/
+/* Task Overlay - end */
+/**********************/
+
+
+/***********************/
+/* ------ - start */
+/***********************/
+
+/*********************/
+/* ------- - end */
+/*********************/

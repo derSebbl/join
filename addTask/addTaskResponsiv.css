@@ -1,0 +1,125 @@
+@media (max-width: 1300px) {
+
+    .mainContainer {
+        padding: 0px;
+        align-items: center;
+    }
+
+    .headline {
+        position: fixed;
+        display: inline-flex;
+        top: 86px;
+        background: #F6F7F8;
+        color: #000;
+        font-family: Inter;
+        font-size: 47px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        max-width: 460px;
+        padding-left: 20px;
+        width: 100vw;
+        height: 112px;
+        align-items: center;
+    }
+
+    #formContainer {
+    flex-direction: column;
+    padding-top: 215px;
+    padding-bottom: 400px;
+    padding-left: 16px;
+    }
+
+    #formLeft,
+    #formRight {
+        padding-left: 20px;
+        margin-right: 20px;
+    }
+
+    .titleField,
+    .descriptionField,
+    .dateField,
+    .subtaskField {
+        width: 95%;
+    }
+    .categoryField,
+    .assignedField {
+    display: flex;
+    width: 95%;
+    }
+
+    .assignedField {
+    flex-direction: column;
+    }
+
+.line {
+    display: none;
+    }
+
+#clear {
+    display: none;
+    }
+
+.footer {
+    display: flex;
+    width: 428px;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+    background: #F6F7F8;
+    position: fixed;
+    bottom: 82px;
+    height: 88px;
+    top: auto;
+}
+
+.bottomText,
+.buttons {
+    padding: 0;
+}
+
+.title {
+    order: 1;
+}
+
+.description {
+    order: 2;
+}
+
+.prio {
+    order: 3;
+    padding-bottom: 30px;
+}
+
+.date {
+    order: 4;
+}
+
+.category {
+    order: 5;
+}
+
+.assigned {
+    order: 6;
+    height: auto;
+}
+
+.subtask {
+    order: 7;
+}
+
+}
+
+@media (max-width: 500px){
+    .prioField {
+        flex-direction: column;
+        height: 220px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        padding-bottom: 50px;
+        flex-direction: column;
+    }
+}
