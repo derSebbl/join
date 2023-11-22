@@ -1,4 +1,8 @@
-// Function to edit the Detailcard on Responsiv
+/**
+ * Function to edit the Detail Contact Card on Responsiv
+ * 
+ * @param {number} y - The index of the contact in the array
+ */
 function editRespContactWindow(y) {
   document.getElementById("btnContainerResp").style.display = "none";
   document.getElementById("editDeleteBtnContainerResp").style.display =
@@ -10,18 +14,25 @@ function editRespContactWindow(y) {
   document.getElementById("phoneResp").innerHTML = contacts[y].phone;
   document.getElementById("respImg").src = randomProfilBadges[y];
   addRespInitials(y);
-}
+};
 
-//Function to close the Detailcard on Responsiv
+/**
+ * Function to close the Detail Contact Card on Responsiv
+ * 
+ */
 function closeRespDetailCard() {
   document.getElementById("contactRightResp").style.display = "none";
   document.getElementById("editDeleteBtnContainerResp").style.display = "none";
   document.getElementById("contactContainer").style.display = "block";
   document.getElementById("btnContainerResp").style.display = "inline-flex";
   document.getElementById("contactOptionsResp").style.display = "none";
-}
+};
 
-// Function to add the Initials in the Detailcard on Responsiv
+/**
+ * Function to add the Initials in the Detail Contact Card on Responsiv
+ * 
+ * @param {number} y - The index of the contact in the array
+ */
 function addRespInitials(y) {
   let name = contacts[y].name;
   let words = name.split(" ");
@@ -30,31 +41,37 @@ function addRespInitials(y) {
   document.getElementById(
     "respInitials"
   ).innerHTML = `${firstLetter}${secondWordFirstLetter}`;
-}
+};
 
-/////////////////////////////////////////////////////////////////
-
-// Function to open the new Contact Display on Responsiv
+/**
+ * Function to open the new Contact Display on Responsiv
+ * 
+ */
 function openNewContactResp() {
   document.getElementById("newContactResp").style.display = "block";
   document.getElementById("background").style.display = "block";
   document.getElementById("btnContainerResp").style.display = "none";
-}
+};
 
-// Function to close the new Contact Display on Responsiv
+/**
+ * Function to close the new Contact Display on Responsiv
+ * 
+ */
 function closeNewContactResp() {
   document.getElementById("newContactResp").style.display = "none";
   document.getElementById("background").style.display = "none";
   document.getElementById("btnContainerResp").style.display = "inline-flex";
-}
+};
 
-// Function to push new Contact Responsiv
+/**
+ * Function to create a new Contact on Responsiv and push it to the Array, clear the values and close the window
+ * 
+ */
 function newContactResp() {
   let name = document.getElementById("newContactNameResp");
   let mail = document.getElementById("newContactMailResp");
   let phone = document.getElementById("newContactPhoneResp");
-  let randomBadge =
-    profilBadges[Math.floor(Math.random() * profilBadges.length)];
+  let randomBadge =profilBadges[Math.floor(Math.random() * profilBadges.length)];
 
   let newContact = {
     name: name.value,
@@ -68,18 +85,23 @@ function newContactResp() {
   clearNewContactValue(name, mail, phone);
   editContactPlates();
   closeNewContactResp();
-}
+};
 
-// Function to clear the new Contact Values on Responsiv
+/**
+ * Function to clear the new Contact Values on Responsiv
+ * 
+ */ 
 function clearNewContactValue(name, mail, phone) {
   name.value = ``;
   mail.value = ``;
   phone.value = ``;
-}
+};
 
-/////////////////////////////////////////////////////////////////
-
-// Function to open the Edit Window
+/**
+ * Function to open the Edit Window on Responsiv
+ * 
+ * @param {number} y - The index of the contact in the array
+ */
 function openEditContactResp(y) {
   let editContact = document.getElementById("editContactResp");
   let background = document.getElementById("background");
@@ -90,9 +112,13 @@ function openEditContactResp(y) {
   editContact.style.display = "block";
   background.style.display = "block";
   fillEditContactResp(y);
-}
+};
 
-// Function to load the Contacts in the Edit Window
+/**
+ * Function to fill the Edit Window on Responsiv with the values of the selected Contact
+ * 
+ * @param {number} y - The index of the contact in the array
+ */
 function fillEditContactResp(y) {
   let i = y;
   let name = document.getElementById("editContactNameResp");
@@ -105,9 +131,13 @@ function fillEditContactResp(y) {
   addBadgeRespEdit(y);
 
   selectedContactIndex = y; // change the global selectedIndex to the Contactposition in the Array of the selected person
-}
+};
 
-// Function to add the Initials in the Edit Window
+/**
+ * Function to fill the Initials Div on Responsiv
+ * 
+ * @param {number} y - The index of the contact in the array
+ */
 function addRespInitialsEdit(y) {
   let name = contacts[y].name;
   let words = name.split(" ");
@@ -116,26 +146,40 @@ function addRespInitialsEdit(y) {
   document.getElementById("editInitialsResp").innerHTML = `${firstLetter}${secondWordFirstLetter}`;
 };
 
-// Function to add the Badge in the Edit Window
+/**
+ * Function to add the Badge in the Edit Window on Responsiv
+ * 
+ * @param {number} y - The index of the contact in the array
+ */
 function addBadgeRespEdit(y) {
   document.getElementById("editContactBadgetResp").src = randomProfilBadges[y];
 };
 
-// Function to close the Edit Window Response
+/**
+ * Function to close the Edit Window Response
+ * 
+ */
 function closeEditContactResp() {
   document.getElementById("editContactResp").style.display = "none";
   document.getElementById("background").style.display = "none";
   closeRespDetailCard();
-}
+};
 
-// Function to edit the little Delete and Edit Frame on Responsiv
+/**
+ * Function to edit the little Delete and Edit Frame on Responsiv
+ * 
+ * @param {number} y - The index of the contact in the array
+ */
 function editRespDelAndEdit(y) {
   document.getElementById("contactOptionsResp").innerHTML = `
     <div id="deleteResp" onclick="openEditContactResp(${y})"><img src="/contact/img/edit.svg">Edit</div>
     <div id="editResp" onclick="deleteContactFloat(${y})"><img src="/contact/img/delete.svg">Delete</div>`;
-}
+};
 
-// Function to show the little Delete and Edit Frame on Responsiv
+/**
+ * Function to show the little Delete and Edit Frame on Responsiv
+ * 
+ */
 function slideInResp() {
   let options = document.getElementById("contactOptionsResp");
   if (options.style.display == "none") {
@@ -143,9 +187,12 @@ function slideInResp() {
   } else {
     options.style.display = "none";
   }
-}
+};
 
-// Function to Update the Contacts after edit
+/**
+ * Function to Update the Contacts after edit
+ * 
+ */
 function updateContactRespEditWindow() {
   let name = document.getElementById("editContactNameResp").value;
   let mail = document.getElementById("editContactMailResp").value;
@@ -161,7 +208,10 @@ function updateContactRespEditWindow() {
   closeEditContactResp();
 };
 
-// Function to delete the contact in the edit Window
+/**
+ * Function to delete the contact in the edit Window
+ * 
+ */
 function deleteContactRespEditWindow() {
   let i = selectedContactIndex;
   contacts.splice(i, 1);
