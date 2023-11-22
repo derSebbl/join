@@ -1,4 +1,7 @@
-// Codeblock zum laden der Templates
+/**
+ * Fucntion to include the header and Nav bar in the page
+ * 
+ */
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
