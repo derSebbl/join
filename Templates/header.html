@@ -3,6 +3,11 @@
     <p class="headerText">Kanban Project Management Tool</p>
     <div class="imgContainer">
         <a href="../help/help.html"><img class="help" src="/Templates/img/help.svg" alt=""></a>
-        <div id="userProfileInitials" class="userProfileInitialsFrame"><span></span></div>
+        <div id="userProfileInitials" onclick="openMiniMenu()" class="userProfileInitialsFrame"><span></span></div>
+    </div>
+    <div id="minimenu" style="display: none;">
+        <div id="legal" onclick="toLegalNotice()" >Legal Notice</div>
+        <div id="privacy" onclick="toPrivacyPolicy()" >Privacy Policy</div>
+        <div id="logOut" onclick="logoutUser()" >Log out</div>
     </div>
 </header>

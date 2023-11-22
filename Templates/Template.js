@@ -35,5 +35,13 @@ function toLegalNotice() {
     window.location.href = '../legalNotice.html'
 };
 
+function openMiniMenu() {
+    let miniMenu = document.getElementById("minimenu");
+    if (miniMenu.style.display === "none") {
+        miniMenu.style.display = "inline-flex";
+    } else {
+        miniMenu.style.display = "none";
+    }
+};
 
 

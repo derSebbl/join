@@ -385,3 +385,13 @@ async function loadRegisteredUsers() {
     // console.log('arrayOfRegisteredUsers: ', arrayOfRegisteredUsers);
 }
 
+function logoutUser() {
+    try {
+        localStorage.removeItem('currentUser');
+        // Optional: Leiten Sie den Benutzer zur Anmeldeseite um
+        window.location.href = "../login/login.html";
+    } catch (e) {
+        console.log('Logout error:', e);
+    }
+}
+
