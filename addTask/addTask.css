@@ -551,7 +551,7 @@ textarea::placeholder {
   line-height: 120%;
 }
 
-.subtask img {
+#subtaskImgPlus {
   width: 24px;
   height: 24px;
   padding-right: 20px;
@@ -560,6 +560,26 @@ textarea::placeholder {
 .subtaskInput:hover,
 .subtask img:hover {
   cursor: pointer;
+}
+
+#subtaskImg {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  max-width: 56px;
+  padding-right: 20px;
+}
+
+#subtaskImgX, #subtaskImgAccept {
+  width: 24px;
+  height: 24px;
+  border-radius: 70px;
+}
+
+#subtaskImgX:hover, #subtaskImgAccept:hover {
+  cursor: pointer;
+  background-color: lightgrey;
 }
 
 .footer {

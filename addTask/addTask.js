@@ -10,6 +10,26 @@ async function initAddTask() {
 };
 
 /**
+ * Eventlistener to change the pictures of the subtask input field
+ * 
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  let inputField = document.getElementById("subtaskInput");
+  let imagePlus = document.getElementById("subtaskImgPlus");
+  let ImageXandAc = document.getElementById("subtaskImg");
+
+  inputField.addEventListener('input', function() {
+    if (inputField.value !== '') {
+      imagePlus.style.display = 'none';
+      ImageXandAc.style.display = 'flex';
+    } else {
+      imagePlus.style.display = 'block';
+      ImageXandAc.style.display = 'none';
+    }
+  });
+});
+
+/**
  * Function to prevent the reloading of the page when the form is submitted
  *
  */
@@ -63,6 +83,8 @@ function clearValues() {
 function addSubtask() {
   let subtaskInput = document.getElementById("subtaskInput");
   let subtask = document.getElementById("subtaskList");
+  let imagePlus = document.getElementById("subtaskImgPlus");
+  let ImageXandAc = document.getElementById("subtaskImg");
   if (subtaskInput.value === ``) {
     return;
   } else {
@@ -71,6 +93,21 @@ function addSubtask() {
     `;
     subtaskInput.value = ``;
   }
+  imagePlus.style.display = 'block';
+  ImageXandAc.style.display = 'none';
+};
+
+/**
+ * Function to clear the subtask Input.
+ * 
+ */
+function clearSubtask() {
+  let imagePlus = document.getElementById("subtaskImgPlus");
+  let ImageXandAc = document.getElementById("subtaskImg");
+  let subtask = document.getElementById("subtaskInput");
+  subtask.value = ``;
+  imagePlus.style.display = 'block';
+  ImageXandAc.style.display = 'none';
 };
 
 /**

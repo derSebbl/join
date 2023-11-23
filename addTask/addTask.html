@@ -85,8 +85,15 @@
 
             <div class="subtask"> <!--subtask for the Task-->
                 <div class="subtaskText">Subtask</div>
-                <div class="subtaskField"><input autocomplete="off" minlength="1" id="subtaskInput" type="text" class="subtaskInput" placeholder="Add new subtask">
-                <img aria-disabled="true" onclick="addSubtask()" src="/addTask/img/Subtasks icons11.svg" alt=""></div>
+                <div class="subtaskField">
+                    <input autocomplete="off" minlength="1" id="subtaskInput" type="text" class="subtaskInput" placeholder="Add new subtask">
+                    <img id="subtaskImgPlus" src="/addTask/img/Subtasks icons11.svg">
+                    <div id="subtaskImg">
+                        <img id="subtaskImgX" onclick="clearSubtask()" src="/addTask/img/Subtasks icon X.svg">
+                        <img src="/addTask/img/Subtask Vect.svg">
+                        <img id="subtaskImgAccept" onclick="addSubtask()" src="/addTask/img/Subtasks icon accept.svg">
+                    </div>
+                </div>
                 <div  id="subtask">
                     <ul id="subtaskList"></ul>
                 </div>
