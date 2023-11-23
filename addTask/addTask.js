@@ -89,7 +89,7 @@ function addSubtask() {
     return;
   } else {
     subtask.innerHTML += /*html*/ `
-    <li>${subtaskInput.value}</li>
+    <div class="subtaskItem">${subtaskInput.value}</div>
     `;
     subtaskInput.value = ``;
   }
