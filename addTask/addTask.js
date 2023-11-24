@@ -1,3 +1,4 @@
+let = subtaskCount = 0;
 /**
  * init function to load the registered users and the addTask.html
  *
@@ -45,6 +46,7 @@ function clearValues() {
   uncheckCheckbox();
   clearAssignedSelected();
   clearSelectedPriority();
+  subtaskCount = 0;
 };
 
 /**
@@ -60,9 +62,18 @@ function addSubtask() {
     return;
   } else {
     subtask.innerHTML += /*html*/ `
-    <div class="subtaskItem">${subtaskInput.value}</div>
+    <div id="Subtask${subtaskCount}" class="subtaskItem">
+      <div class="contentSubtask">
+        ${subtaskInput.value}
+      </div>
+      <div>
+        <img id="subtaskEdit" src="/addTask/img/Subtask edit.svg">
+        <img id="subtaskDelete" src="/addTask/img/subtask delete.svg">
+      </div>
+    </div>
     `;
     subtaskInput.value = ``;
+    subtaskCount++;
   }
   imagePlus.style.display = 'block';
   ImageXandAc.style.display = 'none';

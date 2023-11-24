@@ -50,4 +50,4 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("formContainer").addEventListener("submit", function (event) {
     event.preventDefault();
     addToTask();
-  }); 
+  });

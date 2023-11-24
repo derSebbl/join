@@ -590,7 +590,9 @@ textarea::placeholder {
 }
 
 .subtaskItem {
+  display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 
 .subtaskItem:hover {
@@ -598,9 +600,12 @@ textarea::placeholder {
   background-color: lightgrey;
 }
 
-.subtaskItem::before {
+.contentSubtask::before {
   content: '•';
-  padding-right: 10px;
+}
+
+#subtaskEdit, #subtaskDelete {
+  display: none;
 }
 
 .footer {
