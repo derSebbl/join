@@ -501,7 +501,6 @@ textarea::placeholder {
   display: flex;
   max-width: 440px;
   width: 100vw;
-  height: 80px;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
@@ -591,7 +590,6 @@ textarea::placeholder {
 }
 
 .subtaskItem {
-  display: list-item;
   width: 100%;
 }
 
@@ -600,8 +598,9 @@ textarea::placeholder {
   background-color: lightgrey;
 }
 
-::marker {
-  unicode-bidi: embed;
+.subtaskItem::before {
+  content: '•';
+  padding-right: 10px;
 }
 
 .footer {
