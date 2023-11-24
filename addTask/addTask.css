@@ -593,6 +593,7 @@ textarea::placeholder {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
 }
 
 .subtaskItem:hover {
@@ -604,8 +605,8 @@ textarea::placeholder {
   content: '•';
 }
 
-#subtaskEdit, #subtaskDelete {
-  display: none;
+#subtaskItemImg {
+  display: flex;
 }
 
 .footer {

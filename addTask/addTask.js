@@ -66,9 +66,9 @@ function addSubtask() {
       <div class="contentSubtask">
         ${subtaskInput.value}
       </div>
-      <div>
-        <img id="subtaskEdit" src="/addTask/img/Subtask edit.svg">
-        <img id="subtaskDelete" src="/addTask/img/subtask delete.svg">
+      <div id="subtaskItemImg">
+        <img id="subtaskEdit" onclick="editSubtask(${subtaskCount})"  src="/addTask/img/Subtask edit.svg">
+        <img id="subtaskDelete" onclick="deleteSubtask(${subtaskCount})" src="/addTask/img/subtask delete.svg">
       </div>
     </div>
     `;
@@ -77,6 +77,22 @@ function addSubtask() {
   }
   imagePlus.style.display = 'block';
   ImageXandAc.style.display = 'none';
+};
+
+/**
+ * Function to delete a subtask
+ * 
+ * @param {number} id - its the subtaskCount of the subtask
+ */
+function deleteSubtask(id) {
+  let subtaskItem = document.getElementById(`Subtask${id}`);
+    subtaskItem.remove();
+};
+
+
+function editSubtask(id) {
+  let subtaskItem = document.getElementById(`Subtask${id}`);
+  subtaskItem.innerHTML = ``;
 };
 
 /**
@@ -120,16 +136,6 @@ function createBadgetDiv(i) {
   badgetDiv.id = `designProfileBadgeInner-${i}`;
   badgetDiv.className = "designAssignedBadgeInner";
   return badgetDiv;
-};
-
-/**
- * Function to add an event listener to the checkbox to change the background color and the color of the label and push the selected contacts to the Div to show the selected badges
- * 
- */
-function addEventListenerToCheckbox(checkbox, label, assignedToInput) {
-  checkbox.addEventListener("change", function () {
-    updateSelectedContacts(assignedToInput, label, checkbox);
-  });
 };
 
 /**

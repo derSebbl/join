@@ -51,3 +51,13 @@ document.getElementById("formContainer").addEventListener("submit", function (ev
     event.preventDefault();
     addToTask();
   });
+
+/**
+ * Function to add an event listener to the checkbox to change the background color and the color of the label and push the selected contacts to the Div to show the selected badges
+ * 
+ */
+function addEventListenerToCheckbox(checkbox, label, assignedToInput) {
+  checkbox.addEventListener("change", function () {
+    updateSelectedContacts(assignedToInput, label, checkbox);
+  });
+};
