@@ -570,13 +570,15 @@ textarea::placeholder {
   padding-right: 20px;
 }
 
-#subtaskImgX, #subtaskImgAccept {
+#subtaskImgX,
+#subtaskImgAccept {
   width: 24px;
   height: 24px;
   border-radius: 70px;
 }
 
-#subtaskImgX:hover, #subtaskImgAccept:hover {
+#subtaskImgX:hover,
+#subtaskImgAccept:hover {
   cursor: pointer;
   background-color: lightgrey;
 }
@@ -601,8 +603,17 @@ textarea::placeholder {
   background-color: lightgrey;
 }
 
+.contentSubtask, .subtaskItemEdit {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
 .contentSubtask::before {
-  content: '•';
+  content: "•";
   padding-right: 10px;
 }
 
@@ -610,7 +621,7 @@ textarea::placeholder {
   display: flex;
 }
 
-.subtaskItemEdit{
+.subtaskItemEdit {
   outline: none;
   border: none;
   width: 100%;
