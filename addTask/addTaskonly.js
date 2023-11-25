@@ -86,9 +86,9 @@ function addSubtask() {
       </div>
       <div class="editSubtaskContainer" id="editSubtaskContainer${subtaskCount}" style="display: none;">
         <input type="text" class="subtaskItemEdit" id="subtaskEdit${subtaskCount}" value="${subtaskInput.value}">
-        <img src="/addTask/img/subtask delete.svg" onclick="closeEditSubtaskItem(${subtaskCount})">
+        <img class ="editItemImg" src="/addTask/img/subtask delete.svg" onclick="deleteSubtask(${subtaskCount})">
         <img src="/addTask/img/Subtask Vect.svg">
-        <img src="/addTask/img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${subtaskCount})">
+        <img class="editItemImg" src="/addTask/img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${subtaskCount})">
       </div>
     </div>
     `;
@@ -134,20 +134,6 @@ function clearSubtask() {
   subtask.value = ``;
   imagePlus.style.display = 'block';
   ImageXandAc.style.display = 'none';
-};
-
-/**
- * Function to close the edit subtask item without saving the changes
- * 
- * @param {number} id - index of the subtask
- */
-function closeEditSubtaskItem(id) {
-  let subtaskItem = document.getElementById(`contentSubtask${id}`);
-  let subtaskEdit = document.getElementById(`editSubtaskContainer${id}`);
-  let subtaskItemImg = document.getElementById(`subtaskItemImg${id}`);
-  subtaskEdit.style.display = 'none';
-  subtaskItem.style.display = 'flex';
-  subtaskItemImg.style.display = 'flex';
 };
 
 /**

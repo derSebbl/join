@@ -580,7 +580,7 @@ textarea::placeholder {
 #subtaskImgX:hover,
 #subtaskImgAccept:hover {
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: #E9E9E9;
 }
 
 #subtaskList {
@@ -600,7 +600,7 @@ textarea::placeholder {
 
 .subtaskItem:hover {
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: #E9E9E9;
 }
 
 .contentSubtask, .subtaskItemEdit {
@@ -621,6 +621,17 @@ textarea::placeholder {
   display: flex; 
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.editItemImg {  
+  width: 24px;
+  height: 24px;
+  border-radius: 70px;
+}
+
+.editItemImg:hover {
+  cursor: pointer;
+  background-color: #E9E9E9;
 }
 
 .subtaskItem:hover .subtaskItemImg {
