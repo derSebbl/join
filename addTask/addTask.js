@@ -50,65 +50,6 @@ function clearValues() {
 };
 
 /**
- * Function to add a subtask, if no subtask is entered, nothing happens
- *
- */
-function addSubtask() {
-  let subtaskInput = document.getElementById("subtaskInput");
-  let subtask = document.getElementById("subtaskList");
-  let imagePlus = document.getElementById("subtaskImgPlus");
-  let ImageXandAc = document.getElementById("subtaskImg");
-  if (subtaskInput.value === ``) {
-    return;
-  } else {
-    subtask.innerHTML += /*html*/ `
-    <div id="Subtask${subtaskCount}" class="subtaskItem">
-      <div class="contentSubtask">
-        ${subtaskInput.value}
-      </div>
-      <div id="subtaskItemImg">
-        <img id="subtaskEdit" onclick="editSubtask(${subtaskCount})"  src="/addTask/img/Subtask edit.svg">
-        <img id="subtaskDelete" onclick="deleteSubtask(${subtaskCount})" src="/addTask/img/subtask delete.svg">
-      </div>
-    </div>
-    `;
-    subtaskInput.value = ``;
-    subtaskCount++;
-  }
-  imagePlus.style.display = 'block';
-  ImageXandAc.style.display = 'none';
-};
-
-/**
- * Function to delete a subtask
- * 
- * @param {number} id - its the subtaskCount of the subtask
- */
-function deleteSubtask(id) {
-  let subtaskItem = document.getElementById(`Subtask${id}`);
-    subtaskItem.remove();
-};
-
-
-function editSubtask(id) {
-  let subtaskItem = document.getElementById(`Subtask${id}`);
-  subtaskItem.innerHTML = ``;
-};
-
-/**
- * Function to clear the subtask Input.
- * 
- */
-function clearSubtask() {
-  let imagePlus = document.getElementById("subtaskImgPlus");
-  let ImageXandAc = document.getElementById("subtaskImg");
-  let subtask = document.getElementById("subtaskInput");
-  subtask.value = ``;
-  imagePlus.style.display = 'block';
-  ImageXandAc.style.display = 'none';
-};
-
-/**
  * Function to create a checkbox for the registered users on the AssignedTo Input
  *
  * @param {number} - its the index of the arrayOfRegisteredUsers

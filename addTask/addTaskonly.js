@@ -61,3 +61,107 @@ function addEventListenerToCheckbox(checkbox, label, assignedToInput) {
     updateSelectedContacts(assignedToInput, label, checkbox);
   });
 };
+
+/**
+ * Function to add a subtask, if no subtask is entered, nothing happens
+ *
+ */
+function addSubtask() {
+  let subtaskInput = document.getElementById("subtaskInput");
+  let subtask = document.getElementById("subtaskList");
+  let imagePlus = document.getElementById("subtaskImgPlus");
+  let ImageXandAc = document.getElementById("subtaskImg");
+  if (subtaskInput.value === ``) {
+    return;
+  } else {
+    subtask.innerHTML += /*html*/ `
+    <div id="Subtask${subtaskCount}" class="subtaskItem">
+      <div id="contentSubtask${subtaskCount}" class="contentSubtask">
+        ${subtaskInput.value}
+      </div>
+      <div class="subtaskItemImg" id="subtaskItemImg${subtaskCount}">
+        <img id="subtaskEdit" onclick="editSubtask(${subtaskCount})"  src="/addTask/img/Subtask edit.svg">
+        <img src="/addTask/img/Subtask Vect.svg">
+        <img id="subtaskDelete" onclick="deleteSubtask(${subtaskCount})" src="/addTask/img/subtask delete.svg">
+      </div>
+      <div class="editSubtaskContainer" id="editSubtaskContainer${subtaskCount}" style="display: none;">
+        <input type="text" class="subtaskItemEdit" id="subtaskEdit${subtaskCount}" value="${subtaskInput.value}">
+        <img src="/addTask/img/subtask delete.svg" onclick="closeEditSubtaskItem(${subtaskCount})">
+        <img src="/addTask/img/Subtask Vect.svg">
+        <img src="/addTask/img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${subtaskCount})">
+      </div>
+    </div>
+    `;
+    subtaskInput.value = ``;
+    subtaskCount++;
+  }
+  imagePlus.style.display = 'block';
+  ImageXandAc.style.display = 'none';
+};
+
+/**
+ * Function to delete a subtask
+ * 
+ * @param {number} id - its the subtaskCount of the subtask
+ */
+function deleteSubtask(id) {
+  let subtaskItem = document.getElementById(`Subtask${id}`);
+    subtaskItem.remove();
+};
+
+/**
+ * Function to show the edit subtask container and hide the subtask item
+ * 
+ * @param {number} id - index of the subtask
+ */
+function editSubtask(id) {
+  let subtaskItem = document.getElementById(`contentSubtask${id}`);
+  let subtaskEdit = document.getElementById(`editSubtaskContainer${id}`);
+  let subtaskItemImg = document.getElementById(`subtaskItemImg${id}`);
+  subtaskEdit.style.display = 'flex';
+  subtaskItem.style.display = 'none';
+  subtaskItemImg.style.display = 'none';
+};
+
+/**
+ * Function to clear the subtask Input.
+ * 
+ */
+function clearSubtask() {
+  let imagePlus = document.getElementById("subtaskImgPlus");
+  let ImageXandAc = document.getElementById("subtaskImg");
+  let subtask = document.getElementById("subtaskInput");
+  subtask.value = ``;
+  imagePlus.style.display = 'block';
+  ImageXandAc.style.display = 'none';
+};
+
+/**
+ * Function to close the edit subtask item without saving the changes
+ * 
+ * @param {number} id - index of the subtask
+ */
+function closeEditSubtaskItem(id) {
+  let subtaskItem = document.getElementById(`contentSubtask${id}`);
+  let subtaskEdit = document.getElementById(`editSubtaskContainer${id}`);
+  let subtaskItemImg = document.getElementById(`subtaskItemImg${id}`);
+  subtaskEdit.style.display = 'none';
+  subtaskItem.style.display = 'flex';
+  subtaskItemImg.style.display = 'flex';
+};
+
+/**
+ * Function to change the subtask item
+ * 
+ * @param {number} id - index of the subtask 
+ */
+function changeSubtaskItem(id) {
+  let subtaskItem = document.getElementById(`contentSubtask${id}`);
+  let subtaskEdit = document.getElementById(`editSubtaskContainer${id}`);
+  let subtaskItemImg = document.getElementById(`subtaskItemImg${id}`);
+  let subtaskEditInput = document.getElementById(`subtaskEdit${id}`);
+  subtaskItem.innerHTML = subtaskEditInput.value;
+  subtaskEdit.style.display = 'none';
+  subtaskItem.style.display = 'flex';
+  subtaskItemImg.style.display = 'flex';
+};

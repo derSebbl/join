@@ -603,10 +603,22 @@ textarea::placeholder {
 
 .contentSubtask::before {
   content: '•';
+  padding-right: 10px;
 }
 
-#subtaskItemImg {
+.subtaskItemImg {
   display: flex;
+}
+
+.subtaskItemEdit{
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.editSubtaskContainer {
+  width: 100%;
+  background-color: #fff;
 }
 
 .footer {
