@@ -618,7 +618,8 @@ textarea::placeholder {
 }
 
 .subtaskItemImg {
-  display: flex;
+  display: flex; opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .subtaskItemEdit {
