@@ -112,7 +112,6 @@ p {
   justify-content: center;
   align-items: center;
   gap: 18px;
-  flex-shrink: 0;
   border-radius: 30px;
   background: var(--white, #fff);
 }
@@ -137,13 +136,10 @@ p {
   max-width: 396px;
   height: 110px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 18px;
-  flex-shrink: 0;
+  gap: 61px;
   border-radius: 30px;
-  position: relative;
-  top: 24px;
 }
 
 .summaryBodyPartBottom {
@@ -174,7 +170,7 @@ p {
   height: 168px;
   width: 100%;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 32px;
   border-radius: 30px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
@@ -226,8 +222,6 @@ p {
 .summaryDateContainer {
   display: flex;
   flex-direction: column;
-  padding-left: 32px;
-  padding-right: 32px;
 }
 
 .summaryDate {
@@ -259,7 +253,6 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   gap: 13px;
   border-radius: 30px;
 }
@@ -343,6 +336,7 @@ p {
   .mainContainer {
     padding-left: 0px;
     padding-top: 95px;
+    padding-bottom: 80px;
     align-items: center;
   }
 
@@ -376,6 +370,20 @@ p {
 
   .summaryBody{
     justify-content: space-between;
-    gap: 0px;
+    gap: 15px;
   }
+}
+
+@media (max-width: 500px) {
+#hoverContainer3 {
+    gap: 0px;
+}
+
+.summaryBodyPartTop, .summaryBodyPartMiddle, .summaryBodyPartBottom {
+    height: 145px;
+}
+
+#hoverContainer1, #hoverContainer2, #hoverContainer4, #hoverContainer5, #hoverContainer6 {
+    height: 145px;
+}
 }
