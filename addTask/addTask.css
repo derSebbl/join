@@ -618,8 +618,14 @@ textarea::placeholder {
 }
 
 .subtaskItemImg {
-  display: flex; opacity: 0;
+  display: flex; 
+  opacity: 0;
   transition: opacity 0.5s;
+}
+
+.subtaskItem:hover .subtaskItemImg {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .subtaskItemEdit {
