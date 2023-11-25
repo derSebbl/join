@@ -1,6 +1,16 @@
 body {
     margin: 0;
     background: #F6F7F8;
+    max-width: 1920px;
+    max-height: 1080px;
+}
+
+.mainContainer {
+    padding-left: 328px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 h2 {
@@ -37,9 +47,6 @@ p {
 }
 
 .summaryHeadline {
-    position: absolute;
-    top: 206px;
-    left: 328px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -72,35 +79,42 @@ p {
 }
 
 .summaryBody {
-    position: absolute;
-    top: 335px;
-    left: 328px;
     display: flex;
-    width: 560px;
+    max-width: 560px;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 28px;
+    padding-top: 56px;
 }
 
 .summaryBodyPart {
     display: flex;
-    width: 560px;
+    max-width: 560px;
     height: 168px;
+    width: 100%;
     justify-content: center;
     align-items: flex-start;
     gap: 32px;
 }
 
-.summaryBodyFlex {
+#hoverContainer1, #hoverContainer2 {
     display: flex;
-    width: 264px;
+    max-width: 264px;
     height: 168px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 18px;
     flex-shrink: 0;
     border-radius: 30px;
+    background: var(--white, #FFF);
+}
+
+#hoverContainer1:hover, #hoverContainer2:hover {
+    background: #2A3647;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 #hoverContainer1, #hoverContainer2, #hoverContainer4, .summaryContentMiddle, #hoverContainer5, #hoverContainer6 {
@@ -109,8 +123,9 @@ p {
 
 #hoverContainer3 {
     display: flex;
-    width: 396px;
+    max-width: 396px;
     height: 110px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 18px;
@@ -123,8 +138,9 @@ p {
 
 .summaryBodyPartFlex {
     display: flex;
-    width: 560px;
+    max-width: 560px;
     height: 168px;
+    width: 100%;
     justify-content: center;
     align-items: flex-start;
     gap: 32px;
@@ -133,8 +149,9 @@ p {
 
 .summaryContentMiddle {
     display: flex;
-    width: 560px;
+    max-width: 560px;
     height: 168px;
+    width: 100%;
     justify-content: center;
     align-items: flex-start;
     gap: 32px;
@@ -153,6 +170,12 @@ p {
 .white:hover {
     background-color: #2A3647;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.summaryBodyFlex{
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .redDot {
@@ -209,7 +232,8 @@ p {
 .summaryTasks{
     display: flex;
     height: 168px;
-    width: 168px;
+    max-width: 168px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -237,7 +261,6 @@ p {
 
 .summaryGreetings {
     position: absolute;
-    top: 548px;
     left: 968px;
     display: inline-flex;
     flex-direction: column;
@@ -300,175 +323,4 @@ p {
 
 
 @media (max-width: 1300px) {
-    .summaryHeadline {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        left: 16px;
-        top: 128px;
-        gap: 8px;
-    }
-
-    .headlineText {
-        width: auto;
-        height: auto;
-        font-size: 47px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 120%
-    }
-
-    .headlineInfo {
-        width: auto;
-        height: auto;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%;
-        margin-left: 24px;
-    }
-
-    .separatorHeadline {
-        display: none;
-    }
-
-    .blueVectorResponsive {
-        display: flex;
-        position: absolute;
-        top: 242px;
-        left: 40px;
-        width: 90px;
-    }
-
-    .summaryBody {
-        top: 325px;
-        left: 16px;
-    }
-
-    .summaryImg {
-        width: 40px;
-        height: 40px;
-    }
-
-    #todoColor1 {
-        font-size: 47px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%;
-    }
-
-    #todoColor2 {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%;
-    }
-
-    .summaryBodyFlex {
-        width: 186px;
-        height: 110px;
-        gap: 10px;
-        padding: 38px 8px;
-    }
-    .separatorBody {
-        margin-right: 45px;
-    }
-
-    #hoverContainer1 {
-        position: absolute;
-        left: 16px;
-        padding: 22px 8px;
-        width: 230px;
-    }
-
-    #hoverContainer2 {
-        position: absolute;
-        left: 290px;
-        padding: 22px 8px;
-        width: 230px;
-    }
-
-    #hoverContainer3{
-        top: 0;
-    }
-
-    .summaryArrow {
-        width: 22.791px;
-        height: 16.744px;
-        flex-shrink: 0;
-    }
-
-    .redDot {
-        width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-    }
-
-    #urgentColor1 {
-        font-size: 47px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%;
-    }
-
-    #urgentColor2 {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%;
-    }
-
-    #doneColor1 {
-        font-size: 47px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%
-    }
-
-    #doneColor2 {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%;
-    } 
-
-    .summaryDateContainer {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .summaryContentMiddle {
-        display: flex;
-        align-items: center;
-        width: 465px;
-        height: 110px;
-        padding: 22px 28px;
-        gap: 20px; 
-        position: relative;
-        left: 16px;
-    }
-
-    #taskColor1, #taskColor3, #taskColor5 {
-        font-size: 47px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 120%;
-    }
-
-    #taskColor2, #taskColor4, #taskColor6 {
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 120%;      
-    }
-
-    #hoverContainer4, #hoverContainer5, #hoverContainer6 {
-        width: 116px;
-        height: 116px;
-        padding: 16px 16px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-    }
 }

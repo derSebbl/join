@@ -91,7 +91,7 @@ function changeDoneColor() {
 
 //Ändert Textfarbe
 function changeUrgent() {
-    let container = document.getElementById("hoverContainer3");
+    let container = document.getElementById("summaryContentMiddle");
     let text1 = document.getElementById("urgentColor1");
     let text2 = document.getElementById("urgentColor2");
     let text3 = document.getElementById("urgentColor3");

@@ -20,24 +20,26 @@
 
     <div w3-include-html="../Templates/header.html"></div> <!--includes top-bar-->
     <div w3-include-html="../Templates/navbar.html"></div> <!--includes nav-bar-->
-    <div class="summaryHeadline">
-        <h2 class="headlineText">Join 360</h2>
-        <div class="separatorHeadline"><svg xmlns="http://www.w3.org/2000/svg" width="4" height="63" viewBox="0 0 4 63" fill="none">
-            <path d="M2 2V61" stroke="#29ABE2" stroke-width="3" stroke-linecap="round"/>
-            </svg>
+
+    <div class="mainContainer">
+        <div class="summaryHeadline">
+            <h2 class="headlineText">Join 360</h2>
+            <div class="separatorHeadline"><svg xmlns="http://www.w3.org/2000/svg" width="4" height="63" viewBox="0 0 4 63" fill="none">
+                <path d="M2 2V61" stroke="#29ABE2" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <p class="headlineInfo">Key Metrics at a Glance</p>
         </div>
-        <p class="headlineInfo">Key Metrics at a Glance</p>
-    </div>
-    <img src="./img/VectorResponsive.svg" class="blueVectorResponsive">
-    <div class="summaryBodyFlex">
+        <img src="./img/VectorResponsive.svg" class="blueVectorResponsive">
+        
         <div class="summaryBody">
-        <div  class="summaryBodyPartFlex">
-            <div onmouseover="changePen()" id="hoverContainer1" class="summaryBodyFlex white">
-                <img id="pen1" src="./img/summaryPen.png" class="summaryImg" alt="Pen">               
-                <div id="hoverEffect1">
-                    <h3 id="todoColor1">1</h3>
-                    <h4 id="todoColor2">To-do</h4>
-                </div>
+            <div  class="summaryBodyPartFlex">
+                <div onmouseover="changePen()" id="hoverContainer1" class="summaryBodyFlex white">
+                    <img id="pen1" src="./img/summaryPen.png" class="summaryImg" alt="Pen">               
+                    <div id="hoverEffect1">
+                        <h3 id="todoColor1">1</h3>
+                        <h4 id="todoColor2">To-do</h4>
+                    </div>
             </div>
             <div onmouseover="changeCheck()" id="hoverContainer2" class="summaryBodyFlex white">
                 <img id="check1" src="./img/summaryCheck.png" class="summaryImg" alt="Check">
@@ -48,8 +50,8 @@
             </div>
         </div>
 
-        <div class="summaryContentMiddle white">
-            <div onmouseover="changeUrgent()" id="hoverContainer3" class="summaryBodyFlex">
+        <div id="summaryContentMiddle" class="summaryContentMiddle white" onmouseover="changeUrgent()" >
+            <div id="hoverContainer3" class="summaryBodyFlex">
                 <div class="summaryBodyFlex" id="summaryResponsiveUrgent">
                     <div class="redDot">
                         <img src="./img/summaryArrowUp.png" class="summaryArrow" alt="Arrow Up">
@@ -69,6 +71,7 @@
                 </div>
             </div>
         </div>
+
         <div class="summaryBodyPartFlex">
             <div onmouseover="changeTask1()" id="hoverContainer4" class="summaryTasks white">
                 <div class="summaryTaskInfo">
@@ -89,7 +92,7 @@
                 </div>
             </div>
         </div>
-        </div>
+
         <div class="summaryGreetings">
             <div class="summaryGoodMorning">
                 <h2 id="rightGreeting" class="summaryGoodMorningH2">Good morning</h2>
