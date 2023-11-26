@@ -690,11 +690,47 @@ function closeAddTaskBoard(){
     initBoard();
 };
 
-function openAddTaskBoard(){
-    let addTaskBoard = document.getElementById('mainContainerAddTask');
-    let background = document.getElementById('BackgroundAddTaskBoard');
-    addTaskBoard.style.display = 'flex';
-    background.style.display = 'flex';
+function filterCards() {
+    let searchTerm = getSearchTerm();
+    let cards = getCards();
+    if (searchTerm === "") {
+        displayAllCards(cards);
+    } else {
+        filterAndDisplayCards(cards, searchTerm);
+    }
+    resetSearchTerm();
+};
+
+function getSearchTerm() {
+    return document.getElementById('searchTask').value.toLowerCase();
+};
+
+function getCards() {
+    return document.getElementsByClassName('cardFrame');
+};
+
+function resetSearchTerm() {
+    document.getElementById('searchTask').value = '';
+};
+
+function displayAllCards(cards) {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = 'block';
+    }
+};
+
+function filterAndDisplayCards(cards, searchTerm) {
+    for (let i = 0; i < cards.length; i++) {
+        let card = cards[i];
+        let cardTitle = card.querySelector('.cardContentTitle').innerText.toLowerCase();
+        let cardDescription = card.querySelector('.cardContentText').innerText.toLowerCase();
+
+        if (cardTitle.includes(searchTerm) || cardDescription.includes(searchTerm)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    }
 };
 
 
