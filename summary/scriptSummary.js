@@ -58,19 +58,24 @@ function showUrgentCount() {
            }
     }
     number.innerHTML += `${count}`;
-}
+};
 
-//shows next deadline for urgent to-do
+// zeigt das nächste Ablaufdatum für dringende To-Dos an
 function showUrgentDeadline() {
     let number = document.getElementById('urgentColor3');
     number.innerHTML = '';
 
-    earliestDate = summaryDates.reduce(function (pre, cur) {
-        return Date.parse(pre) > Date.parse(cur) ? cur : pre;
-    });
-    
-    number.innerHTML = `${earliestDate}`;
-}
+    const priority2Todos = boardTodos.filter(todo => todo.priority === 2);
+    if (priority2Todos.length === 0) {
+        number.innerHTML = '-';
+        return;
+    }
+    priority2Todos.sort((a, b) => a.duedate - b.duedate);
+    const earliestDueDateTodo = priority2Todos[0];
+    const duedate = earliestDueDateTodo.duedate * 1000; // Umwandeln in Millisekunden
+    const formattedDueDate = new Date(duedate).toLocaleDateString();
+    number.innerHTML = `${formattedDueDate}`;
+};
 
 //shows total amount of tasks in board
 function showAllTasks() {

@@ -690,6 +690,13 @@ function closeAddTaskBoard(){
     initBoard();
 };
 
+function openAddTaskBoard(){
+    let addTaskBoard = document.getElementById('mainContainerAddTask');
+    let background = document.getElementById('BackgroundAddTaskBoard');
+    addTaskBoard.style.display = 'flex';
+    background.style.display = 'block';
+};
+
 function filterCards() {
     let searchTerm = getSearchTerm();
     let cards = getCards();
