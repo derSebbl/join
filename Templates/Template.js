@@ -44,4 +44,8 @@ function openMiniMenu() {
     }
 };
 
+function goBack() {
+    window.close();
+};
+
 
