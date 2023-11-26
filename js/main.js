@@ -36,7 +36,6 @@ async function init() {
     await loadUser();
     await loadRegisteredUsers();
     initUserProfileInitials();
-    // console.log('arrayOfRegisteredUsers: ', arrayOfRegisteredUsers)
 }
 
 
@@ -58,7 +57,6 @@ function initUserProfileInitials() {
         const firstLetter = words[0].charAt(0);  // Erster Buchstabe des ersten Wortes
         const secondLetter = words[1].charAt(0); // Erster Buchstabe des zweiten Wortes
         const resultString = firstLetter + secondLetter; // Neuer String mit den beiden Buchstaben
-        // console.log(resultString.toUpperCase());
         initials = resultString.toUpperCase();
     } else {
         initials = words[0].charAt(0).toUpperCase() + words[0].charAt(1).toUpperCase();
@@ -77,7 +75,6 @@ function renderUserProfileInitials(usernameForInitials) {
         const firstLetter = words[0].charAt(0);  // Erster Buchstabe des ersten Wortes
         const secondLetter = words[1].charAt(0); // Erster Buchstabe des zweiten Wortes
         const resultString = firstLetter + secondLetter; // Neuer String mit den beiden Buchstaben
-        // console.log(resultString.toUpperCase());
         initials = resultString.toUpperCase();
     } else {
         initials = words[0].charAt(0).toUpperCase() + words[0].charAt(1).toUpperCase();
@@ -93,12 +90,10 @@ async function loadTasksData() {
     } catch (e) {
         console.log('Loading error:', e);
     }
-    // console.log('Load Datas', boardTodos);
 }
 
 
 async function setTasksData() {
-    // console.log('Save Datas', JSON.stringify(boardTodos));
     try {
         await setItem('boardtasks', JSON.stringify(boardTodos));
     } catch (e) {
@@ -184,7 +179,6 @@ function assignedToListInsertUser(cardDatas) {
         label.appendChild(checkbox);
         for (let z = 0; z < assignedUsers.length; z++) {
             if (arrayOfRegisteredUsers[i]['username'] == arrayOfRegisteredUsers[assignedUsers[z]]['username']) {
-                // console.log(`arrayOfRegisteredUsers[assignedUsers[z]]: `, arrayOfRegisteredUsers[assignedUsers[z]]['username']);
                 label.children[0].checked = true;
 
             }
@@ -229,10 +223,8 @@ function pushChangesIntoTasksData(cardId) {
         console.log(`boardTodos[cardId]['subtasksToChecked']: `, boardTodos[cardId]['subtasksToChecked']);
     }
 
-
     closeOverlayBackground();
     updateBoardHTML();
-    // console.log('boardTodos[nextTaskId]', boardTodos[nextTaskId]);
     console.log('boardTodos', boardTodos);
     setTasksData();
 }
@@ -319,7 +311,7 @@ async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
         const element = includeElements[i];
-        file = element.getAttribute("w3-include-html"); // "includes/header.html"
+        file = element.getAttribute("w3-include-html");
         let resp = await fetch(file);
         if (resp.ok) {
             element.innerHTML = await resp.text();
@@ -371,8 +363,7 @@ async function loadUser() {
     } catch (e) {
         console.log('Loading error:', e);
     }
-    // console.log(currentUser);
-}
+};
 
 
 // load registeredUsers
@@ -382,16 +373,14 @@ async function loadRegisteredUsers() {
     } catch (e) {
         console.log('Loading error:', e);
     }
-    // console.log('arrayOfRegisteredUsers: ', arrayOfRegisteredUsers);
-}
+};
 
 function logoutUser() {
     try {
         localStorage.removeItem('currentUser');
-        // Optional: Leiten Sie den Benutzer zur Anmeldeseite um
         window.location.href = "../login/login.html";
     } catch (e) {
         console.log('Logout error:', e);
     }
-}
+};
 
