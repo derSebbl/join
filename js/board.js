@@ -191,19 +191,23 @@ function renderSubtasks(subtasks, subtaskDone) {
 function renderdesignProfileBadge(cardData) {
     let output = '';
     let assignedUsers = cardData['assignedTo'].split(",");
-    // console.log('assignedUsers2: ', arrayOfRegisteredUsers);
     for (let i = 0; i < assignedUsers.length; i++) {
-        output += `
-                    <div class="designProfileBadge">
-                        <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
-                            <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
-                        </div>    
-                    </div>
-                        `;
+        let user = arrayOfRegisteredUsers[assignedUsers[i]];
+        if (user && user.username) {
+            output += `
+                        <div class="designProfileBadge">
+                            <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
+                                <div class="designProfileBadgeInnerText">${renderUserProfileInitials(user.username)}</div>
+                            </div>    
+                        </div>
+                            `;
+        } else {
+            console.log('Benutzer oder Benutzername ist undefiniert');
+        }
     }
     return output;
+};
 
-}
 function generateNoTasksInCategoryHTML(toDoCardsCategory) {
     switch (toDoCardsCategory) {
         case boardColumn[0]:
