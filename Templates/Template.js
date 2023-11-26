@@ -35,12 +35,26 @@ function toLegalNotice() {
     window.open('../legalNotice.html', '_blank');
 }
 
+let closeMenuOnClickOutsideBound;
+
+function closeMenuOnClickOutside(miniMenu, event) {
+    if (!miniMenu.contains(event.target)) {
+        miniMenu.style.display = "none";
+        document.removeEventListener('click', closeMenuOnClickOutsideBound);
+    }
+};
+
 function openMiniMenu() {
     let miniMenu = document.getElementById("minimenu");
     if (miniMenu.style.display === "none") {
         miniMenu.style.display = "inline-flex";
+        closeMenuOnClickOutsideBound = closeMenuOnClickOutside.bind(null, miniMenu);
+        setTimeout(() => {
+            document.addEventListener('click', closeMenuOnClickOutsideBound);
+        }, 0);
     } else {
         miniMenu.style.display = "none";
+        document.removeEventListener('click', closeMenuOnClickOutsideBound);
     }
 };
 
