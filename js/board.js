@@ -691,10 +691,15 @@ function closeAddTaskBoard(){
 };
 
 function openAddTaskBoard(){
+    if(window.innerWidth > 1300){
     let addTaskBoard = document.getElementById('mainContainerAddTask');
     let background = document.getElementById('BackgroundAddTaskBoard');
     addTaskBoard.style.display = 'flex';
     background.style.display = 'block';
+    }
+    else {
+        window.location.href = '/addTask/addTask.html';
+    }
 };
 
 function filterCards() {

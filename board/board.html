@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/designTemplatesBoard.css">
     <link rel="stylesheet" href="../fonts/fonts.css">
     <link rel="stylesheet" href="../css/board.css">
+    <link rel="stylesheet" href="../css/boardResp.css">
     <link rel="stylesheet" href="../addTask/addTask.css">
     <link rel="icon" type="image/x-icon" href="/Templates/img/Capa 2.svg">
     <script src="../js/main.js"></script>
@@ -26,8 +27,8 @@
 
 <body onload="init(); initBoard(); initAddTask()">
 
-    <div w3-include-html="/Templates/header.html"></div> <!--header-->
-    <div w3-include-html="/Templates/navBar.html"></div> <!--navBar-->
+    <div w3-include-html="../Templates/header.html"></div> <!--header-->
+    <div w3-include-html="../Templates/navBar.html"></div> <!--navBar-->
     <div id="BackgroundAddTaskBoard"></div>
     <div id="boardContainer">
         <div class="boardHeader">
@@ -37,13 +38,13 @@
                     <div class="search">
                         <input id="searchTask" type="text" placeholder="Find Task">
                         <div class="searchImg">
-                            <img src="/assets/icons/searchLineVertical.svg">
-                            <img class="imgToSearch" onclick="filterCards()" src="/assets/icons/searchIconDefault.svg">
+                            <img src="../assets/icons/searchLineVertical.svg">
+                            <img class="imgToSearch" onclick="filterCards()" src="../assets/icons/searchIconDefault.svg">
                         </div>
                     </div>
                     <div class="addTask" onclick="openAddTaskBoard()">
                         <p class="addTaskText">Add task</p>
-                        <img src="/assets/icons/add.svg">
+                        <img src="../assets/icons/add.svg">
                     </div>
                 </div>
             </div>
@@ -82,7 +83,7 @@
                 </div>
             </div>
     
-            <div class="line"><img src="/addTask/img/Vector 4.svg" alt=""></div> <!--line in the middle-->
+            <div class="line"><img src="../addTask/img/Vector 4.svg" alt=""></div> <!--line in the middle-->
     
             <div id="formRight" class="formRight"> <!--right Side from the Page-->
     
@@ -94,9 +95,9 @@
                 <div id="prio" class="prio"> <!--prio for the Task-->
                     <div class="prioText">Prio</div>
                     <div class="prioField">
-                        <div class="urgent" id="urgent" onclick="selectPriority('urgent')">Urgent<img src="/addTask/img/Prio alta.svg"></div>
-                        <div class="medium" id="medium" onclick="selectPriority('medium')">Medium<img src="/addTask/img/Prio media.svg"></div>
-                        <div class="low" id="low" onclick="selectPriority('low')">Low<img src="/addTask/img/Prio baja.svg"></div>
+                        <div class="urgent" id="urgent" onclick="selectPriority('urgent')">Urgent<img src="../addTask/img/Prio alta.svg"></div>
+                        <div class="medium" id="medium" onclick="selectPriority('medium')">Medium<img src="../addTask/img/Prio media.svg"></div>
+                        <div class="low" id="low" onclick="selectPriority('low')">Low<img src="../addTask/img/Prio baja.svg"></div>
                         <input type="hidden" id="selectedPriority" name="selectedPriority" value="">
                     </div>
                 </div>
@@ -121,11 +122,11 @@
                     <div class="subtaskText">Subtask</div>
                     <div class="subtaskField">
                         <input autocomplete="off" minlength="1" id="subtaskInput" type="text" class="subtaskInput" placeholder="Add new subtask">
-                        <img id="subtaskImgPlus" src="/addTask/img/Subtasks icons11.svg">
+                        <img id="subtaskImgPlus" src="../addTask/img/Subtasks icons11.svg">
                         <div id="subtaskImg">
-                            <img id="subtaskImgX" onclick="clearSubtask()" src="/addTask/img/Subtasks icon X.svg">
-                            <img src="/addTask/img/Subtask Vect.svg">
-                            <img id="subtaskImgAccept" onclick="addSubtask()" src="/addTask/img/Subtasks icon accept.svg">
+                            <img id="subtaskImgX" onclick="clearSubtask()" src="../addTask/img/Subtasks icon X.svg">
+                            <img src="../addTask/img/Subtask Vect.svg">
+                            <img id="subtaskImgAccept" onclick="addSubtask()" src="../addTask/img/Subtasks icon accept.svg">
                         </div>
                     </div>
                     <div id="subtaskList"></div>
@@ -136,11 +137,12 @@
             <p class="bottomText"><span class="star">*</span>This field is required</p>
         
             <div class="buttons">
-                <div class="clearContainer"><button onclick="clearValues()" id="clear"><span class="clearText">Clear</span><img class="clearImg" src="/addTask/img/iconoir_cancel.svg"></button></div>
-                <button form="formContainer" id="create"><span class="createText">Create Task</span><img src="/addTask/img/check.svg"></button>
+                <div class="clearContainer"><button onclick="clearValues()" id="clear"><span class="clearText">Clear</span><img class="clearImg" src="../addTask/img/iconoir_cancel.svg"></button></div>
+                <button form="formContainer" id="create"><span class="createText">Create Task</span><img src="../addTask/img/check.svg"></button>
             </div>
         </div>
     </div>
-</body>
 
+    <!--Responsiv HTML-->
+</body>
 </html>
