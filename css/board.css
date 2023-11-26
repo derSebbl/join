@@ -47,6 +47,7 @@ li {
 }
 
 .boardHeader {
+  max-width: 1208px;
   width: 95%;
   padding-top: 79.5px;
   padding-bottom: 55.5px;

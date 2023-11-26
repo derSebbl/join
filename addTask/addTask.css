@@ -652,7 +652,7 @@ textarea::placeholder {
 
 .footer {
   display: flex;
-  padding-top: 100px;
+  padding-top: 95px;
   max-width: 980px;
   width: 100vw;
   align-items: flex-end;
