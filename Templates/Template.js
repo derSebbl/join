@@ -28,12 +28,12 @@ function toContact(){
 };
 
 function toPrivacyPolicy() {
-    window.location.href = '../privacyPolicy.html'
+    window.open('../privacyPolicy.html', '_blank');
 };
 
 function toLegalNotice() {
-    window.location.href = '../legalNotice.html'
-};
+    window.open('../legalNotice.html', '_blank');
+}
 
 function openMiniMenu() {
     let miniMenu = document.getElementById("minimenu");
