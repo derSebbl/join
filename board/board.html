@@ -31,9 +31,24 @@
     <div id="BackgroundAddTaskBoard"></div>
     <div id="boardContainer">
         <div class="boardHeader">
-            <div id="boardTitleContainer"></div>
-            <div id="boardColumnTitleContainer"></div>
+            <div class="HeadlineHeader">
+                <div class="Headline">Board</div>
+                <div class="searchAndAddTask">
+                    <div class="search">
+                        <input id="searchTask" type="text" placeholder="Find Task">
+                        <div class="searchImg">
+                            <img src="/assets/icons/searchLineVertical.svg">
+                            <img src="/assets/icons/searchIconDefault.svg">
+                        </div>
+                    </div>
+                    <div class="addTask" onclick="openAddTaskBoard()">
+                        <p class="addTaskText">Add task</p>
+                        <img src="/assets/icons/add.svg">
+                    </div>
+                </div>
+            </div>
         </div>
+        <div id="boardColumnTitleContainer"></div>
         <div id="boardColumnContainer"></div>
     </div>
     <div id="cardOverlayContainer"></div>

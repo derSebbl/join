@@ -11,26 +11,25 @@ li {
 #boardContainer {
   display: flex;
   flex-direction: column;
-  padding: 20px 64px;
+  padding-right: 64px;
   padding-left: calc(238px + 64px);
   align-items: flex-start;
   gap: 24px;
-  flex-shrink: 0;
 }
 
 #boardColumnContainer {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  gap: 10px;
+  width: 1208px;
+  align-items: flex-start;
+  gap: 26px;
+  flex-shrink: 0;
 }
 
 #boardColumnTitleContainer {
-    display: flex;
-    width: 100%;
-    padding: 0px 64px;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  width: 1208px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .dimBoardContainer {
@@ -48,7 +47,94 @@ li {
 }
 
 .boardHeader {
-    height: 232px;
+  width: 95%;
+  padding-top: 79.5px;
+  padding-bottom: 55.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.HeadlineHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Headline {
+  color: #000;
+  font-family: Inter;
+  font-size: 61px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.searchAndAddTask {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+}
+
+.search {
+  display: flex;
+  width: 312px;
+  padding: 8px 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--icon, #a8a8a8);
+  background: #fff;
+  justify-content: space-between;
+}
+
+#searchTask {
+  width: 250px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  outline: none;
+  border: none;
+}
+
+.searchImg {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.addTask {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 10px;
+  border: 1px solid #2a3647;
+  background: #2a3647;
+}
+
+.addTask:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 2px -2px rgba(0, 0, 0, 0.106);
+  background-color: #2aaae2;
+  border: 1px solid #2aaae2;
+}
+
+.addTaskText {
+  width: 92px;
+  height: 24px;
+  color: var(--white, #fff);
+  font-family: Inter;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
 }
 
 .boardColumnTitleOneColumn {
