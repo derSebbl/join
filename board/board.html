@@ -19,20 +19,110 @@
     <script src="../js/designTemplatesGeneralElements.js"></script>
     <script src="../js/board.js"></script>
     <script src="../addTask/addTask.js"></script>
+    <script src="../addTask/addTaskonly.js"></script>
     <script src="../login/showToast.js"></script>
     <title>Join - Board</title>
 </head>
 
-<body onload="init(); initBoard();">
+<body onload="init(); initBoard(); initAddTask()">
 
     <div w3-include-html="/Templates/header.html"></div> <!--header-->
     <div w3-include-html="/Templates/navBar.html"></div> <!--navBar-->
-
+    <div id="BackgroundAddTaskBoard"></div>
     <div id="boardContainer">
         <div id="boardColumnTitleContainer"></div>
         <div id="boardColumnContainer"></div>
     </div>
     <div id="cardOverlayContainer"></div>
+    <div id="mainContainerAddTask"> <!--Container for Content, better for margin, padding etc.-->
+        <div class="headlineAddTask">
+            <span>Add Task</span>
+        </div>
+        <div id="closeAddTaskBoard" onclick="closeAddTaskBoard()">X</div>
+        <form onsubmit="addToTask(); return false" class="formContainerAddTask" id="formContainer"> <!--Container for the Formular-->
+    
+            <div id="formLeft" class="formLeft"> <!--left Side from the Page-->
+    
+                <div class="title"> <!--Title for the Task (required)-->
+                    <div class="titleText">Title<span class="star">*</span></div>
+                    <div class="titleField"><input required class="titleInput" type="text" id="title" placeholder= "Enter a title"></div>
+                </div>
+    
+                <div class="description"> <!--Description for the Task-->
+                    <div class="descriptionText">Description</div>
+                    <div class="descriptionField"><textarea class="descriptionInput" id="description" placeholder="Enter a Description"></textarea></div>
+                </div>
+    
+                <div id="assigned" class="assigned"> <!--Assignment for the Task-->
+                    <div id="assignedText" class="assignedText">Assigned to</div>
+                    <div class="assignedField">
+                        <div class="assignedContainer" flex;"><input autocomplete="off" oninput="filterContacts()" onclick="openNameList()" id="assignedTo" class="assignedInput" placeholder="Select contacts to assign"><img class="assignedArrow" onclick="showNameList()" src="/addTask/img/arrow_drop_downaa.svg"></div>
+                        <div style="display: none;" id="checkbox"></div>
+                        <input type="hidden" id="assignedToInput">
+                    </div>
+                    <div id="assignedSelected"></div>
+                </div>
+            </div>
+    
+            <div class="line"><img src="/addTask/img/Vector 4.svg" alt=""></div> <!--line in the middle-->
+    
+            <div id="formRight" class="formRight"> <!--right Side from the Page-->
+    
+                <div class="date"> <!--date for the Task-->
+                    <div class="dateText">Due Date<span class="star">*</span></div>
+                    <div class="dateField"><input required class="dateInput" id="date" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="dd/mm/yyy"></div>
+                </div>
+    
+                <div id="prio" class="prio"> <!--prio for the Task-->
+                    <div class="prioText">Prio</div>
+                    <div class="prioField">
+                        <div class="urgent" id="urgent" onclick="selectPriority('urgent')">Urgent<img src="/addTask/img/Prio alta.svg"></div>
+                        <div class="medium" id="medium" onclick="selectPriority('medium')">Medium<img src="/addTask/img/Prio media.svg"></div>
+                        <div class="low" id="low" onclick="selectPriority('low')">Low<img src="/addTask/img/Prio baja.svg"></div>
+                        <input type="hidden" id="selectedPriority" name="selectedPriority" value="">
+                    </div>
+                </div>
+    
+                <div class="category"> <!--category for the Task-->
+                    <div class="categoryText">Category<span class="star">*</span></div>
+                    <div class="categoryField">
+                        <!-- <input id="category" required list="categorys" class="categoryInput" placeholder="Select task category"> -->
+                        <select id="category" name="category" class="categoryInput" required>
+                            <option value="">Select task category</option>
+                            <option value=1>Technical Task</option>
+                            <option value=0>User Story</option>
+                          </select>
+                        
+                    </div>
+                    <datalist id="categorys">
+                     <!--Value for the Dropdwon-->
+                    </datalist>
+                </div>
+    
+                <div class="subtask"> <!--subtask for the Task-->
+                    <div class="subtaskText">Subtask</div>
+                    <div class="subtaskField">
+                        <input autocomplete="off" minlength="1" id="subtaskInput" type="text" class="subtaskInput" placeholder="Add new subtask">
+                        <img id="subtaskImgPlus" src="/addTask/img/Subtasks icons11.svg">
+                        <div id="subtaskImg">
+                            <img id="subtaskImgX" onclick="clearSubtask()" src="/addTask/img/Subtasks icon X.svg">
+                            <img src="/addTask/img/Subtask Vect.svg">
+                            <img id="subtaskImgAccept" onclick="addSubtask()" src="/addTask/img/Subtasks icon accept.svg">
+                        </div>
+                    </div>
+                    <div id="subtaskList"></div>
+                </div> 
+            </div>
+        </form>
+        <div class="footerAddTask">
+            <p class="bottomText"><span class="star">*</span>This field is required</p>
+        
+            <div class="buttons">
+                <div class="clearContainer"><button onclick="clearValues()" id="clear"><span class="clearText">Clear</span><img class="clearImg" src="/addTask/img/iconoir_cancel.svg"></button></div>
+                <button form="formContainer" id="create"><span class="createText">Create Task</span><img src="/addTask/img/check.svg"></button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

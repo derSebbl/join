@@ -459,9 +459,8 @@ function setActivePrioButtonEdit(cardDatas) {
 
 
 function createNewTaskInColumn(columnId) {
+    openAddTaskBoard();
     console.log('columnId', columnId);
-
-
 }
 
 
@@ -677,6 +676,21 @@ function removeHighlight(i) {
         document.getElementById(boardColumn[i + 1] + 'HighlightCardFrame').classList.remove('dragArea');
         document.getElementById(boardColumn[i + 1] + 'HighlightCardFrame').classList.remove('dragAreaHighlight');
     }
-}
+};
+
+function closeAddTaskBoard(){
+    let addTaskBoard = document.getElementById('mainContainerAddTask');
+    let background = document.getElementById('BackgroundAddTaskBoard');
+    addTaskBoard.style.display = 'none';
+    background.style.display = 'none';
+    initBoard();
+};
+
+function openAddTaskBoard(){
+    let addTaskBoard = document.getElementById('mainContainerAddTask');
+    let background = document.getElementById('BackgroundAddTaskBoard');
+    addTaskBoard.style.display = 'flex';
+    background.style.display = 'flex';
+};
 
 
