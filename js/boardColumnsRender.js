@@ -76,12 +76,15 @@ function ChangeParentsResp(){
     let InProgressColumn = document.getElementById('boardColumnInProgress');
     let AwaitFeedbackColumn = document.getElementById('boardColumnAwaitFeedback');
     let DoneColumn = document.getElementById('boardColumnDone');
+    let boardHeader = document.getElementById('boardHeader');
+    let search = document.getElementById('search');
 
     if(window.innerWidth < 1300){
     ToDoHeader.appendChild(ToDoColumn);
     InProgressHeader.appendChild(InProgressColumn);
     AwaitFeedbackHeader.appendChild(AwaitFeedbackColumn);
     DoneHeader.appendChild(DoneColumn);
+    boardHeader.appendChild(search);
     } else {
         ChangeParentsRespBack();
     }
@@ -89,14 +92,17 @@ function ChangeParentsResp(){
 
 function ChangeParentsRespBack(){
     let MainColumnContainer = document.getElementById('boardColumnContainer');
+    let searchAndAddTask = document.getElementById('searchAndAddTask');
     let ToDoColumn = document.getElementById('boardColumnToDo');
     let InProgressColumn = document.getElementById('boardColumnInProgress');
     let AwaitFeedbackColumn = document.getElementById('boardColumnAwaitFeedback');
     let DoneColumn = document.getElementById('boardColumnDone');
+    let search = document.getElementById('search');
 
     MainColumnContainer.appendChild(ToDoColumn);
     MainColumnContainer.appendChild(InProgressColumn);
     MainColumnContainer.appendChild(AwaitFeedbackColumn);
     MainColumnContainer.appendChild(DoneColumn);
+    searchAndAddTask.appendChild(search);
 };
 

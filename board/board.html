@@ -31,13 +31,14 @@
 
     <div w3-include-html="../Templates/header.html"></div> <!--header-->
     <div w3-include-html="../Templates/navBar.html"></div> <!--navBar-->
+<div class="main">
     <div id="BackgroundAddTaskBoard"></div>
     <div id="boardContainer">
-        <div class="boardHeader">
+        <div id="boardHeader" class="boardHeader">
             <div class="HeadlineHeader">
                 <div class="Headline">Board</div>
-                <div class="searchAndAddTask">
-                    <div class="search">
+                <div id="searchAndAddTask" class="searchAndAddTask">
+                    <div id="search" class="search">
                         <input id="searchTask" type="text" placeholder="Find Task">
                         <div class="searchImg">
                             <img src="../assets/icons/searchLineVertical.svg">
@@ -144,7 +145,6 @@
             </div>
         </div>
     </div>
-
-    <!--Responsiv HTML-->
+</div>
 </body>
 </html>

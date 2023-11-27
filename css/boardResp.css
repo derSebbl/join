@@ -1,6 +1,8 @@
 @media (max-width: 1300px) {
-  .search {
-    display: none;
+  .main {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px;
   }
 
   .addTaskText {
@@ -9,6 +11,7 @@
 
   #boardContainer {
     max-width: 414px;
+    padding: 0;
   }
 
   .HeadlineHeaderResp {
@@ -18,14 +21,32 @@
     gap: 1px;
   }
 
+  .Headline {
+    color: #000;
+    font-family: Inter;
+    font-size: 47px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  .searchAndAddTask {
+    display: flex;
+    padding: 3px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
   .boardHeader {
     width: 102%;
+    height: 146px;
+    padding-top: 127.5px;
   }
 
   .addTask {
     display: flex;
-    width: 40px;
-    height: 40px;
     padding: 3px;
     justify-content: center;
     align-items: center;
