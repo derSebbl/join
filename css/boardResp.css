@@ -7,11 +7,19 @@
     display: none;
   }
 
+  #boardContainer {
+    max-width: 414px;
+  }
+
   .HeadlineHeaderResp {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1px;
+  }
+
+  .boardHeader {
+    width: 102%;
   }
 
   .addTask {
@@ -24,6 +32,30 @@
     gap: 10px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: var(--version-2-main-color, #2A3647);
+    background: var(--version-2-main-color, #2a3647);
+  }
+
+  #boardColumnContainer {
+    display: none;
+  }
+
+  #boardColumnTitleContainer {
+    flex-direction: column;
+    width: 100%;
+    gap: 26px;
+  }
+
+  .boardColumnTitleOneColumn {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .TitleField {
+    color: var(--version-2-main-color, #2a3647);
+    font-family: Inter;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
   }
 }

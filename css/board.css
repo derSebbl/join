@@ -32,6 +32,13 @@ li {
   align-items: flex-start;
 }
 
+.TitleField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .dimBoardContainer {
   position: fixed;
   top: 0;

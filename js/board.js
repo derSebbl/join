@@ -11,6 +11,7 @@ async function initBoard() {
     renderBoardColumnTitleContainer();
     renderBoardColumns();
     updateBoardHTML();
+    ChangeParentsResp();
     // console.log('boardTodos:', boardTodos);
     // sortBoardToDosArray();
 }

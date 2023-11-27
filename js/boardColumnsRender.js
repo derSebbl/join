@@ -1,3 +1,7 @@
+window.addEventListener('resize', function() {
+    ChangeParentsResp();
+});
+
 function renderBoardColumnTitleContainer() {
     let outputColumnTitle = '';
     let columnTitle;
@@ -31,8 +35,10 @@ function renderBoardColumnTitleContainer() {
         }
         outputColumnTitle += `
                                 <div class="boardColumnTitleOneColumn" id="${id}">
-                                    <div>${columnTitle}</div>
+                                    <div class="TitleField">
+                                    ${columnTitle}
                                     ${plusButtonIcons}
+                                    </div>
                                 </div>
                             `;
     }
@@ -71,10 +77,26 @@ function ChangeParentsResp(){
     let AwaitFeedbackColumn = document.getElementById('boardColumnAwaitFeedback');
     let DoneColumn = document.getElementById('boardColumnDone');
 
+    if(window.innerWidth < 1300){
     ToDoHeader.appendChild(ToDoColumn);
     InProgressHeader.appendChild(InProgressColumn);
     AwaitFeedbackHeader.appendChild(AwaitFeedbackColumn);
     DoneHeader.appendChild(DoneColumn);
+    } else {
+        ChangeParentsRespBack();
+    }
 };
 
+function ChangeParentsRespBack(){
+    let MainColumnContainer = document.getElementById('boardColumnContainer');
+    let ToDoColumn = document.getElementById('boardColumnToDo');
+    let InProgressColumn = document.getElementById('boardColumnInProgress');
+    let AwaitFeedbackColumn = document.getElementById('boardColumnAwaitFeedback');
+    let DoneColumn = document.getElementById('boardColumnDone');
+
+    MainColumnContainer.appendChild(ToDoColumn);
+    MainColumnContainer.appendChild(InProgressColumn);
+    MainColumnContainer.appendChild(AwaitFeedbackColumn);
+    MainColumnContainer.appendChild(DoneColumn);
+};
 
