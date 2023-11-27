@@ -73,6 +73,14 @@
     top: auto;
 }
 
+#checkbox {
+    height: 100px;
+}
+
+#subtaskList {
+    padding: 0;
+}
+
 .bottomText,
 .buttons {
     padding: 0;
