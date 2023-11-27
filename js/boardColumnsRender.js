@@ -7,18 +7,22 @@ function renderBoardColumnTitleContainer() {
         switch (i) {
             case 0:
                 columnTitle = 'To do';
+                id = 'To do';
                 break;
 
             case 1:
                 columnTitle = 'In progress';
+                id = 'In progress';
                 break;
 
             case 2:
                 columnTitle = 'Await feedback';
+                id = 'Await feedback';
                 break;
 
             case 3:
                 columnTitle = 'Done';
+                id = 'Done';
                 plusButtonIcons = '';
                 break;
 
@@ -26,8 +30,8 @@ function renderBoardColumnTitleContainer() {
                 break;
         }
         outputColumnTitle += `
-                                <div class="boardColumnTitleOneColumn">
-                                    <div id="${columnTitle}>${columnTitle}</div>
+                                <div class="boardColumnTitleOneColumn" id="${id}">
+                                    <div>${columnTitle}</div>
                                     ${plusButtonIcons}
                                 </div>
                             `;
@@ -56,3 +60,21 @@ function renderBoardColumns() {
     }
     document.getElementById('boardColumnContainer').innerHTML = outputColumns;
 }
+
+function ChangeParentsResp(){
+    let ToDoHeader = document.getElementById('To do');
+    let InProgressHeader = document.getElementById('In progress');
+    let AwaitFeedbackHeader = document.getElementById('Await feedback');
+    let DoneHeader = document.getElementById('Done');
+    let ToDoColumn = document.getElementById('boardColumnToDo');
+    let InProgressColumn = document.getElementById('boardColumnInProgress');
+    let AwaitFeedbackColumn = document.getElementById('boardColumnAwaitFeedback');
+    let DoneColumn = document.getElementById('boardColumnDone');
+
+    ToDoHeader.appendChild(ToDoColumn);
+    InProgressHeader.appendChild(InProgressColumn);
+    AwaitFeedbackHeader.appendChild(AwaitFeedbackColumn);
+    DoneHeader.appendChild(DoneColumn);
+};
+
+
