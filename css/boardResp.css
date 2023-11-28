@@ -9,9 +9,14 @@
     display: none;
   }
 
+  .search {
+    width: auto;
+  }
+
   #boardContainer {
     max-width: 414px;
     padding: 0;
+    width: 90%;
   }
 
   .HeadlineHeaderResp {
@@ -85,5 +90,11 @@
     white-space: nowrap;
     flex-direction: row;
     flex: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .boardTaskColumn::-webkit-scrollbar {
+    display: none;
   }
 }

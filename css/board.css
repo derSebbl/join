@@ -297,6 +297,32 @@ li {
   z-index: 1;
 }
 
+.cardContentText {
+  white-space: wrap;
+  width: 230px;
+  overflow-y: scroll;
+  height: 43px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cardContentTitle {
+  white-space: wrap;
+  width: 230px;
+  overflow-y: scroll;
+  height: 43px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cardContentText::-webkit-scrollbar {
+  display: none;
+}
+
+.cardContentTitle::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
