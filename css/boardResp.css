@@ -79,4 +79,11 @@
     font-weight: 700;
     line-height: 120%;
   }
+
+  .boardTaskColumn {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-direction: row;
+    flex: auto;
+  }
 }
