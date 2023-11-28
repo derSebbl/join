@@ -323,13 +323,13 @@ p {
 
 /* ---------------- Responsive Design -------------------------- */
 
-@media (max-width: 1360px) {
+@media (max-width: 1420px) {
   .summaryGreetings {
     display: none;
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1420px) {
   .mainContainer {
     padding-left: 0px;
     padding-top: 95px;

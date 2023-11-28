@@ -79,7 +79,7 @@ function ChangeParentsResp(){
     let boardHeader = document.getElementById('boardHeader');
     let search = document.getElementById('search');
 
-    if(window.innerWidth < 1300){
+    if(window.innerWidth < 1420){
     ToDoHeader.appendChild(ToDoColumn);
     InProgressHeader.appendChild(InProgressColumn);
     AwaitFeedbackHeader.appendChild(AwaitFeedbackColumn);

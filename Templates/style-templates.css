@@ -217,7 +217,7 @@ nav {
   display: none;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1420px) {
   header {
     padding: 20px 16px;
     position: fixed;
@@ -261,7 +261,6 @@ nav {
     bottom: 0;
     top: auto;
     padding: 0 2px 0 2px;
-    max-width: 1300px;
   }
 
   .logo,
