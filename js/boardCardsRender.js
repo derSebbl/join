@@ -257,49 +257,28 @@ function editCardDatas(cardId) {
 
 function renderCardTaskOverlayAssignedToBadges(cardDatas) {
     let output = '';
-    let assignedUsers = cardDatas['assignedTo'].split(",");
-    console.log('assignedUsers: ', assignedUsers);
-    for (let i = 0; i < assignedUsers.length; i++) {
-        output += `
-                <div class="designProfileBadgeContact">
-                    <div class="designProfileBadgeContactBanner">
-                        <div class="designProfileBadge">
-                            <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
-                                <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
+    if (cardDatas['assignedTo']) {
+        let assignedUsers = cardDatas['assignedTo'].split(",");
+        console.log('assignedUsers: ', assignedUsers);
+        for (let i = 0; i < assignedUsers.length; i++) {
+            output += `
+                    <div class="designProfileBadgeContact">
+                        <div class="designProfileBadgeContactBanner">
+                            <div class="designProfileBadge">
+                                <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
+                                    <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="designProfileBadgeContactData">${arrayOfRegisteredUsers[assignedUsers[i]]['username']}</div>
-                    </div>
-                </div>
-    
-        `;
-    }
-    return output;
-
-}
-
-
-function renderCardTaskOverlayAssignedToBadgesEdit(cardDatas) {
-    let output = '';
-    let assignedUsers = cardDatas['assignedTo'].split(",");
-    console.log('assignedUsers: ', assignedUsers);
-    for (let i = 0; i < assignedUsers.length; i++) {
-        output += `
-                <div class="designProfileBadgeContact">
-                    <div class="designProfileBadgeContactBanner">
-                        <div class="designProfileBadge">
-                            <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
-                                <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
-                            </div>
+                            <div class="designProfileBadgeContactData">${arrayOfRegisteredUsers[assignedUsers[i]]['username']}</div>
                         </div>
                     </div>
-                </div>
-    
-        `;
+        
+            `;
+        }
     }
     return output;
-
 }
+
 
 function renderCardTaskOverlayEditSaveButton(cardDatas) {
     let output = '<button form="formContainer" id="create"><span class="createText">Ok</span><img src="../addTask/img/check.svg"></button>';
