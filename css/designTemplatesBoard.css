@@ -737,8 +737,6 @@ input:hover, textarea:hover {
     align-self: flex-start;
 }
 
-.cardTaskOverlayContentInnerTop {}
-
 .cardTaskOverlayContentTitle {
     align-self: stretch;
     color: var(--black, #000);
