@@ -7,7 +7,7 @@ let boardOverlayIsOpen = false;
 async function initBoard() {
     await loadUsersData();
     await loadRegisteredUsers();
-    // await loadTasksData();
+    await loadTasksData();
     renderBoardColumnTitleContainer();
     renderBoardColumns();
     updateBoardHTML();
@@ -90,6 +90,7 @@ function openCardDatas(cardId) {
     openOverlayBackground();
     if (checkCardlabelIfPresent(cardId)) {
         renderCardDatasOverlay(cardId);
+        loadTasksData();
     } else {
         console.log('Error: Cardlabel not found');
     }

@@ -90,6 +90,7 @@ function renderUserProfileInitials(usernameForInitials) {
 async function loadTasksData() {
     try {
         boardTodos = JSON.parse(await getItem('boardtasks'));
+        console.log('loadTasksDate: geklappt');
     } catch (e) {
         console.log('Loading error:', e);
     }
@@ -101,6 +102,7 @@ async function setTasksData() {
     // console.log('Save Datas', JSON.stringify(boardTodos));
     try {
         await setItem('boardtasks', JSON.stringify(boardTodos));
+        console.log('setTasksData: geklappt');
     } catch (e) {
         console.log('Loading error:', e);
     }
