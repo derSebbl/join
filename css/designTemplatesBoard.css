@@ -830,8 +830,9 @@ input:hover, textarea:hover {
 
 .cardTaskOverlayContentDescriptionEdit textarea {
     display: flex;
-    flex: 1 0 0;
-    height: 120px;
+    height: 90px;
+    width: 400px;
+    max-width: 400px;
     padding: 18px 16px;
     align-items: flex-start;
     gap: 10px;
