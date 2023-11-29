@@ -134,7 +134,7 @@ function createNewTaskInColumn(columnId) {
 
 function switchSubtaskCheck(id, i) {
     console.log('switchSubtaskCheck i: ', i);
-    // console.log('document.getElementById("cardTaskOverlaySubtasksDatas").innerText: ', document.getElementById("cardTaskOverlaySubtasksDatas").innerText);
+
     if (boardTodos[id]['subtasksToChecked'][i] == false || boardTodos[id]['subtasksToChecked'][i] == 0) {
         console.log('switch subtasksToChecked from false to true');
         boardTodos[id]['subtasksToChecked'][i] = true;
@@ -146,6 +146,8 @@ function switchSubtaskCheck(id, i) {
     }
     setTasksData();
 }
+
+
 
 async function deleteCard(cardId) {
     boardTodos.splice(cardId, 1);

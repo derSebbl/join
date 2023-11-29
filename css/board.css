@@ -5,7 +5,7 @@ body {
 li {
   margin-left: 16px;
   margin-bottom: 4px;
-  list-style: inside;
+  list-style: none;
 }
 
 #boardContainer {
