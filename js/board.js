@@ -155,6 +155,7 @@ async function deleteCard(cardId) {
     renderBoardColumnTitleContainer();
     renderBoardColumns();
     updateBoardHTML();
+    closeOverlayBackground();
 }
 
 function sortBoardToDosArray() {

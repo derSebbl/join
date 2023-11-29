@@ -277,7 +277,7 @@ function renderCardTaskOverlayAssignedToBadges(cardDatas) {
         }
     }
     return output;
-}
+};
 
 
 function renderCardTaskOverlayEditSaveButton(cardDatas) {
