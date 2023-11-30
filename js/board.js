@@ -260,5 +260,3 @@ function filterAndDisplayCards(cards, searchTerm) {
         }
     }
 };
-
-
