@@ -135,12 +135,10 @@ function createNewTaskInColumn(columnId) {
 function switchSubtaskCheck(id, i) {
     console.log('switchSubtaskCheck i: ', i);
 
-    if (boardTodos[id]['subtasksToChecked'][i] == false || boardTodos[id]['subtasksToChecked'][i] == 0) {
-        console.log('switch subtasksToChecked from false to true');
+    if (boardTodos[id]['subtasksToChecked'][i] === false || boardTodos[id]['subtasksToChecked'][i] === 0) {
         boardTodos[id]['subtasksToChecked'][i] = true;
         document.getElementById(`subtasksCheckField${i}`).checked = true;
-    } else if (boardTodos[id]['subtasksToChecked'][i] == true) {
-        console.log('switch subtasksToChecked from true to false');
+    } else if (boardTodos[id]['subtasksToChecked'][i] === true) {
         boardTodos[id]['subtasksToChecked'][i] = false;
         document.getElementById(`subtasksCheckField${i}`).checked = false;
     }
