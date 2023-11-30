@@ -147,6 +147,18 @@ function switchSubtaskCheck(id, i) {
     setTasksData();
 }
 
+function updateSubtaskImage(id, i) {
+    let checkbox = document.getElementById(`subtasksCheckField${i}`);
+    let label = checkbox.parentElement;
+    let image = label.querySelector('.checkButtonChecked');
+
+    if (boardTodos[id]['subtasksToChecked'][i]) {
+        image.src = '../assets/icons/checkButtonChecked.svg';
+    } else {
+        image.src = '../assets/icons/checkButtonUnchecked.svg';
+    }
+}
+
 
 
 async function deleteCard(cardId) {
