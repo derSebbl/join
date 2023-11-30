@@ -128,19 +128,13 @@ function pushIntoTasksData(newTask) {
         columnCategory: 'boardColumnToDo'
     };
     boardTodos.push(newBoardTodo);
-
-
-    // console.log('boardTodos[nextTaskId]', boardTodos[nextTaskId]);
-    console.log('boardTodos: ', boardTodos);
     setTasksData();
 }
 
 
 function initSubtasksChecked(inputSubtasksTo) {
-    console.log('inputSubtasksTo: ', inputSubtasksTo);
     let cardSubtasks = inputSubtasksTo.split("\n");
     let arraySubtasksToCheck = [];
-    console.log('cardSubtasks.length: ', cardSubtasks.length);
     let output = '';
     for (let i = 0; i < cardSubtasks.length; i++) {
         arraySubtasksToCheck[i] = false;
@@ -150,7 +144,6 @@ function initSubtasksChecked(inputSubtasksTo) {
         //     output += '0';
         // }
     }
-    console.log('arraySubtasksToCheck output: ', arraySubtasksToCheck);
     return arraySubtasksToCheck;
 }
 
@@ -184,7 +177,6 @@ function assignedToListInsertUser(cardDatas) {
         label.appendChild(checkbox);
         for (let z = 0; z < assignedUsers.length; z++) {
             if (arrayOfRegisteredUsers[i]['username'] == arrayOfRegisteredUsers[assignedUsers[z]]['username']) {
-                // console.log(`arrayOfRegisteredUsers[assignedUsers[z]]: `, arrayOfRegisteredUsers[assignedUsers[z]]['username']);
                 label.children[0].checked = true;
 
             }
@@ -213,7 +205,6 @@ function addEditedSubtask() {
 
 
 function pushChangesIntoTasksData(cardId) {
-    console.log('document.getElementById("assignedToInput").value: ', document.getElementById("assignedToInput").value)
     boardTodos[cardId]['title'] = document.getElementById("titleInput").value;
     boardTodos[cardId]['description'] = document.getElementById("descriptionInput").value;
     boardTodos[cardId]['assignedTo'] = document.getElementById("assignedToInput").value;
@@ -222,18 +213,13 @@ function pushChangesIntoTasksData(cardId) {
     if (!(document.getElementById("subtaskList") == null)) {
         boardTodos[cardId]['subtasks'] = document.getElementById("subtaskList").innerText;
         if (boardTodos[cardId]['subtasksToChecked'] == null) {
-            console.log(`subtasksToChecked ist NULL`);
             boardTodos[cardId]['subtasksToChecked'] = initSubtasksChecked(boardTodos[cardId]['subtasks']);
         }
-        console.log(`boardTodos[cardId]['subtasks']: `, boardTodos[cardId]['subtasks']);
-        console.log(`boardTodos[cardId]['subtasksToChecked']: `, boardTodos[cardId]['subtasksToChecked']);
     }
 
 
     closeOverlayBackground();
     updateBoardHTML();
-    // console.log('boardTodos[nextTaskId]', boardTodos[nextTaskId]);
-    console.log('boardTodos', boardTodos);
     setTasksData();
 }
 
@@ -291,11 +277,8 @@ function getDateFromTimestamp(Timestamp) {
 
 
 function getTimestampFromDate(dateForTimestamp) {
-    console.log('dateForTimestamp: ', dateForTimestamp);
-
     dateForTimestamp = dateForTimestamp.split("-");
     var newTimestamp = new Date(dateForTimestamp[0], dateForTimestamp[1] - 1, dateForTimestamp[2]);
-    console.log('getDateFromTimestamp: ', getDateFromTimestamp(newTimestamp.getTime() / 1000));
     return (newTimestamp.getTime() / 1000);
 }
 
@@ -310,7 +293,6 @@ function timestampToDateOrTimeofday(timestamp, dateOrTimeofday, limiter) {
     } else if (dateOrTimeofday == 'timeofday') {
         timeString = ('0' + timestampAsString.getHours()).slice(-2) + limiter + ('0' + timestampAsString.getMinutes()).slice(-2) + limiter + ('0' + timestampAsString.getSeconds()).slice(-2);
     }
-    console.log('timeString: ', timeString);
     return timeString;
 }
 

@@ -99,8 +99,6 @@ function generateHighlightCardFrameHTML(toDoCardsCategory) {
 }
 
 function renderCardDatasOverlay(cardId) {
-    console.log('boardTodos bei Overlayaufruf: ', boardTodos);
-
     const cardDatas = boardTodos[cardId];
     let timeString = timestampToDateOrTimeofday(cardDatas['duedate'], 'date', '.');
     document.getElementById('cardOverlayContainer').innerHTML = `
@@ -259,7 +257,6 @@ function renderCardTaskOverlayAssignedToBadges(cardDatas) {
     let output = '';
     if (cardDatas['assignedTo']) {
         let assignedUsers = cardDatas['assignedTo'].split(",");
-        console.log('assignedUsers: ', assignedUsers);
         for (let i = 0; i < assignedUsers.length; i++) {
             output += `
                     <div class="designProfileBadgeContact">
@@ -283,7 +280,6 @@ function renderCardTaskOverlayAssignedToBadges(cardDatas) {
 function renderCardTaskOverlayAssignedToBadgesEdit(cardDatas) {
     let output = '';
     let assignedUsers = cardDatas['assignedTo'].split(",");
-    console.log('assignedUsers: ', assignedUsers);
     for (let i = 0; i < assignedUsers.length; i++) {
         output += `
                 <div class="designProfileBadgeContact">
@@ -324,8 +320,6 @@ function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) 
     let output = '';
     if (cardDatas['subtasks']) {
         let cardSubtasks = cardDatas['subtasks'].split("\n");
-        console.log('cardSubtasks: ', cardSubtasks);
-
         output += `
             <div class="cardTaskOverlaySubtasks">
                 <div class="cardTaskOverlaySubtasksTitle">Subtasks</div>
