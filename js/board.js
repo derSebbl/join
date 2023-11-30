@@ -12,7 +12,6 @@ async function initBoard() {
     renderBoardColumns();
     updateBoardHTML();
     ChangeParentsResp();
-    // console.log('boardTodos:', boardTodos);
     // sortBoardToDosArray();
 }
 
@@ -86,7 +85,6 @@ function moveTo(columnCategory) {
 }
 
 function openCardDatas(cardId) {
-    // console.log("boardTodos[cardId]['cardlabel']: ", boardTodos[cardId]['cardlabel']);
     openOverlayBackground();
     if (checkCardlabelIfPresent(cardId)) {
         renderCardDatasOverlay(cardId);
@@ -121,7 +119,6 @@ function checkCardlabelIfPresent(cardId) {
 
 function setActivePrioButtonEdit(cardDatas) {
     let priorityName = getPriorityName(cardDatas['priority']);
-    console.log('priorityName: ', priorityName);
     document.getElementById(priorityName).classList.add('selected');
     document.getElementById('selectedPriority').value = priorityName;
 }
@@ -129,12 +126,9 @@ function setActivePrioButtonEdit(cardDatas) {
 
 function createNewTaskInColumn(columnId) {
     openAddTaskBoard();
-    console.log('columnId', columnId);
 }
 
 function switchSubtaskCheck(id, i) {
-    console.log('switchSubtaskCheck i: ', i);
-
     if (boardTodos[id]['subtasksToChecked'][i] === false || boardTodos[id]['subtasksToChecked'][i] === 0) {
         boardTodos[id]['subtasksToChecked'][i] = true;
         document.getElementById(`subtasksCheckField${i}`).checked = true;
