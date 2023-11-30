@@ -343,7 +343,7 @@ function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) 
                 output += `
                     <li>
                         <label class="subtasksCheckField">
-                            <input id="subtasksCheckField${i}" class="subtasksCheckFieldImage" type="checkbox" onchange="switchSubtaskCheck(${cardDatas['id']}, ${i})" ${cardDatas['subtasksToChecked'][i] ? 'checked' : ''}>
+                            <input id="subtasksCheckField${i}" class="subtasksCheckFieldImage" type="checkbox" onchange="switchSubtaskCheck(${cardDatas['id']}, ${i}); updateSubtaskImage(${cardDatas['id']}, ${i})" ${cardDatas['subtasksToChecked'][i] ? 'checked' : ''}>
                             <img class="checkButtonUnchecked" src="../assets/icons/checkButtonUnchecked.svg" alt="unchecked">
                             <img class="checkButtonUncheckedHover" src="../assets/icons/checkButtonUncheckedHover.svg" alt="unchecked">
                             <img class="checkButtonChecked" src="${cardDatas['subtasksToChecked'][i] ? '../assets/icons/checkButtonChecked.svg' : '../assets/icons/checkButtonUnchecked.svg'}" alt="checked">
@@ -361,7 +361,7 @@ function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) 
                 output += `
                     <div class="cardTaskOverlaySubtasksDatasSubtask">
                         <label class="subtasksCheckField">
-                            <input id="subtasksCheckField${i}" class="subtasksCheckFieldImage" type="checkbox" onchange="switchSubtaskCheck(${cardDatas['id']}, ${i})" ${cardDatas['subtasksToChecked'][i] ? 'checked' : ''}>
+                            <input id="subtasksCheckField${i}" class="subtasksCheckFieldImage" type="checkbox" onchange="switchSubtaskCheck(${cardDatas['id']}, ${i}); updateSubtaskImage(${cardDatas['id']}, ${i})" ${cardDatas['subtasksToChecked'][i] ? 'checked' : ''}>
                             <img class="checkButtonUnchecked" src="../assets/icons/checkButtonUnchecked.svg" alt="unchecked">
                             <img class="checkButtonUncheckedHover" src="../assets/icons/checkButtonUncheckedHover.svg" alt="unchecked">
                             <img class="checkButtonChecked" src="${cardDatas['subtasksToChecked'][i] ? '../assets/icons/checkButtonChecked.svg' : '../assets/icons/checkButtonUnchecked.svg'}" alt="checked">
@@ -404,4 +404,16 @@ function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) 
         }
     }
     return output;
+}
+
+function updateSubtaskImage(id, i) {
+    let checkbox = document.getElementById(`subtasksCheckField${i}`);
+    let label = checkbox.parentElement;
+    let image = label.querySelector('.checkButtonChecked');
+
+    if (boardTodos[id]['subtasksToChecked'][i]) {
+        image.src = '../assets/icons/checkButtonChecked.svg';
+    } else {
+        image.src = '../assets/icons/checkButtonUnchecked.svg';
+    }
 }
