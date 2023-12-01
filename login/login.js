@@ -60,17 +60,12 @@ function changeLogoColor() {
 }
 
 async function guestLogin() {
-  // Erstellen Sie ein Gastbenutzerobjekt
   let guestUser = {
       username: 'Guest',
       email: 'gast@gast.com',
       password: 'gast',
   };
-
-  // Setzen Sie den eingeloggten Benutzer auf den Gastbenutzer
   loggedUser = guestUser;
   await setItem('currentUser', loggedUser);
-
-  // Weiterleitung zur Zusammenfassungsseite
   window.location.href = "../summary/summary.html";
 }
