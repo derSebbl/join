@@ -137,6 +137,17 @@ nav {
   top: 0;
 }
 
+.active {
+  background-color: #091931;
+}
+
+#summaryMenu.active:hover,
+#addTaskMenu.active:hover,
+#boardMenu.active:hover,
+#contactMenu.active:hover {
+  background-color: #091931;
+}
+
 .logo {
   width: 100.034px;
   height: 121.966px;
