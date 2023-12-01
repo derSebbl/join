@@ -282,7 +282,7 @@ function standardColorNamePlate() {
 };
 
 /**
- * Functtion to Fill the edit Contact Window with the Data of the selected Contact.
+ * Function to Fill the edit Contact Window with the Data of the selected Contact.
  * 
  * @param {number} x - Index of the selected Contact
  */
