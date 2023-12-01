@@ -58,3 +58,19 @@ function changeLogoColor() {
   const logo = document.getElementById("logo");
   logo.style.backgroundImage = 'url("../Templates/img/join-dark.svg")';
 }
+
+async function guestLogin() {
+  // Erstellen Sie ein Gastbenutzerobjekt
+  let guestUser = {
+      username: 'Guest',
+      email: 'gast@gast.com',
+      password: 'gast',
+  };
+
+  // Setzen Sie den eingeloggten Benutzer auf den Gastbenutzer
+  loggedUser = guestUser;
+  await setItem('currentUser', loggedUser);
+
+  // Weiterleitung zur Zusammenfassungsseite
+  window.location.href = "../summary/summary.html";
+}
