@@ -4,7 +4,7 @@ let summaryDates = ['29.11.2023', '30.12.2023', '01.01.2024'];
 
 async function initSummary() {
     await loadUser();
-    includeHTMLSummary();
+    await includeHTMLSummary();
     showToDoCount();
     showDoneCount();
     showUrgentCount();
