@@ -68,26 +68,6 @@ function showUrgentCount() {
 };
 
 /**
- * Function to check the earliest due date of the urgent cards
- * 
- */
-function showUrgentDeadline() {
-    let number = document.getElementById('urgentColor3');
-    number.innerHTML = '';
-
-    const priority2Todos = boardTodos.filter(todo => todo.priority === 2);
-    if (priority2Todos.length === 0) {
-        number.innerHTML = '-';
-        return;
-    }
-    priority2Todos.sort((a, b) => a.duedate - b.duedate);
-    const earliestDueDateTodo = priority2Todos[0];
-    const duedate = earliestDueDateTodo.duedate * 1000; // Umwandeln in Millisekunden
-    const formattedDueDate = new Date(duedate).toLocaleDateString();
-    number.innerHTML = `${formattedDueDate}`;
-};
-
-/**
  * Function to check how many cards are on the board
  * 
  */
@@ -134,6 +114,27 @@ function showTaskFeedback() {
            }
     }
     number.innerHTML += `${count}`;
+};
+
+
+/**
+ * Function to check the earliest due date of the urgent cards
+ * 
+ */
+function showUrgentDeadline() {
+    let number = document.getElementById('urgentColor3');
+    number.innerHTML = '';
+
+    const priority2Todos = boardTodos.filter(todo => todo.priority === 2);
+    if (priority2Todos.length === 0) {
+        number.innerHTML = '-';
+        return;
+    }
+    priority2Todos.sort((a, b) => a.duedate - b.duedate);
+    const earliestDueDateTodo = priority2Todos[0];
+    const duedate = earliestDueDateTodo.duedate * 1000; // Umwandeln in Millisekunden
+    const formattedDueDate = new Date(duedate).toLocaleDateString();
+    number.innerHTML = `${formattedDueDate}`;
 };
 
 /**
