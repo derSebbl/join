@@ -1,7 +1,5 @@
 let greetingText;
 
-let summaryDates = ['29.11.2023', '30.12.2023', '01.01.2024'];
-
 async function initSummary() {
     await loadUser();
     await includeHTMLSummary();
@@ -16,7 +14,10 @@ async function initSummary() {
     showUrgentDeadline();
 }
 
-//shows open amount of to-dos
+/**
+ * Function to check how many cards are in the to-do column
+ * 
+ */
 function showToDoCount() {
     let number = document.getElementById('todoColor1');
     number.innerHTML = '';
@@ -29,9 +30,12 @@ function showToDoCount() {
     }
 
     number.innerHTML += `${count}`;
-}
+};
 
-//shows amount of all to-dos which are done
+/**
+ * Function to check how many cards are in the done column
+ * 
+ */
 function showDoneCount() {
     let number = document.getElementById('doneColor1');
     number.innerHTML = '';
@@ -44,9 +48,12 @@ function showDoneCount() {
     }
 
     number.innerHTML += `${count}`;
-}
+};
 
-//shows amount of all open urgent to-dos
+/**
+ * Function to check how many cards are in the urgent column
+ * 
+ */
 function showUrgentCount() {
     let number = document.getElementById('urgentColor1');
     number.innerHTML = '';
@@ -60,7 +67,10 @@ function showUrgentCount() {
     number.innerHTML += `${count}`;
 };
 
-// zeigt das nächste Ablaufdatum für dringende To-Dos an
+/**
+ * Function to check the earliest due date of the urgent cards
+ * 
+ */
 function showUrgentDeadline() {
     let number = document.getElementById('urgentColor3');
     number.innerHTML = '';
@@ -77,7 +87,10 @@ function showUrgentDeadline() {
     number.innerHTML = `${formattedDueDate}`;
 };
 
-//shows total amount of tasks in board
+/**
+ * Function to check how many cards are on the board
+ * 
+ */
 function showAllTasks() {
     let number = document.getElementById('taskColor1');
     number.innerHTML = '';
@@ -87,9 +100,12 @@ function showAllTasks() {
            }
     }
     number.innerHTML += `${count}`;
-}
+};
 
-//shows amount of tasks in progress
+/**
+ * Function to check how many cards are in the in progress column
+ * 
+ */
 function showTaskInProgress() {
     let number = document.getElementById('taskColor3');
     number.innerHTML = '';
@@ -101,9 +117,12 @@ function showTaskInProgress() {
            }
     }
     number.innerHTML += `${count}`;
-}
+};
 
-//shows amount of tasks which require feddback
+/**
+ * Function to check how many cards are in the feedback column
+ * 
+ */
 function showTaskFeedback() {
     let number = document.getElementById('taskColor5');
     number.innerHTML = '';
@@ -115,18 +134,24 @@ function showTaskFeedback() {
            }
     }
     number.innerHTML += `${count}`;
-}
+};
 
-//shows user who is currently logged in
+/**
+ * Function to show the active user for the greeting text
+ * 
+ */
 function showActiveUser() {
     let name = document.getElementById('greetingName');
         name.innerHTML = '';
        name.innerHTML += currentUser.username;
 
         correctGreetingText();
-    }
+    };
 
-//displays correct greeting text
+/**
+ * Function to show the correct greeting text depending on the time of the day
+ * 
+ */
 function correctGreetingText(){
     let greetings = document.getElementById('rightGreeting')
     let now = new Date();
@@ -140,4 +165,4 @@ function correctGreetingText(){
     }
 
     greetings.innerHTML = greetingText;
-}
+};

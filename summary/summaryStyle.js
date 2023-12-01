@@ -1,4 +1,7 @@
-// Codeblock zum laden der Templates
+/**
+ * Function to create the navBar and header
+ * 
+ */
 async function includeHTMLSummary() {
   let includeElements = document.querySelectorAll('[w3-include-html]');
   for (let i = 0; i < includeElements.length; i++) {
@@ -11,163 +14,114 @@ async function includeHTMLSummary() {
           element.innerHTML = 'Page not found';
       }
   }
-}
+};
 
-// Ändert Icon, bei hovern über den Container
+/**
+ * Function to change the pen icon, when hovering over the container
+ * 
+ */
 function changePen() {
   let container = document.getElementById("hoverContainer1");
   let image = document.getElementById("pen1");
 
-  // Ändert das Bild, wenn der Mauszeiger über den Container hovert
   container.addEventListener("mouseover", function () {
     image.src = "./img/summaryPenHover.svg";
   });
 
-  // Setzt das Bild zurück, wenn der Mauszeiger den Container verlässt
   container.addEventListener("mouseout", function () {
     image.src = "./img/summaryPen.png";
   });
 
   changeToDoColor();
-}
+};
 
-//Ändert Textfarbe
+/**
+ * Function to change the text color, when hovering over the container and leave it
+ * 
+ */
 function changeToDoColor() {
-  let container = document.getElementById("hoverContainer1");
-  let h3Color = document.getElementById("todoColor1");
-  let h4Color = document.getElementById("todoColor2");
+  changeColor("hoverContainer1", ["todoColor1", "todoColor2"]);
+};
 
-  // Ändert Textfarbe in weiß
-  container.addEventListener("mouseover", function () {
-    h3Color.classList.add("changeColor");
-    h4Color.classList.add("changeColor");
-  });
-
-  //setzt Textfarbe wieder zurück
-  container.addEventListener("mouseout", function () {
-    h3Color.classList.remove("changeColor");
-    h4Color.classList.remove("changeColor");
-  });
-}
-
-
-// Ändert Icon, bei hovern über den Container
+/**
+ * Function to change the check icon, when hovering over the container
+ * 
+ */
 function changeCheck() {
   let container = document.getElementById("hoverContainer2");
   let image = document.getElementById("check1");
 
-  // Ändert das Bild, wenn der Mauszeiger über den Container hovert
   container.addEventListener("mouseover", function () {
     image.src = "./img/summaryCheckHover.svg";
   });
 
-  // Setzt das Bild zurück, wenn der Mauszeiger den Container verlässt
   container.addEventListener("mouseout", function () {
     image.src = "./img/summaryCheck.png";
   });
 
   changeDoneColor();
-}
+};
 
-//Ändert Textfarbe
+/**
+ * Function to change the text color, when hovering over the container Done and leave it
+ * 
+ */
 function changeDoneColor() {
-  let container = document.getElementById("hoverContainer2");
-  let h3Color = document.getElementById("doneColor1");
-  let h4Color = document.getElementById("doneColor2");
+  changeColor("hoverContainer2", ["doneColor1", "doneColor2"]);
+};
 
-  // Ändert Textfarbe in weiß
-  container.addEventListener("mouseover", function () {
-    h3Color.classList.add("changeColor");
-    h4Color.classList.add("changeColor");
-  });
-
-  //setzt Textfarbe wieder zurück
-  container.addEventListener("mouseout", function () {
-    h3Color.classList.remove("changeColor");
-    h4Color.classList.remove("changeColor");
-  });
-}
-
-
-//Ändert Textfarbe
+/**
+ * Function to change the urgent text, when hovering over the container
+ * 
+ */
 function changeUrgent() {
-    let container = document.getElementById("summaryContentMiddle");
-    let text1 = document.getElementById("urgentColor1");
-    let text2 = document.getElementById("urgentColor2");
-    let text3 = document.getElementById("urgentColor3");
-    let text4 = document.getElementById("urgentColor4");
-    
-    
-    // Ändert Textfarbe in weiß
-    container.addEventListener("mouseover", function () {
-      text1.classList.add("changeColor");
-      text2.classList.add("changeColor");
-      text3.classList.add("changeColor");
-      text4.classList.add("changeColor");
-    });
-  
-    //setzt Textfarbe wieder zurück
-    container.addEventListener("mouseout", function () {
-      text1.classList.remove("changeColor");
-      text2.classList.remove("changeColor");
-      text3.classList.remove("changeColor");
-      text4.classList.remove("changeColor");
-    });
-  }
+  changeColor("summaryContentMiddle", ["urgentColor1", "urgentColor2", "urgentColor3", "urgentColor4"]);
+  };
 
-//Ändert Textfarbe
+/**
+ * Function to change the text color, when hovering over the container Tasks in Board
+ * 
+ */
 function changeTask1() {
-    let container = document.getElementById("hoverContainer4");
-    let text1 = document.getElementById("taskColor1");
-    let text2 = document.getElementById("taskColor2");    
-    
-    // Ändert Textfarbe in weiß
-    container.addEventListener("mouseover", function () {
-      text1.classList.add("changeColor");
-      text2.classList.add("changeColor");
-    });
-  
-    //setzt Textfarbe wieder zurück
-    container.addEventListener("mouseout", function () {
-      text1.classList.remove("changeColor");
-      text2.classList.remove("changeColor");
-  })
-}
+  changeColor("hoverContainer4", ["taskColor1", "taskColor2"]);
+};
 
-//Ändert Textfarbe
+/**
+ * Function to change the text color, when hovering over the container Tasks in Progress
+ * 
+ */
 function changeTask2() {
-    let container = document.getElementById("hoverContainer5");
-    let text1 = document.getElementById("taskColor3");
-    let text2 = document.getElementById("taskColor4");    
-    
-    // Ändert Textfarbe in weiß
-    container.addEventListener("mouseover", function () {
-      text1.classList.add("changeColor");
-      text2.classList.add("changeColor");
-    });
-  
-    //setzt Textfarbe wieder zurück
-    container.addEventListener("mouseout", function () {
-      text1.classList.remove("changeColor");
-      text2.classList.remove("changeColor");
-  })
-}
+  changeColor("hoverContainer5", ["taskColor3", "taskColor4"]);
+};
 
-//Ändert Textfarbe
+/**
+ * Function to change the text color, when hovering over the container Awaiting Feedback
+ * 
+ */
 function changeTask3() {
-    let container = document.getElementById("hoverContainer6");
-    let text1 = document.getElementById("taskColor5");
-    let text2 = document.getElementById("taskColor6");    
-    
-    // Ändert Textfarbe in weiß
-    container.addEventListener("mouseover", function () {
-      text1.classList.add("changeColor");
-      text2.classList.add("changeColor");
-    });
+  changeColor("hoverContainer6", ["taskColor5", "taskColor6"]);
+};
+
+/**
+ * Fuction to change the text color, when hovering over the container and leave it
+ * 
+ * @param {string} containerId - id of the container to hover over 
+ * @param {string} textIds - ids of the text to change color
+ */
+function changeColor(containerId, textIds) {
+  let container = document.getElementById(containerId);
   
-    //setzt Textfarbe wieder zurück
-    container.addEventListener("mouseout", function () {
-      text1.classList.remove("changeColor");
-      text2.classList.remove("changeColor");
-  })
-}
+  container.addEventListener("mouseover", function () {
+    textIds.forEach(function(textId) {
+      let text = document.getElementById(textId);
+      text.classList.add("changeColor");
+    });
+  });
+
+  container.addEventListener("mouseout", function () {
+    textIds.forEach(function(textId) {
+      let text = document.getElementById(textId);
+      text.classList.remove("changeColor");
+    });
+  });
+};
