@@ -300,19 +300,6 @@ function renderCardTaskOverlayAssignedToBadgesEdit(cardDatas) {
 
 function renderCardTaskOverlayEditSaveButton(cardDatas) {
     let output = '<button form="formContainer" id="create"><span class="createText">Ok</span><img src="../addTask/img/check.svg"></button>';
-    //     output += `
-    //             <div class="designProfileBadgeContact">
-    //                 <div class="designProfileBadgeContactBanner">
-    //                     <div class="designProfileBadge">
-    //                         <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
-    //                             <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-
-    //     `;
-    // }
     return output;
 }
 
