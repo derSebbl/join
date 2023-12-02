@@ -319,42 +319,65 @@ function renderCardTaskOverlayEditSaveButton(cardDatas) {
 function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) {
     let output = '';
     let cardSubtasks = cardDatas['subtasks'].split("\n");
-    output += `
-        <div class="cardTaskOverlaySubtasks">
-            <div class="cardTaskOverlaySubtasksTitle">Subtasks</div>
-            <div id="cardTaskOverlaySubtasksDatas" class="cardTaskOverlaySubtasksDatas">
-    `;
-    if (editSubtasks == 1) {
+    if (cardDatas['subtasks']) {
         output += `
-            <div class="subtaskField">
-                <input autocomplete="off" minlength="1" id="subtaskInput" type="text" class="subtaskInput" placeholder="Add new subtask">
-                <img aria-disabled="true" onclick="addSubtask()" src="/addTask/img/Subtasks icons11.svg" alt="">
+            <div class="cardTaskOverlaySubtasks">
+                <div class="cardTaskOverlaySubtasksTitle">Subtasks</div>
+                <div id="cardTaskOverlaySubtasksDatas" class="cardTaskOverlaySubtasksDatas">
+        `;
+        if (editSubtasks == 1) {
+            output += `
+                <div class="subtaskField">
+                    <input autocomplete="off" minlength="1" id="subtaskInput" type="text" class="subtaskInput" placeholder="Add new subtask">
+                    <img aria-disabled="true" onclick="addSubtask()" src="/addTask/img/Subtasks icons11.svg" alt="">
+                </div>
+            `;
+        }
+        output += `
+            <ul id="subtaskList">
+        `;
+        for (let i = 0; i < cardSubtasks.length; i++) {
+            if (editSubtasks == 0) {
+                output += `
+                    <li>
+                        <label class="subtasksCheckField">
+                            <input id="subtasksCheckField${i}" class="subtasksCheckFieldImage" type="checkbox" onchange="switchSubtaskCheck(${cardDatas['id']}, ${i}); updateSubtaskImage(${cardDatas['id']}, ${i})" ${cardDatas['subtasksToChecked'][i] ? 'checked' : ''}>
+                            <img class="checkButtonUnchecked" src="../assets/icons/checkButtonUnchecked.svg" alt="unchecked">
+                            <img class="checkButtonUncheckedHover" src="../assets/icons/checkButtonUncheckedHover.svg" alt="unchecked">
+                            <img class="checkButtonChecked" src="${cardDatas['subtasksToChecked'][i] ? '../assets/icons/checkButtonChecked.svg' : '../assets/icons/checkButtonUnchecked.svg'}" alt="checked">
+                            <div class="checkButtonCheckedHoverGroup"><img class="checkButtonCheckedHover" src="../assets/icons/checkButtonCheckedHover.svg" alt="checked"></div>
+                            <div class="subtasksCheckFieldText">${cardSubtasks[i]}</div>
+                        </label>
+                    </li>
+                `;
+            } else if (editSubtasks == 1) {
+                output += `
+                    <div id="Subtask${i}" class="subtaskItem">
+                        <div id="contentSubtask${i}" class="contentSubtask">
+                            ${cardSubtasks[i]}
+                        </div>
+                        <div class="subtaskItemImg" id="subtaskItemImg${i}">
+                            <img id="subtaskEdit" onclick="editSubtask(${i})"  src="/addTask/img/Subtask edit.svg">
+                            <img src="/addTask/img/Subtask Vect.svg">
+                            <img id="subtaskDelete" onclick="deleteSubtask(${i})" src="/addTask/img/subtask delete.svg">
+                        </div>
+                        <div class="editSubtaskContainer" id="editSubtaskContainer${i}" style="display: none;">
+                            <input type="text" class="subtaskItemEdit" id="subtaskEdit${i}" value="${cardSubtasks[i]}">
+                            <img class ="editItemImg" src="/addTask/img/subtask delete.svg" onclick="deleteSubtask(${i})">
+                            <img src="/addTask/img/Subtask Vect.svg">
+                            <img class="editItemImg" src="/addTask/img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${i})">
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        output += `
+            </ul>
+        `;
+        output += `
+                </div>
             </div>
         `;
     }
-    output += `
-        <ul id="subtaskList">
-    `;
-    for (let i = 0; i < cardSubtasks.length; i++) {
-        output += `
-            <li>
-                <label class="subtasksCheckField">
-                    <input id="subtasksCheckField${i}" class="subtasksCheckFieldImage" type="checkbox" onchange="switchSubtaskCheck(${cardDatas['id']}, ${i}); updateSubtaskImage(${cardDatas['id']}, ${i})" ${cardDatas['subtasksToChecked'][i] ? 'checked' : ''}>
-                    <img class="checkButtonUnchecked" src="../assets/icons/checkButtonUnchecked.svg" alt="unchecked">
-                    <img class="checkButtonUncheckedHover" src="../assets/icons/checkButtonUncheckedHover.svg" alt="unchecked">
-                    <img class="checkButtonChecked" src="${cardDatas['subtasksToChecked'][i] ? '../assets/icons/checkButtonChecked.svg' : '../assets/icons/checkButtonUnchecked.svg'}" alt="checked">
-                    <div class="checkButtonCheckedHoverGroup"><img class="checkButtonCheckedHover" src="../assets/icons/checkButtonCheckedHover.svg" alt="checked"></div>
-                    <div class="subtasksCheckFieldText">${cardSubtasks[i]}</div>
-                </label>
-            </li>
-        `;
-    }
-    output += `
-        </ul>
-    `;
-    output += `
-            </div>
-        </div>
-    `;
     return output;
 }
