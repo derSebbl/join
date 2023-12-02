@@ -331,7 +331,7 @@ function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) 
         <ul id="subtaskList">
     `;
     for (let i = 0; i < cardSubtasks.length; i++) {
-        if (cardSubtasks[i].trim() !== '') { // Überprüfen, ob das Subtask nicht leer ist
+        if (cardSubtasks[i].trim() !== '') { 
             if (editSubtasks == 0) {
                 output += createSubtaskCheckField(cardDatas, cardSubtasks, i);
             } else if (editSubtasks == 1) {
