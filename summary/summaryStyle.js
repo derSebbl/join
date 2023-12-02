@@ -24,6 +24,10 @@ function changePen() {
   let container = document.getElementById("hoverContainer1");
   let image = document.getElementById("pen1");
 
+  container.addEventListener("mouseenter", function () {
+    image.src = "./img/summaryPenHover.svg";
+  });
+
   container.addEventListener("mouseover", function () {
     image.src = "./img/summaryPenHover.svg";
   });
@@ -50,6 +54,10 @@ function changeToDoColor() {
 function changeCheck() {
   let container = document.getElementById("hoverContainer2");
   let image = document.getElementById("check1");
+
+  container.addEventListener("mouseenter", function () {
+    image.src = "./img/summaryCheckHover.svg";
+  });
 
   container.addEventListener("mouseover", function () {
     image.src = "./img/summaryCheckHover.svg";
@@ -110,18 +118,15 @@ function changeTask3() {
  */
 function changeColor(containerId, textIds) {
   let container = document.getElementById(containerId);
-  
-  container.addEventListener("mouseover", function () {
-    textIds.forEach(function(textId) {
-      let text = document.getElementById(textId);
-      text.classList.add("changeColor");
-    });
-  });
 
-  container.addEventListener("mouseout", function () {
+  const handleEvent = (event, action) => {
     textIds.forEach(function(textId) {
       let text = document.getElementById(textId);
-      text.classList.remove("changeColor");
+      text.classList[action]("changeColor");
     });
-  });
+  };
+
+  container.addEventListener("mouseenter", () => handleEvent("mouseenter", "add"));
+  container.addEventListener("mouseover", () => handleEvent("mouseover", "add"));
+  container.addEventListener("mouseout", () => handleEvent("mouseout", "remove"));
 };
