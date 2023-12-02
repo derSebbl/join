@@ -319,33 +319,33 @@ function renderCardTaskOverlayEditSaveButton(cardDatas) {
 function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) {
     let output = '';
     let cardSubtasks = cardDatas['subtasks'].split("\n");
-    if (cardDatas['subtasks']) {
-        output += `
-            <div class="cardTaskOverlaySubtasks">
-                <div class="cardTaskOverlaySubtasksTitle">Subtasks</div>
-                <div id="cardTaskOverlaySubtasksDatas" class="cardTaskOverlaySubtasksDatas">
-        `;
-        if (editSubtasks == 1) {
-            output += createSubtaskField();
-        }
-        output += `
-            <ul id="subtaskList">
-        `;
-        for (let i = 0; i < cardSubtasks.length; i++) {
+    output += `
+        <div class="cardTaskOverlaySubtasks">
+            <div class="cardTaskOverlaySubtasksTitle">Subtasks</div>
+            <div id="cardTaskOverlaySubtasksDatas" class="cardTaskOverlaySubtasksDatas">
+    `;
+    if (editSubtasks == 1) {
+        output += createSubtaskField();
+    }
+    output += `
+        <ul id="subtaskList">
+    `;
+    for (let i = 0; i < cardSubtasks.length; i++) {
+        if (cardSubtasks[i].trim() !== '') { // Überprüfen, ob das Subtask nicht leer ist
             if (editSubtasks == 0) {
                 output += createSubtaskCheckField(cardDatas, cardSubtasks, i);
             } else if (editSubtasks == 1) {
                 output += createSubtaskItem(cardSubtasks, i);
             }
         }
-        output += `
-            </ul>
-        `;
-        output += `
-                </div>
-            </div>
-        `;
     }
+    output += `
+        </ul>
+    `;
+    output += `
+            </div>
+        </div>
+    `;
     return output;
 }
 
