@@ -318,8 +318,8 @@ function renderCardTaskOverlayEditSaveButton(cardDatas) {
 
 function renderCardTaskOverlaySubtasksDatasSubtask(cardDatas, editSubtasks = 0) {
     let output = '';
+    let cardSubtasks = cardDatas['subtasks'].split("\n");
     if (cardDatas['subtasks']) {
-        let cardSubtasks = cardDatas['subtasks'].split("\n");
         output += `
             <div class="cardTaskOverlaySubtasks">
                 <div class="cardTaskOverlaySubtasksTitle">Subtasks</div>
