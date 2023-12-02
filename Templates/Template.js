@@ -12,11 +12,13 @@ let checkExist = setInterval(function () {
         if (element && window.location.href.endsWith(page.url)) {
             element.className = "";
             element.classList.add("active");
-            clearInterval(checkExist);
         } else if (element) {
             element.className = "";
         }
     }
+    setTimeout(() => {
+      clearInterval(checkExist);
+    }, 500);
 }, 20);
 
 
