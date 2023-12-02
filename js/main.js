@@ -132,22 +132,6 @@ function pushIntoTasksData(newTask) {
 }
 
 
-function initSubtasksChecked(inputSubtasksTo) {
-    let cardSubtasks = inputSubtasksTo.split("\n");
-    let arraySubtasksToCheck = [];
-    let output = '';
-    for (let i = 0; i < cardSubtasks.length; i++) {
-        arraySubtasksToCheck[i] = false;
-        // if (i < cardSubtasks.length) {
-        //     output += '0,';
-        // } else if (i == cardSubtasks.length) {
-        //     output += '0';
-        // }
-    }
-    return arraySubtasksToCheck;
-}
-
-
 //Function to add the Contacts in the Dropdown Menu
 function assignedToListInsertUser(cardDatas) {
     let container = document.getElementById("checkbox");
@@ -210,17 +194,34 @@ function pushChangesIntoTasksData(cardId) {
     boardTodos[cardId]['assignedTo'] = document.getElementById("assignedToInput").value;
     boardTodos[cardId]['duedate'] = getTimestampFromDate(document.getElementById("dateInput").value);
     boardTodos[cardId]['priority'] = getPriorityNumber(document.getElementById("selectedPriority").value);
-    if (!(document.getElementById("subtaskList") == null)) {
+
+    if (document.getElementById("subtaskList")) {
         boardTodos[cardId]['subtasks'] = document.getElementById("subtaskList").innerText;
-        if (boardTodos[cardId]['subtasksToChecked'] == null) {
+
+        if (!boardTodos[cardId].hasOwnProperty('subtasksToChecked')) {
             boardTodos[cardId]['subtasksToChecked'] = initSubtasksChecked(boardTodos[cardId]['subtasks']);
+        } else {
+            let newSubtasks = document.getElementById("subtaskList").innerText.split("\n");
+            let existingSubtasks = boardTodos[cardId]['subtasksToChecked'];
+
+            for (let i = existingSubtasks.length; i < newSubtasks.length; i++) {
+                existingSubtasks[i] = false;
+            }
         }
     }
-
 
     closeOverlayBackground();
     updateBoardHTML();
     setTasksData();
+}
+
+function initSubtasksChecked(inputSubtasksTo) {
+    let cardSubtasks = inputSubtasksTo.split("\n");
+    let arraySubtasksToCheck = [];
+    for (let i = 0; i < cardSubtasks.length; i++) {
+        arraySubtasksToCheck[i] = false;
+    }
+    return arraySubtasksToCheck;
 }
 
 
