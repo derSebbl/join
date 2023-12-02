@@ -735,6 +735,12 @@ input:hover, textarea:hover {
     gap: 24px;
     overflow-y: scroll;
     align-self: flex-start;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.cardTaskOverlayContentInner::-webkit-scrollbar {
+    display: none;
 }
 
 .cardTaskOverlayContentTitle {
