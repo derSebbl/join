@@ -63,7 +63,7 @@ function checkCountOfDoneSubtasks(subtasks) {
     let subtaskDone = 0;
     for (let i = 0; i < subtasks.length; i++) {
         const element = subtasks[i];
-        if (element.charAt(1) == 'S') {
+        if (element.charAt(1) == 'x') {
             subtaskDone += 1;
         }
 
