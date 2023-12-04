@@ -136,6 +136,7 @@ function switchSubtaskCheck(id, i) {
         document.getElementById(`subtasksCheckField${i}`).checked = false;
     }
     setTasksData();
+    updateBoardHTML();
 }
 
 function updateSubtaskImage(id, i) {
