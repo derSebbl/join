@@ -281,18 +281,21 @@ function renderCardTaskOverlayAssignedToBadgesEdit(cardDatas) {
     let output = '';
     let assignedUsers = cardDatas['assignedTo'].split(",");
     for (let i = 0; i < assignedUsers.length; i++) {
-        output += `
-                <div class="designProfileBadgeContact">
-                    <div class="designProfileBadgeContactBanner">
-                        <div class="designProfileBadge">
-                            <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
-                                <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
+        if (arrayOfRegisteredUsers[assignedUsers[i]]) {
+            output += `
+                    <div class="designProfileBadgeContact">
+                        <div class="designProfileBadgeContactBanner">
+                            <div class="designProfileBadge">
+                                <div id="designProfileBadgeInner-${assignedUsers[i]}" class="designProfileBadgeInner">
+                                    <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
+                                </div>
                             </div>
+                            <div class="designProfileBadgeContactData">${arrayOfRegisteredUsers[assignedUsers[i]]['username']}</div>
                         </div>
                     </div>
-                </div>
-    
-        `;
+        
+            `;
+        }
     }
     return output;
 
