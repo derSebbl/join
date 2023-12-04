@@ -103,7 +103,19 @@
     width: 100%;
   }
 
-  .cardTaskOverlayContentInnerTop, .cardTaskOverlayContentInnerBottom {
+  .cardTaskOverlayContent {
+    width: 80%;
+  }
+
+  .cardTaskOverlayContentInnerTop, .cardTaskOverlayContentInnerBottom, .cardTaskOverlayContentTitleEdit {
     width: 100%;
+  }
+
+  .cardTaskOverlayAssignedTo {
+    align-items: flex-start;
+  }
+
+  .cardTaskOverlayContentDescriptionEdit textarea {
+    width: 90%;
   }
 }
