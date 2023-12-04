@@ -59,14 +59,13 @@ function checkAndRenderCardProgress(cardData) {
     return output;
 }
 
-function checkCountOfDoneSubtasks(subtasks) {
+function checkCountOfDoneSubtasks(subtaskcheck) {
     let subtaskDone = 0;
-    for (let i = 0; i < subtasks.length; i++) {
-        const element = subtasks[i];
-        if (element.charAt(1) == 'x') {
+    for (let i = 0; i < subtaskcheck.length; i++) {
+        const element = subtaskcheck[i];
+        if (element === true) {
             subtaskDone += 1;
         }
-
     }
     return subtaskDone;
 }

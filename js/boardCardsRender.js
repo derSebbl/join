@@ -1,7 +1,6 @@
 
 
 function generateTodoCardHTML(cardData) {
-    // console.log(`cardData ${cardData['id']}: `, cardData);
     return `<div class="cardFrame" draggable="true" ondragstart="startDragging(${cardData['id']})" onClick="openCardDatas(${cardData['id']})">
                 <div class="cardContent">
                     <div class="boardCardLabel${cardData['cardlabel']}">${cardlabel[cardData['cardlabel']]}</div>
@@ -29,7 +28,8 @@ function generateTodoCardHTML(cardData) {
 
 function renderCardDataSubtasks(cardData) {
     let subtasks = cardData['subtasks'].split("\n");
-    let subtaskDone = checkCountOfDoneSubtasks(subtasks);
+    let subtaskcheck = cardData['subtasksToChecked'];
+    let subtaskDone = checkCountOfDoneSubtasks(subtaskcheck);
     let renderedSubtasks = renderSubtasks(subtasks, subtaskDone);
     return renderedSubtasks;
 }
