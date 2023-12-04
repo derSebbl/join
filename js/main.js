@@ -137,7 +137,17 @@ function assignedToListInsertUser(cardDatas) {
     let container = document.getElementById("checkbox");
     let assignedToInput = document.getElementById("assignedToInput");
 
+    if (!container || !assignedToInput) {
+        console.error('Die benötigten Elemente konnten nicht gefunden werden.');
+        return;
+    }
+
     let assignedUsers = document.getElementById("assignedToInput").value = cardDatas['assignedTo'].split(",");
+
+    if (!arrayOfRegisteredUsers || arrayOfRegisteredUsers.length === 0) {
+        console.error('Keine registrierten Benutzer gefunden.');
+        return;
+    }
 
     for (let i = 0; i < arrayOfRegisteredUsers.length; i++) {
         let contact = arrayOfRegisteredUsers[i];
@@ -160,16 +170,14 @@ function assignedToListInsertUser(cardDatas) {
         label.appendChild(document.createTextNode(contact.username));
         label.appendChild(checkbox);
         for (let z = 0; z < assignedUsers.length; z++) {
-            if (arrayOfRegisteredUsers[i]['username'] == arrayOfRegisteredUsers[assignedUsers[z]]['username']) {
+            if (arrayOfRegisteredUsers[assignedUsers[z]] && arrayOfRegisteredUsers[i]['username'] == arrayOfRegisteredUsers[assignedUsers[z]]['username']) {
                 label.children[0].checked = true;
-
             }
         }
 
         container.appendChild(label);
     }
 }
-
 
 function addEditedSubtask() {
     let subtaskInput = document.getElementById("subtaskInput");
