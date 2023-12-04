@@ -54,7 +54,6 @@ function clearValues() {
  *
  * @param {number} - its the index of the arrayOfRegisteredUsers
  * @param {string} - the usernames of the registered users
- * @returns
  */
 function createCheckbox(i, contact) {
   let checkbox = document.createElement("input");
@@ -70,7 +69,6 @@ function createCheckbox(i, contact) {
  * Function to create a div for the User Badges at the assignedTo Label
  *
  * @param {number} i - its the index of the arrayOfRegisteredUsers
- * @returns
  */
 function createBadgetDiv(i) {
   let badgetDiv = document.createElement("div");
