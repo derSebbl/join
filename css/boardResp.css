@@ -97,4 +97,9 @@
   .boardTaskColumn::-webkit-scrollbar {
     display: none;
   }
+
+  .cardFrameTaskOverlay {
+    height: 100%;
+    width: 100%;
+  }
 }
