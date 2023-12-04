@@ -290,7 +290,6 @@ function renderCardTaskOverlayAssignedToBadgesEdit(cardDatas) {
                                     <div class="designProfileBadgeInnerText">${renderUserProfileInitials(arrayOfRegisteredUsers[assignedUsers[i]]['username'])}</div>
                                 </div>
                             </div>
-                            <div class="designProfileBadgeContactData">${arrayOfRegisteredUsers[assignedUsers[i]]['username']}</div>
                         </div>
                     </div>
         
