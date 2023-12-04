@@ -180,9 +180,16 @@ function checkCardlabelIfPresent(cardId) {
  * @param {Object} cardDatas - The data of the card.
  */
 function setActivePrioButtonEdit(cardDatas) {
-    let priorityName = getPriorityName(cardDatas['priority']);
-    document.getElementById(priorityName).classList.add('selected');
-    document.getElementById('selectedPriority').value = priorityName;
+    if (cardDatas && cardDatas['priority']) {
+        let priorityName = getPriorityName(cardDatas['priority']);
+        if (priorityName) {
+            let priorityElement = document.getElementById(priorityName);
+            if (priorityElement) {
+                priorityElement.classList.add('selected');
+                document.getElementById('selectedPriority').value = priorityName;
+            }
+        }
+    }
 };
 
 /**
