@@ -136,7 +136,8 @@
     font-size: 15px !important;
   }
 
-  .assignedField {
+  .assignedField,
+  .subtaskField {
     width: 100% !important;
   }
 
