@@ -93,28 +93,18 @@ async function loadTasksData() {
     } catch (e) {
         console.log('Loading error:', e);
     }
-    // console.log('Load Datas', boardTodos);
 }
 
 
 async function setTasksData() {
-    // console.log('Save Datas', JSON.stringify(boardTodos));
     try {
         await setItem('boardtasks', JSON.stringify(boardTodos));
     } catch (e) {
         console.log('Loading error:', e);
     }
-
 }
 
-
 function pushIntoTasksData(newTask) {
-    // console.log('newTask', newTask);
-    // let nextTaskId = boardTodos.length;
-    // console.log('nextTaskId', nextTaskId);
-    // boardTodos.push(newTask);
-
-
     let newBoardTodo = {
         id: boardTodos.length,
         cardlabel: parseInt(newTask['cardlabel']),
@@ -321,7 +311,7 @@ async function includeHTML() {
 }
 
 // Array Contactlist
-const contacts = [
+let contacts = [
     {
         name: "Sebastian Binz",
         mail: "sebastianbinz@mail.de",
@@ -344,17 +334,6 @@ const contacts = [
     },
 ];
 
-// Array Tasks
-const tasks = [
-    {
-        title: "clean the kitchen",
-        description: "take a mopp and clean",
-        date: "2023-10-25",
-        category: "cleaning",
-        subtask: "wash off the dishes"
-    },
-];
-
 // load currentUser
 async function loadUser() {
     try {
@@ -362,7 +341,6 @@ async function loadUser() {
     } catch (e) {
         console.log('Loading error:', e);
     }
-    // console.log(currentUser);
 }
 
 
@@ -373,13 +351,11 @@ async function loadRegisteredUsers() {
     } catch (e) {
         console.log('Loading error:', e);
     }
-    // console.log('arrayOfRegisteredUsers: ', arrayOfRegisteredUsers);
 }
 
 function logoutUser() {
     try {
         localStorage.removeItem('currentUser');
-        // Optional: Leiten Sie den Benutzer zur Anmeldeseite um
         window.location.href = "../login/login.html";
     } catch (e) {
         console.log('Logout error:', e);
