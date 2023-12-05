@@ -1,12 +1,4 @@
-// Initialise variables
-////////////////////////////
-
-
-// Initialise Site
-////////////////////////////
-
 function initProfileBadgesUser() {
-
 }
 
 function taskSearchString() {
@@ -14,7 +6,6 @@ function taskSearchString() {
 }
 
 function renderButtonsForPriority() {
-
 }
 
 
