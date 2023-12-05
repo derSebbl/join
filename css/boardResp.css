@@ -107,8 +107,14 @@
     width: 80%;
   }
 
+  .cardTaskOverlayContentInner {
+    width: 100%;
+    position: relative;
+  }
+
   .cardTaskOverlayContentInnerTop, .cardTaskOverlayContentInnerBottom, .cardTaskOverlayContentTitleEdit {
     width: 100%;
+    position: relative;
   }
 
   .cardTaskOverlayAssignedTo {
@@ -117,5 +123,29 @@
 
   .cardTaskOverlayContentDescriptionEdit textarea {
     width: 90%;
+  }
+
+  #formContainer {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 16px !important;
+  }
+
+  .assignedInput, .subtaskInput  {
+    font-size: 15px !important;
+  }
+
+  .assignedField {
+    width: 100% !important;
+  }
+
+  .subtask, #subtask {
+    width: 100% !important;
+  }
+
+  .prio {
+    order: unset !important;
+    padding-bottom: 0 !important;
   }
 }
