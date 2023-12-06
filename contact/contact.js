@@ -108,7 +108,7 @@ function sortContacts(contacts) {
 function addLetterSegment(contactList, letter) {
   contactList.innerHTML += /*html*/`
     <div class="letterSection">${letter}
-    <img class="lineLetterSection" src="/contact/img/Vector 10.svg"></div>
+    <img class="lineLetterSection" src="img/Vector 10.svg"></div>
   `;
 };
 
