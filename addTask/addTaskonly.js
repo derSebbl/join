@@ -80,15 +80,15 @@ function addSubtask() {
         ${subtaskInput.value}
       </div>
       <div class="subtaskItemImg" id="subtaskItemImg${subtaskCount}">
-        <img id="subtaskEdit" onclick="editSubtask(${subtaskCount})"  src="/addTask/img/Subtask edit.svg">
-        <img src="/addTask/img/Subtask Vect.svg">
-        <img id="subtaskDelete" onclick="deleteSubtask(${subtaskCount})" src="/addTask/img/subtask delete.svg">
+        <img id="subtaskEdit" onclick="editSubtask(${subtaskCount})"  src="img/Subtask edit.svg">
+        <img src="img/Subtask Vect.svg">
+        <img id="subtaskDelete" onclick="deleteSubtask(${subtaskCount})" src="img/subtask delete.svg">
       </div>
       <div class="editSubtaskContainer" id="editSubtaskContainer${subtaskCount}" style="display: none;">
         <input type="text" class="subtaskItemEdit" id="subtaskEdit${subtaskCount}" value="${subtaskInput.value}">
-        <img class ="editItemImg" src="/addTask/img/subtask delete.svg" onclick="deleteSubtask(${subtaskCount})">
-        <img src="/addTask/img/Subtask Vect.svg">
-        <img class="editItemImg" src="/addTask/img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${subtaskCount})">
+        <img class ="editItemImg" src="img/subtask delete.svg" onclick="deleteSubtask(${subtaskCount})">
+        <img src="img/Subtask Vect.svg">
+        <img class="editItemImg" src="img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${subtaskCount})">
       </div>
     </div>
     `;
