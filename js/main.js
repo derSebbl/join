@@ -19,6 +19,7 @@ async function getItem(key) {
 let boardTodos = [];
 let arrayOfRegisteredUsers = [];
 let currentUser = [];
+let contacts = [];
 const randomProfilBadges = [];
 
 async function init() {
@@ -403,8 +404,10 @@ function logoutUser() {
     }
 };
 
-let contacts = [];
-
+/**
+ * Asynchronously loads contact data from local storage.
+ * 
+ */
 async function loadContactData() {
     try {
         contacts = JSON.parse(await getItem('contact'));
@@ -415,7 +418,10 @@ async function loadContactData() {
     }
 };
 
-
+/**
+ * Asynchronously sets contact data to local storage.
+ * 
+ */
 async function setContactData() {
     try {
         await setItem('contact', JSON.stringify(contacts));
