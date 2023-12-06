@@ -20,6 +20,7 @@ let boardTodos = [];
 let arrayOfRegisteredUsers = [];
 let currentUser = [];
 let contacts = [];
+const tasks = [];
 const randomProfilBadges = [];
 
 async function init() {
