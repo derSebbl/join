@@ -17,6 +17,7 @@ async function initContact() {
   // await includeHTML();
   // await initRender();
   // initUserProfileInitials();
+  await loadContactData();
   editContactPlates();
 }
 
@@ -177,6 +178,7 @@ function newContact() {
   
   randomProfilBadges.push(randomBadge);
   contacts.push(newContact);
+  setContactData();
   clearValuesNewContact(name, mail, phone);
 };
 
@@ -331,6 +333,7 @@ function updateContact() {
     };
   
   editContactPlates();
+  setContactData();
   closeEditContact();
 };
 
@@ -343,6 +346,7 @@ function deleteContact() {
   contacts.splice(i, 1);
   randomProfilBadges.splice(i, 1);
   editContactPlates();
+  setContactData();
   closeEditContact();
 };
 
@@ -356,6 +360,7 @@ function deleteContactFloat(i) {
   randomProfilBadges.splice(i, 1);
   let addContactResp = document.getElementById("btnContainerResp");
   editContactPlates();
+  setContactData();
   closeFloatingFrame();
   closeResponse();
   closeRespDetailCard();

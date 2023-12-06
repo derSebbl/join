@@ -403,25 +403,21 @@ function logoutUser() {
     }
 };
 
-let contacts = [
-    {
-        name: "Sebastian Binz",
-        mail: "sebastianbinz@mail.de",
-        phone: "07821 435 678",
-    },
-    {
-        name: "Christian De Stradis",
-        mail: "ChrisDeStradis@mail.de",
-        phone: "07867 894 672"
-    },
-    {
-        name: "Mahmut Kalem",
-        mail: "m.kalem@mail.de",
-        phone: "0736 157 678"
-    },
-    {
-        name: "Wolfram Simon",
-        mail: "WolframS@mail.de",
-        phone: "0797 643 217"
-    },
-];
+let contacts = [];
+
+async function loadContactData() {
+    try {
+        contacts = JSON.parse(await getItem('contact'));
+    } catch (e) {
+        console.log('Loading error:', e);
+    }
+};
+
+
+async function setContactData() {
+    try {
+        await setItem('contact', JSON.stringify(contacts));
+    } catch (e) {
+        console.log('Loading error:', e);
+    }
+};
