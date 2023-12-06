@@ -202,16 +202,16 @@ function editCardDatas(cardId) {
                                                                 <div id="prio" class="prio">
                                                                     <div class="prioText">Priority:</div>
                                                                     <div class="prioField">
-                                                                        <div class="urgent" id="urgent" onclick="selectPriority('urgent')">Urgent<img src="/addTask/img/Prio alta.svg"></div>
-                                                                        <div class="medium" id="medium" onclick="selectPriority('medium')">Medium<img src="/addTask/img/Prio media.svg"></div>
-                                                                        <div class="low" id="low" onclick="selectPriority('low')">Low<img src="/addTask/img/Prio baja.svg"></div>
+                                                                        <div class="urgent" id="urgent" onclick="selectPriority('urgent')">Urgent<img src="../addTask/img/Prio alta.svg"></div>
+                                                                        <div class="medium" id="medium" onclick="selectPriority('medium')">Medium<img src="../addTask/img/Prio media.svg"></div>
+                                                                        <div class="low" id="low" onclick="selectPriority('low')">Low<img src="../addTask/img/Prio baja.svg"></div>
                                                                         <input type="hidden" id="selectedPriority" name="selectedPriority" value="">
                                                                     </div>
                                                                 </div>
                                                                 <div class="cardTaskOverlayAssignedTo">
                                                                     <div class="cardTaskOverlayAssignedToText">Assigned To:</div>
                                                                     <div class="assignedField">
-                                                                        <div class="assignedContainer"><input autocomplete="off" oninput="filterContacts()" onclick="openNameList()" id="assignedTo" class="assignedInput" placeholder="Select contacts to assign"><img class="assignedArrow" onclick="showNameList()" src="/addTask/img/arrow_drop_downaa.svg"></div>
+                                                                        <div class="assignedContainer"><input autocomplete="off" oninput="filterContacts()" onclick="openNameList()" id="assignedTo" class="assignedInput" placeholder="Select contacts to assign"><img class="assignedArrow" onclick="showNameList()" src="../addTask/img/arrow_drop_downaa.svg"></div>
                                                                         <div style="display: none;" id="checkbox"></div>
                                                                         <input type="hidden" id="assignedToInput">
                                                                     </div>
@@ -342,7 +342,7 @@ function createSubtaskField() {
     return `
         <div class="subtaskField">
             <input autocomplete="off" minlength="1" id="subtaskInput" type="text" class="subtaskInput" placeholder="Add new subtask">
-            <img aria-disabled="true" onclick="addSubtask()" src="/addTask/img/Subtasks icons11.svg" alt="">
+            <img aria-disabled="true" onclick="addSubtask()" src="../addTask/img/Subtasks icons11.svg" alt="">
         </div>
     `;
 };
@@ -361,15 +361,15 @@ function createSubtaskItem(cardSubtasks, i) {
                 ${cardSubtasks[i]}
             </div>
             <div class="subtaskItemImg" id="subtaskItemImg${i}">
-                <img id="subtaskEdit" onclick="editSubtask(${i})"  src="/addTask/img/Subtask edit.svg">
-                <img src="/addTask/img/Subtask Vect.svg">
-                <img id="subtaskDelete" onclick="deleteSubtask(${i})" src="/addTask/img/subtask delete.svg">
+                <img id="subtaskEdit" onclick="editSubtask(${i})"  src="../addTask/img/Subtask edit.svg">
+                <img src="../addTask/img/Subtask Vect.svg">
+                <img id="subtaskDelete" onclick="deleteSubtask(${i})" src="../addTask/img/subtask delete.svg">
             </div>
             <div class="editSubtaskContainer" id="editSubtaskContainer${i}" style="display: none;">
                 <input type="text" class="subtaskItemEdit" id="subtaskEdit${i}" value="${cardSubtasks[i]}">
-                <img class ="editItemImg" src="/addTask/img/subtask delete.svg" onclick="deleteSubtask(${i})">
-                <img src="/addTask/img/Subtask Vect.svg">
-                <img class="editItemImg" src="/addTask/img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${i})">
+                <img class ="editItemImg" src="../addTask/img/subtask delete.svg" onclick="deleteSubtask(${i})">
+                <img src="../addTask/img/Subtask Vect.svg">
+                <img class="editItemImg" src="../addTask/img/Subtasks icon accept.svg" onclick="changeSubtaskItem(${i})">
             </div>
         </div>
     `;
