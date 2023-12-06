@@ -383,14 +383,17 @@ function closeFloatingFrame() {
  * 
  */
 function editInitalsContacts() {
+  let container = document.getElementById("initials-container");
+  if (!container) {
+    return;
+  }
   for (let i = 0; i < contacts.length; i++) {
     let name = contacts[i].name;
     let words = name.split(' ');
     let firstLetter = words[0].charAt(0).toUpperCase();
     let secondWordFirstLetter = words[1].charAt(0).toUpperCase();
-    document.getElementById("initials-container").innerHTML = `
-    ${firstLetter}${secondWordFirstLetter}`;
-}
+    container.innerHTML = `${firstLetter}${secondWordFirstLetter}`;
+  }
 };
 
 /**
@@ -398,9 +401,11 @@ function editInitalsContacts() {
  * 
  */
 function initializeRandomProfilBadges() {
+  if (!profilBadges) {
+    return;
+  }
   for (let i = 0; i < contacts.length; i++) {
     randomProfilBadges[i] = profilBadges[Math.floor(Math.random() * profilBadges.length)];
   }
-}
-
+};
 initializeRandomProfilBadges();

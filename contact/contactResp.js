@@ -83,6 +83,7 @@ function newContactResp() {
   contacts.push(newContact);
 
   clearNewContactValue(name, mail, phone);
+  setContactData();
   editContactPlates();
   closeNewContactResp();
 };
@@ -203,7 +204,7 @@ function updateContactRespEditWindow() {
     mail: mail,
     phone: phone,
   };
-
+  setContactData();
   editContactPlates();
   closeEditContactResp();
 };
@@ -215,6 +216,7 @@ function updateContactRespEditWindow() {
 function deleteContactRespEditWindow() {
   let i = selectedContactIndex;
   contacts.splice(i, 1);
+  setContactData();
   editContactPlates();
   closeEditContactResp();
 };

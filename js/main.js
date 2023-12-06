@@ -408,6 +408,8 @@ let contacts = [];
 async function loadContactData() {
     try {
         contacts = JSON.parse(await getItem('contact'));
+        editInitalsContacts();
+        initializeRandomProfilBadges();
     } catch (e) {
         console.log('Loading error:', e);
     }
