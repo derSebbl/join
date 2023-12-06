@@ -173,8 +173,8 @@ function closeEditContactResp() {
  */
 function editRespDelAndEdit(y) {
   document.getElementById("contactOptionsResp").innerHTML = `
-    <div id="deleteResp" onclick="openEditContactResp(${y})"><img src="/contact/img/edit.svg">Edit</div>
-    <div id="editResp" onclick="deleteContactFloat(${y})"><img src="/contact/img/delete.svg">Delete</div>`;
+    <div id="deleteResp" onclick="openEditContactResp(${y})"><img src="img/edit.svg">Edit</div>
+    <div id="editResp" onclick="deleteContactFloat(${y})"><img src="img/delete.svg">Delete</div>`;
 };
 
 /**
