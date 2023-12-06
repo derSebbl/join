@@ -23,19 +23,19 @@ let checkExist = setInterval(function () {
 
 
 function toSummary() {
-  window.location.href = "/summary/summary.html";
+  window.location.href = "../summary/summary.html";
 }
 
 function toAddTask() {
-  window.location.href = "/addTask/addTask.html";
+  window.location.href = "../addTask/addTask.html";
 }
 
 function toBoard() {
-  window.location.href = "/board/board.html";
+  window.location.href = "../board/board.html";
 }
 
 function toContact() {
-  window.location.href = "/contact/contact.html";
+  window.location.href = "../contact/contact.html";
 }
 
 function toPrivacyPolicy() {
