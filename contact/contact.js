@@ -1,15 +1,15 @@
 let selectedContactIndex = -1 //Index for the Edit Function
 
 const profilBadges = [
-  "/contact/img/Ellipse 1.svg",
-  "/contact/img/Ellipse 2.svg",
-  "/contact/img/Ellipse 3.svg",
-  "/contact/img/Ellipse 4.svg",
-  "/contact/img/Ellipse 5.svg",
-  "/contact/img/Ellipse 6.svg",
-  "/contact/img/Ellipse 7.svg",
-  "/contact/img/Ellipse 8.svg",
-  "/contact/img/Ellipse 9.svg",
+  "img/Ellipse 1.svg",
+  "img/Ellipse 2.svg",
+  "img/Ellipse 3.svg",
+  "img/Ellipse 4.svg",
+  "img/Ellipse 5.svg",
+  "img/Ellipse 6.svg",
+  "img/Ellipse 7.svg",
+  "img/Ellipse 8.svg",
+  "img/Ellipse 9.svg",
 ];
 
 /**
