@@ -7,7 +7,10 @@ const profilBadges = [
   "/contact/img/Ellipse 4.svg",
   "/contact/img/Ellipse 5.svg",
   "/contact/img/Ellipse 6.svg",
-]
+  "/contact/img/Ellipse 7.svg",
+  "/contact/img/Ellipse 8.svg",
+  "/contact/img/Ellipse 9.svg",
+];
 
 /**
  * Function to initialize the contact page
