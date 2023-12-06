@@ -81,8 +81,8 @@ function editFloatingDisplay(y) {
   document.getElementById("ImgFloatingDisplay").src = randomProfilBadges[y];
   document.getElementById("bigInitials").innerHTML = `${firstLetter}${secondWordFirstLetter}`;
   document.getElementById("bigContainerImg").innerHTML = `
-    <div class="edit" id="edit" onclick="editContact(${y})"><img src="/contact/img/edit.svg">Edit</div>
-    <div class="delete" onclick="deleteContactFloat(${y})" id="delete(${y})"><img src="/contact/img/delete.svg">Delete</div>`;
+    <div class="edit" id="edit" onclick="editContact(${y})"><img src="img/edit.svg">Edit</div>
+    <div class="delete" onclick="deleteContactFloat(${y})" id="delete(${y})"><img src="img/delete.svg">Delete</div>`;
 }else{
   editRespContactWindow(y);
   editRespDelAndEdit(y);
