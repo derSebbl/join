@@ -1,7 +1,7 @@
 body{
     margin: 0;
     font-family: Inter;
-    line-height: 120%; /* 73.2px */ 
+    line-height: 120%; 
 }
 .imgContainer{
     display: none;
