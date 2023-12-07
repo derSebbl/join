@@ -7,6 +7,7 @@ header {
   align-items: center;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 .headerText {
@@ -132,6 +133,7 @@ nav {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
+  z-index: 100;
 }
 
 .active {
