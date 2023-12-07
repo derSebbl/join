@@ -39,11 +39,11 @@ function toContact() {
 }
 
 function toPrivacyPolicy() {
-  window.open("../privacyPolicy.html", "_blank");
+  window.open("../pirvacyLegal/privacyPolicy.html", "_blank");
 }
 
 function toLegalNotice() {
-  window.open("../legalNotice.html", "_blank");
+  window.open("../pirvacyLegal/legalNotice.html", "_blank");
 }
 
 let closeMenuOnClickOutsideBound;
