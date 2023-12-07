@@ -25,15 +25,15 @@ function changePen() {
   let image = document.getElementById("pen1");
 
   container.addEventListener("mouseenter", function () {
-    image.src = "./img/summaryPenHover.svg";
+    image.src = "img/summaryPenHover.svg";
   });
 
   container.addEventListener("mouseover", function () {
-    image.src = "./img/summaryPenHover.svg";
+    image.src = "img/summaryPenHover.svg";
   });
 
   container.addEventListener("mouseout", function () {
-    image.src = "./img/summaryPen.png";
+    image.src = "img/summaryPen.png";
   });
 
   changeToDoColor();
@@ -56,15 +56,15 @@ function changeCheck() {
   let image = document.getElementById("check1");
 
   container.addEventListener("mouseenter", function () {
-    image.src = "./img/summaryCheckHover.svg";
+    image.src = "img/summaryCheckHover.svg";
   });
 
   container.addEventListener("mouseover", function () {
-    image.src = "./img/summaryCheckHover.svg";
+    image.src = "img/summaryCheckHover.svg";
   });
 
   container.addEventListener("mouseout", function () {
-    image.src = "./img/summaryCheck.png";
+    image.src = "img/summaryCheck.png";
   });
 
   changeDoneColor();
