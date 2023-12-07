@@ -320,7 +320,7 @@ function openAddTaskBoard(){
     background.style.display = 'block';
     }
     else {
-        window.location.href = '/addTask/addTask.html';
+        window.location.href = '../addTask/addTask.html';
     }
 };
 
