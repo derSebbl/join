@@ -251,13 +251,31 @@ function editCategoryList() {
   }
 };
 
+function closeNameListOnClickOutside(nameList, event) {
+  if (!nameList.contains(event.target)) {
+    nameList.style.display = "none";
+    document.removeEventListener("click", closeNameListOnClickOutsideBound);
+  }
+};
+
+let closeNameListOnClickOutsideBound;
+
 /**
  * Function to open the AssignedTo List
  *
  */
 function openNameList() {
   let nameList = document.getElementById("checkbox");
-  nameList.style.display = "flex";
+  if (nameList.style.display === "none") {
+    nameList.style.display = "flex";
+    closeNameListOnClickOutsideBound = closeNameListOnClickOutside.bind(null, nameList);
+    setTimeout(() => {
+      document.addEventListener("click", closeNameListOnClickOutsideBound);
+    }, 0);
+  } else {
+    nameList.style.display = "none";
+    document.removeEventListener("click", closeNameListOnClickOutsideBound);
+  }
 };
 
 /**
