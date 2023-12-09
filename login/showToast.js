@@ -45,23 +45,25 @@ function setupPasswordVisibility(inputId, iconId) {
     const passwordInput = document.getElementById(inputId);
     const passwordIcon = document.getElementById(iconId);
 
-    passwordInput.addEventListener("input", function() {
-        if (passwordInput.value === "") {
-            passwordIcon.src = "loginSymbols/lock.svg";
-        } else {
-            passwordIcon.src = "loginSymbols/eyeClosed.svg";
-        }
-    });
+    if (passwordInput && passwordIcon) {
+        passwordInput.addEventListener("input", function() {
+            if (passwordInput.value === "") {
+                passwordIcon.src = "loginSymbols/lock.svg";
+            } else {
+                passwordIcon.src = "loginSymbols/eyeClosed.svg";
+            }
+        });
 
-    passwordIcon.addEventListener("click", function() {
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-            passwordIcon.src = "loginSymbols/eyeOpen.svg";
-        } else {
-            passwordInput.type = "password";
-            passwordIcon.src = "loginSymbols/eyeClosed.svg";
-        }
-    });
+        passwordIcon.addEventListener("click", function() {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordIcon.src = "loginSymbols/eyeOpen.svg";
+            } else {
+                passwordInput.type = "password";
+                passwordIcon.src = "loginSymbols/eyeClosed.svg";
+            }
+        });
+    }
 }
 
 setupPasswordVisibility("password", "passwordIcon");
