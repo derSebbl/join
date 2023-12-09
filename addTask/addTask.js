@@ -120,7 +120,6 @@ function updateAssignedSelectedDiv(checkbox, assignedSelectedDiv) {
 
   if (checkbox.checked) {
     assignedSelectedDiv.appendChild(selectedBadge);
-    console.log(badgeId);
   } else {
     let badgeToRemove = document.getElementsByClassName(id)[0];
     badgeToRemove.remove();
