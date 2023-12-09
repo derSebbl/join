@@ -47,10 +47,12 @@ document.addEventListener('DOMContentLoaded', function() {
  * Function to prevent the reloading of the page when the form is submitted
  *
  */
-document.getElementById("formContainer").addEventListener("submit", function (event) {
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById("formContainer").addEventListener("submit", function (event) {
     event.preventDefault();
     addToTask();
   });
+});
 
 /**
  * Function to add an event listener to the checkbox to change the background color and the color of the label and push the selected contacts to the Div to show the selected badges
