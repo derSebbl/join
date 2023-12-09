@@ -49,7 +49,7 @@ function clearValues() {
   clearFormContainer();
   uncheckCheckbox();
   clearAssignedSelected();
-  clearSelectedPriority();
+  selectPriority('medium');
   subtaskCount = 0;
 };
 
@@ -362,19 +362,4 @@ function clearFormContainer() {
   category.value = ``;
   subtaskInput.value = ``;
   subtask.innerHTML = ``;
-};
-
-/**
- * Function to clear the selected priority. If nothing is selected, nothing happens 
- *
- */
-function clearSelectedPriority() {
-  let selectedPrio = document.querySelector(".selected");
-
-  if (selectedPrio){
-  selectedPrio.classList.remove("selected");
-  selectedPrio.querySelector("img").style.filter = "brightness(1) invert(0)";
-  } else {
-    return;
-  }
 };
