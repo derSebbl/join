@@ -1,4 +1,5 @@
 let = subtaskCount = 0;
+let closeNameListOnClickOutsideBound;
 /**
  * init function to load the registered users and the addTask.html
  *
@@ -251,14 +252,18 @@ function editCategoryList() {
   }
 };
 
+/**
+ * Closes the name list when clicked outside of the list.
+ *
+ * @param {HTMLElement} nameList - The HTML element representing the name list.
+ * @param {Event} event - The event object representing the click.
+ */
 function closeNameListOnClickOutside(nameList, event) {
   if (!nameList.contains(event.target)) {
     nameList.style.display = "none";
     document.removeEventListener("click", closeNameListOnClickOutsideBound);
   }
 };
-
-let closeNameListOnClickOutsideBound;
 
 /**
  * Function to open the AssignedTo List
