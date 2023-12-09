@@ -10,6 +10,10 @@ async function initAddTask() {
   editCategoryList();
 };
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  selectPriority('medium');
+});
+
 /**
  * Function to push the new Task to the array and to the local storage
  *
