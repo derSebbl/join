@@ -122,7 +122,6 @@ nav {
   display: flex;
   width: 232px;
   box-sizing: border-box;
-  max-height: 1080px;
   height: 100%;
   padding: 64px 0px;
   flex-direction: column;
