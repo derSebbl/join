@@ -395,3 +395,19 @@ function filterAndDisplayCards(cards, searchTerm) {
         }
     }
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    let searchTask = document.getElementById('searchTask');
+    if (searchTask) {
+        searchTask.addEventListener('keyup', function() {
+            let searchTerm = this.value.toLowerCase();
+            let cards = document.getElementsByClassName('cardFrame');
+            if (searchTerm) {
+                filterAndDisplayCards(cards, searchTerm);
+                console.log('searchTerm: ', searchTerm);
+            } else {
+                displayAllCards(cards);
+            }
+        });
+    }
+});
