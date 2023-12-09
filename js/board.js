@@ -396,6 +396,10 @@ function filterAndDisplayCards(cards, searchTerm) {
     }
 };
 
+/**
+ * Event listener for the search input. Filters the cards based on the search term on keyup.
+ * 
+ */
 document.addEventListener('DOMContentLoaded', function() {
     let searchTask = document.getElementById('searchTask');
     if (searchTask) {
