@@ -27,15 +27,8 @@
     flex-direction: column;
     padding-top: 215px;
     padding-bottom: 400px;
-    padding-left: 16px;
     }
-
-    #formLeft,
-    #formRight {
-        padding-left: 20px;
-        margin-right: 20px;
-    }
-
+    
     .titleField,
     .descriptionField,
     .dateField,
