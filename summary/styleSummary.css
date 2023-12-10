@@ -325,9 +325,7 @@ p {
   .summaryGreetings {
     display: none;
   }
-}
 
-@media (max-width: 1420px) {
   .mainContainer {
     padding-left: 0px;
     padding-top: 95px;
@@ -381,4 +379,38 @@ p {
 #hoverContainer1, #hoverContainer2, #hoverContainer4, #hoverContainer5, #hoverContainer6 {
     height: 145px;
 }
+
+.separatorBody {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+}
+
+@media (max-width: 350px) {
+
+  h3 {
+    font-size: 36px !important;
+  }
+
+  h4 {
+    font-size: 16px !important;
+  }
+
+  .summaryDeadline {
+    width: 150px;
+  }
+
+  .summaryBodyPartTop, .summaryBodyPartMiddle, .summaryBodyPartBottom  {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .summaryBodyPartTop {
+    padding-bottom: 20px;
+  }
+
+  .summaryBodyPartBottom {
+    padding-top: 60px;
+  }
 }
