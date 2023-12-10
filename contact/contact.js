@@ -35,7 +35,7 @@ window.addEventListener('resize', closeResponse);
  * 
  */
 function closeResponse(){
-  if (window.innerWidth > 1300) {
+  if (window.innerWidth > 1200) {
     closeNewContactResp();
     closeEditContactResp();
     closeRespDetailCard();
@@ -53,7 +53,7 @@ function closeResponse(){
 function slideIn(x) {
   editFloatingDisplay(x);
   let floatingFrame = document.getElementById("floatingFrame");
-  if (window.innerWidth > 1300){
+  if (window.innerWidth > 1200){
   if (floatingFrame.style.display == "none") {
     floatingFrame.style.display = "inline-flex";
     changeColorNamePlate(x);
@@ -70,7 +70,7 @@ function slideIn(x) {
  * @param {number} y - Index of the selected Contact
  */
 function editFloatingDisplay(y) {
-  if (window.innerWidth > 1300){
+  if (window.innerWidth > 1200){
     let name = contacts[y].name;
     let words = name.split(' ');
     let firstLetter = words[0].charAt(0).toUpperCase();
