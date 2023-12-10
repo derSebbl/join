@@ -408,7 +408,6 @@ document.addEventListener('DOMContentLoaded', function() {
             let cards = document.getElementsByClassName('cardFrame');
             if (searchTerm) {
                 filterAndDisplayCards(cards, searchTerm);
-                console.log('searchTerm: ', searchTerm);
             } else {
                 displayAllCards(cards);
             }
