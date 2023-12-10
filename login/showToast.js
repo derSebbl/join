@@ -5,7 +5,6 @@ async function loadUsers(){
     } catch(e){
         console.log('Loading error:', e);
     }
-    console.log(users);
 }
 
 function showToast(message) {
