@@ -396,6 +396,10 @@ p {
     font-size: 16px !important;
   }
 
+  .respContainer {
+    padding-bottom: 80px;
+  }
+
   .summaryDeadline {
     width: 150px;
   }
@@ -412,5 +416,10 @@ p {
 
   .summaryBodyPartBottom {
     padding-top: 60px;
+  }
+
+  #hoverContainer1, #hoverContainer2, #hoverContainer4, #hoverContainer5, #hoverContainer6 {
+    height: 145px;
+    max-width: 264px;
   }
 }
