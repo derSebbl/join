@@ -40,16 +40,6 @@ function switchColumn(cardId, columnTitle, event) {
     let card = document.getElementById(`cardFrame${cardId}`);
     let column = document.getElementById(columnTitle);
 
-    if (!card) {
-        console.error(`Kein Element gefunden mit der ID cardContent${cardId}`);
-        return;
-    }
-
-    if (!column) {
-        console.error(`Kein Element gefunden mit der ID ${columnTitle}`);
-        return;
-    }
-
     // Dann entfernen wir die Karte aus ihrer aktuellen Spalte
     card.parentNode.removeChild(card);
 
