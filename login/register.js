@@ -3,7 +3,10 @@ async function register() {
         if(passwordMatch()){
             await signUser();
             resetForm();
-            showToast("Erfolgreich registriert")
+            showToast("Erfolgreich registriert");
+            setTimeout(() => {
+                window.location.href = "../login/login.html";
+            }, 700);
             return; 
         }else{
             showToast('Passwort stimmt nicht überein');
