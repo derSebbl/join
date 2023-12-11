@@ -11,6 +11,7 @@
 
   .search {
     width: auto;
+    gap: 0;
   }
 
   #boardContainer {
@@ -148,5 +149,13 @@
   .prio {
     order: unset !important;
     padding-bottom: 0 !important;
+  }
+
+  .searchImg {
+    gap: 0 !important;
+  }
+
+  #searchTask {
+    width: auto !important;
   }
 }
