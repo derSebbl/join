@@ -352,6 +352,10 @@ li {
   height: 80%;
 }
 
+#arrowSwitchColumns {
+  display: none;
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);

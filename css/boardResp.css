@@ -158,4 +158,8 @@
   #searchTask {
     width: auto !important;
   }
+
+  #arrowSwitchColumns {
+    display: block;
+  }
 }

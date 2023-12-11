@@ -18,14 +18,20 @@ function setActiveButtonForPriorityTo(setPriority) {
 function showSwitches(x, event) {
     event.stopPropagation();
     let contentContainer = document.getElementById(`cardContent${x}`);
-   let switchContainer = document.getElementById(`switchColumns${x}`);
-   if (switchContainer.style.display === `none`) {
+    let switchContainer = document.getElementById(`switchColumns${x}`);
+    if (switchContainer.style.display === `none`) {
         switchContainer.style.display = `flex`;
         contentContainer.style.display = `none`;       
-   } else {
+    } else {
+    showCard(x);
+   }
+};
+
+function showCard (x) {
+    let contentContainer = document.getElementById(`cardContent${x}`);
+    let switchContainer = document.getElementById(`switchColumns${x}`);
    switchContainer.style.display = `none`;
    contentContainer.style.display = `flex`;
-   }
 };
 
 function switchColumn(cardId, columnTitle, event) {
@@ -49,7 +55,6 @@ function switchColumn(cardId, columnTitle, event) {
 
     // Und fügen sie in die neue Spalte ein
     column.appendChild(card);
-    updateBoardHTML();
+    showCard(cardId);
     setTasksData();
-
 }
