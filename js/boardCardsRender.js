@@ -11,8 +11,11 @@
  */
 function generateTodoCardHTML(cardData) {
     return `<div class="cardFrame" draggable="true" ondragstart="startDragging(${cardData['id']})" onClick="openCardDatas(${cardData['id']})">
-                <div class="cardContent">
-                    <div class="boardCardLabel${cardData['cardlabel']}">${cardlabel[cardData['cardlabel']]}</div>
+                <div class="cardContent" id="cardContent${cardData['id']}">
+                    <div class="cardLabelContainer">
+                        <div class="boardCardLabel${cardData['cardlabel']}">${cardlabel[cardData['cardlabel']]}</div>
+                        <div onclick="showSwitches(${cardData['id']}, event)"> pfeil </div>
+                    </div>
                     <div class="boardCardContentInner">
                         <h3 class="cardContentTitle">${cardData['title']}</h3>
                         <p class="cardContentText">${cardData['description']}</p>
@@ -30,6 +33,20 @@ function generateTodoCardHTML(cardData) {
                             </div>    
                         </div>    
                     </div>    
+                </div>
+                <div class="switchColumns" id="switchColumns${cardData['id']}" style="display:none">
+                    <div class="switchColumnsInner">
+                        <div class="cardLabelContainer">
+                            <div class="switchColumnsInnerTitle">Move to:</div>
+                            <div onclick="showSwitches(${cardData['id']}, event)"> Pfeil </div>
+                        </div>
+                        <div class="switchColumnsInnerButtons">
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 0, event)">To do</div>
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 1, event)">In Progress</div>
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 2, event)">Await Feedback</div>
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 3, event)">Done</div>
+                        </div>
+                    </div>
                 </div>
             </div>`;
 };

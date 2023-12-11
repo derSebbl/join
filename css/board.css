@@ -323,6 +323,35 @@ li {
   order: unset !important;
 }
 
+.cardLabelContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.switchColumns {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  height: 220px;
+}
+
+.switchColumnsInner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.switchColumnsInnerButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
