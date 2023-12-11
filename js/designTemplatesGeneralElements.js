@@ -27,11 +27,12 @@ function showSwitches(x, event) {
    contentContainer.style.display = `flex`;
    }
 };
-function switchColumn(cardId, columnId, event) {
+
+function switchColumn(cardId, columnTitle, event) {
     event.stopPropagation();
     // Hier holen wir die Karte und die Spalte, in die sie verschoben werden soll
-    let card = document.getElementById(`cardContent${cardId}`);
-    let column = document.getElementById(`column${columnId}`);
+    let card = document.getElementById(`cardFrame${cardId}`);
+    let column = document.getElementById(columnTitle);
 
     if (!card) {
         console.error(`Kein Element gefunden mit der ID cardContent${cardId}`);
@@ -39,7 +40,7 @@ function switchColumn(cardId, columnId, event) {
     }
 
     if (!column) {
-        console.error(`Kein Element gefunden mit der ID column${columnId}`);
+        console.error(`Kein Element gefunden mit der ID ${columnTitle}`);
         return;
     }
 
@@ -48,4 +49,7 @@ function switchColumn(cardId, columnId, event) {
 
     // Und fügen sie in die neue Spalte ein
     column.appendChild(card);
+    updateBoardHTML();
+    setTasksData();
+
 }

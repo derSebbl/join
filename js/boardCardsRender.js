@@ -10,7 +10,7 @@
  * @returns {string} A string representing the HTML for the Todo card.
  */
 function generateTodoCardHTML(cardData) {
-    return `<div class="cardFrame" draggable="true" ondragstart="startDragging(${cardData['id']})" onClick="openCardDatas(${cardData['id']})">
+    return `<div class="cardFrame" id="cardFrame${cardData['id']}" draggable="true" ondragstart="startDragging(${cardData['id']})" onClick="openCardDatas(${cardData['id']})">
                 <div class="cardContent" id="cardContent${cardData['id']}">
                     <div class="cardLabelContainer">
                         <div class="boardCardLabel${cardData['cardlabel']}">${cardlabel[cardData['cardlabel']]}</div>
@@ -41,10 +41,10 @@ function generateTodoCardHTML(cardData) {
                             <div onclick="showSwitches(${cardData['id']}, event)"> Pfeil </div>
                         </div>
                         <div class="switchColumnsInnerButtons">
-                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 0, event)">To do</div>
-                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 1, event)">In Progress</div>
-                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 2, event)">Await Feedback</div>
-                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 3, event)">Done</div>
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 'To do', event)">To do</div>
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 'In progress', event)">In Progress</div>
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 'Await feedback', event)">Await Feedback</div>
+                            <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 'Done', event)">Done</div>
                         </div>
                     </div>
                 </div>
