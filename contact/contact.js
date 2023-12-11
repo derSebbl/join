@@ -183,6 +183,7 @@ function newContact() {
   contacts.push(newContact);
   setContactData();
   clearValuesNewContact(name, mail, phone);
+  closeNewContact();
 };
 
 /**

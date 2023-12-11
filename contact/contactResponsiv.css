@@ -69,11 +69,12 @@
     display: flex;
     padding: 24px;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    max-width: none;
   }
 
   .contactContainer {
-    max-width: 456px;
+    max-width: none;
     width: 100%;
     padding-top: 80px;
   }
@@ -562,6 +563,19 @@
     gap: 10px;
   }
 
+  .letterSection {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .lineLetterSection {
+    width: 100%;
+  }
+
+  .contactPlate {
+    max-width: none;
+  }
+
   @keyframes slide-up {
     from {
       top: -1000px; /* Startposition unten */
@@ -572,9 +586,17 @@
   }
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1420px) {
 #mainContainer {
   padding-left: 0;
   justify-content: center;
 }
+.contactContainer {
+  padding-top: 80px;
+}
+
+#contactList {
+  padding-bottom: 120px;
+}
+
 }
