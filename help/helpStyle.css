@@ -34,6 +34,10 @@ h1 {
     flex-shrink: 0;
 }
 
+.arrowLeftLine:hover {
+    cursor: pointer;
+}
+
 .helpArrow:hover {
     cursor: pointer;
 }
