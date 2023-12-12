@@ -23,6 +23,7 @@ input,
   font-weight: 700;
   line-height: 120%;
   width: auto;
+  z-index: 1;
 }
 
 #formContainer {
@@ -651,7 +652,7 @@ textarea::placeholder {
   display: flex;
   padding-top: 95px;
   max-width: 980px;
-  width: 100vw;
+  width: 100%;
   align-items: flex-end;
   justify-content: space-between;
   flex-grow: 1;
