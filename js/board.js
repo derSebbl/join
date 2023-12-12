@@ -365,24 +365,29 @@ function resetSearchTerm() {
     document.getElementById('searchTask').value = '';
 };
 
+
 /**
- * Displays all cards.
- * 
- * @param {HTMLCollection} cards - The collection of cards.
+ * Displays all cards and updates the "No Tasks" messages in each column.
+ *
+ * @param {HTMLElement[]} cards - An array of card elements to be displayed.
  */
 function displayAllCards(cards) {
+    removeNoTasksMessages();
     for (let i = 0; i < cards.length; i++) {
         cards[i].style.display = 'block';
     }
+    checkEmptyColumns();
+    removeNoTasksMessages();
 };
 
 /**
- * Filters and displays the cards based on the search term.
- * 
- * @param {HTMLCollection} cards - The collection of cards.
- * @param {string} searchTerm - The search term.
+ * Filters and displays cards based on a search term.
+ *
+ * @param {HTMLElement[]} cards - An array of card elements to be filtered and displayed.
+ * @param {string} searchTerm - The term to filter the cards by. Only cards with a title or description that includes this term will be displayed.
  */
 function filterAndDisplayCards(cards, searchTerm) {
+    removeNoTasksMessages();
     for (let i = 0; i < cards.length; i++) {
         let card = cards[i];
         let cardTitle = card.querySelector('.cardContentTitle').innerText.toLowerCase();
@@ -394,6 +399,7 @@ function filterAndDisplayCards(cards, searchTerm) {
             card.style.display = 'none';
         }
     }
+    checkEmptyColumns();
 };
 
 /**
@@ -406,6 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
         searchTask.addEventListener('keyup', function() {
             let searchTerm = this.value.toLowerCase();
             let cards = document.getElementsByClassName('cardFrame');
+            removeNoTasksMessages();
             if (searchTerm) {
                 filterAndDisplayCards(cards, searchTerm);
             } else {
@@ -414,3 +421,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+/**
+ * Checks each column on the board for cards. If a column has no cards, a "No Tasks" message is displayed.
+ * If a column has cards, any existing "No Tasks" message is removed.
+ * 
+ */
+function checkEmptyColumns() {
+    for (let i = 0; i < boardColumn.length; i++) {
+        let cardsInCategory = Array.from(document.getElementsByClassName(boardColumn[i])).filter(card => window.getComputedStyle(card).display !== 'none');
+        let noTasksMessage = document.getElementById(`${boardColumn[i]}NoTasks`);
+        if (cardsInCategory.length === 0) {
+            if (!noTasksMessage) {
+                let noTasksElement = document.createElement('div');
+                noTasksElement.id = `${boardColumn[i]}NoTasks`;
+                noTasksElement.innerHTML = generateNoTasksInCategoryHTML(boardColumn[i]);
+                let parentElement = document.getElementById(boardColumn[i]);
+                parentElement.appendChild(noTasksElement);
+            }
+        } else if (cardsInCategory.length > 0 && noTasksMessage) {
+            noTasksMessage.remove();
+        }
+    }
+};
+
+/**
+ * Removes the "No Tasks" messages from all columns on the board.
+ * 
+ */
+function removeNoTasksMessages() {
+    for (let i = 0; i < boardColumn.length; i++) {
+        let noTasksMessage = document.getElementById(`${boardColumn[i]}NoTasks`);
+        if (noTasksMessage) {
+            noTasksMessage.innerHTML = '';
+            noTasksMessage.remove();
+        }
+    }
+};

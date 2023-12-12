@@ -116,13 +116,13 @@ function renderdesignProfileBadge(cardData) {
 function generateNoTasksInCategoryHTML(toDoCardsCategory) {
     switch (toDoCardsCategory) {
         case boardColumn[0]:
-            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No tasks To do</div>`;
+            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No more tasks To do</div>`;
         case boardColumn[1]:
-            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No tasks In Progress</div>`;
+            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No more tasks In Progress</div>`;
         case boardColumn[2]:
-            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No tasks Await Feedback</div>`;
+            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No more tasks Await Feedback</div>`;
         case boardColumn[3]:
-            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No tasks Done</div>`;
+            return `<div id="${toDoCardsCategory}NoTasks" class="boardColumnHasNoTasks dFlex">No more tasks Done</div>`;
         default:
             break;
     }
