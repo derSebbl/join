@@ -45,7 +45,7 @@
                             <input id="newContactName" required pattern="^[A-Za-z]+ [A-Za-z]+$" type="text" placeholder="First- and Lastname"> <img class="newContactImg" src="img/person.svg">
                         </div>
                         <div class="mailContainer">
-                            <input id="newContactMail" required type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
+                            <input id="newContactMail" required type="email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
                         </div>
                         <div class="phoneContainerNew">
                             <input id="newContactPhone" required ="tel" placeholder="Phone" pattern="[\+\d\-\(\)\s]*"> <img class="newContactImg" src="img/call.svg">
@@ -81,7 +81,7 @@
                         <input id="editContactName" type="text" placeholder="Name"> <img class="newContactImg" src="img/person.svg">
                     </div>
                     <div class="mailContainer">
-                        <input id="editContactMail" type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
+                        <input id="editContactMail" type="email" placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
                     </div>
                     <div class="phoneContainerNew">
                         <input id="editContactPhone" type="tel" placeholder="Phone" pattern="[\+\d\-\(\)\s]*"> <img class="newContactImg" src="img/call.svg">
@@ -196,7 +196,7 @@
                     <input id="newContactNameResp" type="text" required pattern="^[A-Za-z]+ [A-Za-z]+$" placeholder="First- and Lastname"> <img class="newContactImg" src="img/person.svg">
                 </div>
                 <div class="mailContainerResp">
-                   <input id="newContactMailResp" type="email" required placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
+                   <input id="newContactMailResp" type="email" required placeholder="Email" pattern="[a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
                 </div>
                 <div class="phoneContainerNewResp">
                    <input id="newContactPhoneResp" type="tel" required placeholder="Phone" pattern="[\+\d\-\(\)\s]*"> <img class="newContactImg" src="img/call.svg">
@@ -205,7 +205,7 @@
             <div class="createBtnResp"><button id="create">Create Contact <img src="img/check.svg"></button></div>
         </form>
 
-        <div id="editContactResp">
+        <form onsubmit="updateContactRespEditWindow(); return false" id="editContactResp">
             <img class="closeResp" onclick="closeEditContactResp()" src="img/close.svg">
             <div class="headerEditContactResp">
                 <div class="imgContainerResp">
@@ -225,7 +225,7 @@
                     </div>
 
                     <div class="mailContainer">
-                        <input id="editContactMailResp" type="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
+                        <input id="editContactMailResp" type="email" placeholder="Email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
                     </div>
 
                     <div class="phoneContainerNew">
@@ -234,9 +234,9 @@
             </div>
             <div class="editContactBtnContainerResp">
                 <button onclick="deleteContactRespEditWindow()" id="deleteEditContact">Delete <img class="cancelImg" src="img/iconoir_cancel.svg"></button>
-                <button onclick="updateContactRespEditWindow()"  id="save">Save <img src="img/check.svg"></button>
+                <button id="save">Save <img src="img/check.svg"></button>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
