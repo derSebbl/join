@@ -75,7 +75,7 @@
                     <div id="editInitials"></div>
                 </div>
             </div> 
-            <div class="infoEditContainer">
+            <form onsubmit="updateContact(); return false" class="infoEditContainer">
                 <div class="contactInfosRight">
                     <div class="nameContainer">
                         <input id="editContactName" type="text" placeholder="Name"> <img class="newContactImg" src="img/person.svg">
@@ -89,9 +89,9 @@
                 </div>
                 <div class="editContactBtnContainer">
                     <button onclick="deleteContact()" id="deleteEditContact">Delete <img class="cancelImg" src="img/iconoir_cancel.svg"></button>
-                    <button onclick="updateContact()"  id="save">Save <img src="img/check.svg"></button>
+                    <button id="save">Save <img src="img/check.svg"></button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
