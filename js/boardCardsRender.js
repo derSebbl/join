@@ -14,7 +14,7 @@ function generateTodoCardHTML(cardData) {
                 <div class="cardContent" id="cardContent${cardData['id']}">
                     <div class="cardLabelContainer">
                         <div class="boardCardLabel${cardData['cardlabel']}">${cardlabel[cardData['cardlabel']]}</div>
-                        <div id="arrowSwitchColumns" onclick="showSwitches(${cardData['id']}, event)"> pfeil </div>
+                        <div id="arrowSwitchColumns" onclick="showSwitches(${cardData['id']}, event)"><img src="../assets/icons/arrow_drop_downaa.svg"></div>
                     </div>
                     <div class="boardCardContentInner">
                         <h3 class="cardContentTitle">${cardData['title']}</h3>
@@ -38,7 +38,7 @@ function generateTodoCardHTML(cardData) {
                     <div class="switchColumnsInner">
                         <div class="cardLabelContainer">
                             <div class="switchColumnsInnerTitle">Move to:</div>
-                            <div onclick="showSwitches(${cardData['id']}, event)"> Pfeil </div>
+                            <div id="arrowSwitchColumns" onclick="showSwitches(${cardData['id']}, event)"><img src="../assets/icons/arrow_drop_downaa.svg"></div>
                         </div>
                         <div class="switchColumnsInnerButtons">
                             <div class="switchColumnsInnerButtonsButton" onclick="switchColumn(${cardData['id']}, 'boardColumnToDo', event)">To do</div>

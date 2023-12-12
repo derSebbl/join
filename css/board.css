@@ -352,9 +352,24 @@ li {
   height: 80%;
 }
 
+.switchColumnsInnerButtonsButton:hover {
+cursor: pointer;
+background-color: #e9e9e9;
+color: #000;
+border-radius: 10px;
+}
+
 #arrowSwitchColumns {
   display: none;
+  height: 24px;
 }
+
+#arrowSwitchColumns:hover{
+  background-color: lightgrey;
+  border-radius: 70px;
+  cursor: pointer;
+}
+
 
 @keyframes slideInFromRight {
   0% {
