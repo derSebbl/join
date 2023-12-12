@@ -45,10 +45,10 @@
                             <input id="newContactName" required pattern="^[A-Za-z]+ [A-Za-z]+$" type="text" placeholder="First- and Lastname"> <img class="newContactImg" src="img/person.svg">
                         </div>
                         <div class="mailContainer">
-                            <input id="newContactMail" required type="email" placeholder="Email"> <img class="newContactImg" src="img/mail.svg">
+                            <input id="newContactMail" required type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
                         </div>
                         <div class="phoneContainerNew">
-                            <input id="newContactPhone" required ="tel" placeholder="Phone"> <img class="newContactImg" src="img/call.svg">
+                            <input id="newContactPhone" required ="tel" placeholder="Phone" pattern="[\+\d\-\(\)\s]*"> <img class="newContactImg" src="img/call.svg">
                         </div>
                     </div>
                     <div class="newContactBtnContainer">
@@ -81,10 +81,10 @@
                         <input id="editContactName" type="text" placeholder="Name"> <img class="newContactImg" src="img/person.svg">
                     </div>
                     <div class="mailContainer">
-                        <input id="editContactMail" type="email" placeholder="Email"> <img class="newContactImg" src="img/mail.svg">
+                        <input id="editContactMail" type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
                     </div>
                     <div class="phoneContainerNew">
-                        <input id="editContactPhone" type="tel" placeholder="Phone"> <img class="newContactImg" src="img/call.svg">
+                        <input id="editContactPhone" type="tel" placeholder="Phone" pattern="[\+\d\-\(\)\s]*"> <img class="newContactImg" src="img/call.svg">
                     </div>
                 </div>
                 <div class="editContactBtnContainer">
@@ -196,10 +196,10 @@
                     <input id="newContactNameResp" type="text" required pattern="^[A-Za-z]+ [A-Za-z]+$" placeholder="First- and Lastname"> <img class="newContactImg" src="img/person.svg">
                 </div>
                 <div class="mailContainerResp">
-                   <input id="newContactMailResp" type="email" required placeholder="Email"> <img class="newContactImg" src="img/mail.svg">
+                   <input id="newContactMailResp" type="email" required placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
                 </div>
                 <div class="phoneContainerNewResp">
-                   <input id="newContactPhoneResp" type="tel" required placeholder="Phone"> <img class="newContactImg" src="img/call.svg">
+                   <input id="newContactPhoneResp" type="tel" required placeholder="Phone" pattern="[\+\d\-\(\)\s]*"> <img class="newContactImg" src="img/call.svg">
                 </div>
             </div>
             <div class="createBtnResp"><button id="create">Create Contact <img src="img/check.svg"></button></div>
@@ -221,15 +221,17 @@
             </div>
             <div id="ContactInfosResp">
                 <div class="nameContainer">
-                    <input id="editContactNameResp" type="text" placeholder="Name"> <img class="newContactImg" src="img/person.svg">
-                </div>
+                    <div class="nameContainer">
+                        <input id="editContactNameResp" type="text" placeholder="Name" pattern="[A-Za-z\s]*"> <img class="newContactImg" src="img/person.svg">
+                    </div>
 
-                <div class="mailContainer">
-                    <input id="editContactMailResp" type="email" placeholder="Email"> <img class="newContactImg" src="img/mail.svg">
-                </div>
+                    <div class="mailContainer">
+                        <input id="editContactMailResp" type="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <img class="newContactImg" src="img/mail.svg">
+                    </div>
 
-                <div class="phoneContainerNew">
-                    <input id="editContactPhoneResp" type="tel" placeholder="Phone"> <img class="newContactImg" src="img/call.svg">
+                    <div class="phoneContainerNew">
+                        <input id="editContactPhoneResp" type="tel" placeholder="Phone" pattern="[\+\d\-\(\)\s]*"> <img class="newContactImg" src="img/call.svg">
+                    </div>
                 </div>
             </div>
             <div class="editContactBtnContainerResp">
