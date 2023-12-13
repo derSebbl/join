@@ -314,7 +314,7 @@ textarea::placeholder {
 .formRight {
   display: flex;
   max-width: 440px;
-  width: 100vw;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;

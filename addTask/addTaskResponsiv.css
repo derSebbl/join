@@ -2,7 +2,6 @@
     .mainContainer {
         padding: 0;
         align-items: center;
-        margin-left: 5px;
     }
 
     .headline {
@@ -33,12 +32,12 @@
     .dateField,
     .subtaskField,
     .prioField {
-        width: 95%;
+        width: 100%;
     }
     .categoryField,
     .assignedField {
     display: flex;
-    width: 95%;
+    width: 100%;
     }
 
     .assignedField {
@@ -125,7 +124,7 @@
     }
 
     .subtaskField {
-        width: 94%;
+        width: 99%;
     }
 
     #create {
