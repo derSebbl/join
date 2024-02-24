@@ -210,10 +210,10 @@ input:not([type=checkbox]){
 
 #rememberContainer{
     display: flex;
-    padding: 0px 232px 0px 39px;
     align-items: center;
     align-self: stretch;
     gap: 10px;
+    justify-content: space-between;
 }
 
 #loginButtons{
@@ -305,6 +305,10 @@ input:focus-visible{
     background-color: #EDF2FA;
 }
 
+#forgotPw:hover {
+    cursor: pointer;
+    color: #29ABE2;
+}
 
 
 /* Footer */
