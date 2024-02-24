@@ -29,7 +29,6 @@ function renderBoardColumnTitleContainer() {
             case 3:
                 columnTitle = 'Done';
                 id = 'Done';
-                plusButtonIcons = '';
                 break;
             default:
                 break;
