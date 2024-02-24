@@ -401,7 +401,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('date').onchange = function () {
     var dateParts = this.value.split("-");
     if (dateParts[0].length > 4) {
-      alert("Das Jahr darf nicht mehr als 4 Ziffern haben.");
+      alert("The Year only need 4 digits.");
       this.value = "";
     }
   }
