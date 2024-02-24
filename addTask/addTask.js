@@ -1,5 +1,6 @@
 let = subtaskCount = 0;
 let closeNameListOnClickOutsideBound;
+let hasRun = false;
 /**
  * init function to load the registered users and the addTask.html
  *
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
  *
  */
 function addToTask() {
+  if (hasRun) return;
+  hasRun = true;
+
   let title = document.getElementById("title");
   let description = document.getElementById("description");
   let assignedTo = document.getElementById("assignedToInput");
@@ -40,6 +44,8 @@ function addToTask() {
   tasks.push(newTask);
   pushIntoTasksData(newTask);
   clearValues();
+  closeAddTaskBoard();
+  hasRun = false;
 };
 
 /**
