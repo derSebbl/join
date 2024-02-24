@@ -385,3 +385,18 @@ function clearFormContainer() {
   subtaskInput.value = ``;
   subtask.innerHTML = ``;
 };
+
+/**
+ * Function to check if the Input of Year is not more than 4 digits
+ * 
+ */
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById('date').onchange = function () {
+    var dateParts = this.value.split("-");
+    if (dateParts[0].length > 4) {
+      alert("Das Jahr darf nicht mehr als 4 Ziffern haben.");
+      this.value = "";
+    }
+  }
+});
