@@ -160,6 +160,18 @@ function closeOverlayBackground() {
     boardOverlayIsOpen = false;
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    let cardOverlayContainer = document.getElementById('cardOverlayContainer');
+    if (cardOverlayContainer) {
+        cardOverlayContainer.addEventListener('click', function(event) {
+            // Überprüfen, ob das geklickte Element das cardOverlayContainer selbst ist
+            if (event.target === cardOverlayContainer) {
+                closeOverlayBackground();
+            }
+        });
+    }
+});
+
 /**
  * Checks if a card label is present.
  * 

@@ -148,7 +148,7 @@ function renderCardDatasOverlay(cardId) {
     let timeString = timestampToDateOrTimeofday(cardDatas['duedate'], 'date', '.');
     document.getElementById('cardOverlayContainer').innerHTML = `
                                             <div class="cardFrameTaskOverlay">
-                                                <div class="cardTaskOverlayContent">
+                                                <div id="detailCard" class="cardTaskOverlayContent">
                                                     <div class="taskOverlaytemplateCard">
                                                         <div class="boardCardLabel${cardDatas['cardlabel']}">
                                                             ${cardlabel[cardDatas['cardlabel']]}
