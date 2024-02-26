@@ -305,6 +305,10 @@ input:focus-visible{
     background-color: #EDF2FA;
 }
 
+#forgotPw{
+    text-decoration: none;
+}
+
 #forgotPw:hover {
     cursor: pointer;
     color: #29ABE2;
@@ -329,7 +333,6 @@ footer > a{
   white-space: nowrap;
   overflow: hidden;
   padding: 8px;
-
 }
 
 footer > a:hover{
