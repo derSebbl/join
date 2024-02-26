@@ -1,4 +1,4 @@
-const STORAGE_TOKEN = 'BFGA2839RXJ228BO5J181H5QX8PREY153637G14W';
+const STORAGE_TOKEN = '3I8KXR7TQP8EZFBKWR28HJJ175ALF0H6VIMGW3PY';
 const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
 
 async function setItem(key, value) {
