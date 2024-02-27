@@ -24,20 +24,22 @@
             </div>
             <img src="loginSymbols/underline.svg">
         </div>
-        <form onsubmit="checkMail(); return false;">
+        <form id="forgotPw" onsubmit="checkMail(); return false;">
             <div id="emailContainer">
                 <input type="email" id="email" placeholder="Email" name="email" required>
                 <img src="loginSymbols/mail.svg" class="inputIcon" alt="mail symbol">
             </div>
-
-            <div id="passwordContainer">
+            <div style="display: none;" id="errorMail">Mail not existing</div>
+            <div id="passwordContainer" style="display: none;">
                 <input type="password" id="password" placeholder="Password" name="password">
                 <img src="loginSymbols/lock.svg" id="passwordIcon" class="inputIcon"  alt="lock icon">
             </div>
-            <div id="loginButtons">
-                <button id="registerBtn" class="btn">Check</button>
-            </div>
+            <div style="display: none;" id="passwordChanged">Password succesfully changed</div>
         </form>
+        <div id="loginButtons">
+            <button style="display: block;" form="forgotPw" id="registerBtn" class="btn">Check</button>
+            <button style="display: none;" onclick="changePassword()" id="passwordBtn" class="btn">Change Password</button>
+        </div>
     </div>
     <footer>
         <a href="#">Privacy Policy</a>
